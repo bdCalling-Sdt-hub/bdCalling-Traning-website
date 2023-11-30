@@ -9,107 +9,124 @@ import {
   Youtube,
 } from "lucide-react";
 import Image from "next/image";
+import footerLink from "../../../public/db/footer.json";
 
 const Footer = () => {
+  const { usefulLinks, popularCourses, description, contacts, paymentImages } =
+    footerLink;
+
   return (
-    <footer className="grid grid-cols-4 gap-8 p-10 bg-[#e6f8ff] text-base-content">
-      <aside>
-        <a href="#">
-          <Image src="/images/logo.png" alt="logo" width={150} height={100} />
-        </a>
-        <p className="mt-4">
-          What brings innovation to everything we do is collaboration. We help
-          each other, solve issues we face, we enjoys sweet talks. We shape up
-          each other’s ideas to bring the best out of them.
-        </p>
-        <h4 className="font-bold mt-4 mb-2">Share Now</h4>
-        <div className="flex items-center gap-2">
-          <Icon>
-            <Facebook color="#e8e3e3" />
-          </Icon>
-          <Icon>
-            <Linkedin color="#e8e3e3" />
-          </Icon>
-          <Icon>
-            <Youtube color="#e8e3e3" />
-          </Icon>
-          <Icon>
-            <Mail color="#e8e3e3" />
-          </Icon>
-          <Icon>
-            <Send color="#e8e3e3" />
-          </Icon>
-        </div>
-      </aside>
-      <nav>
-        <header className="font-bold">Useful Links</header>
-        <a className="block mt-4">About Us</a>
-        <a className="block">Contact Us</a>
-        <a className="block">Success Story</a>
-        <a className="block">Free Seminar Schedule</a>
-        <a className="block">Mentors</a>
-        <a className="block">Refund Policy</a>
-      </nav>
-      <nav>
-        <header className="font-bold">Popular Courses</header>
-        <a className="block mt-4">Lead Generation-Data Entry </a>
-        <a className="block">Digital Marketing</a>
-        <a className="block">WordPress Specialist</a>
-        <a className="block">Graphics Designer</a>
-        <a className="block">UX/UI Designer</a>
-        <a className="block">APP Developer with Flutter </a>
-        <a className="block">Front-End Development </a>
-        <a className="block">MERN STACK Developer</a>
-      </nav>
-      <nav>
-        <header className="font-bold">Contact Info</header>
-        <div className="flex items-center gap-2 mt-4">
-          <Icon>
-            <Phone color="#e8e3e3" size={25} />
-          </Icon>
-          <p>+88 01321231802</p>
-        </div>
-        <div className="flex items-center gap-2 mt-4">
-          <Icon>
-            <Mail color="#e8e3e3" />
-          </Icon>
-          <p>learn.bdcalling@gmail.com</p>
-        </div>
-        <div className="flex items-center gap-2 mt-4">
-          <Icon>
-            <MapPinned size={40} color="#e8e3e3" absoluteStrokeWidth />
-          </Icon>
-          <p>Daisy Garden, House 14,Block A, Banasree, main road, Dhaka-1219</p>
-        </div>
-        <h3 className="my-4 text-lg">Online Transaction Method</h3>
-        <div className="flex gap-1">
-          <div className="bg-white  rounded-md px-2 py-1">
+    <footer className="bg-[#e6f8ff]">
+      <div className="container py-16">
+        <div className="grid grid-cols-4 gap-8 text-base-content">
+          <aside>
             <a href="#">
               <Image
-                src="/images/bkash.png"
+                src="/images/logo.png"
                 alt="logo"
-                width={80}
-                height={80}
+                width={150}
+                height={100}
               />
             </a>
-          </div>
-          <div className="bg-white rounded-md px-2 py-1">
-            <a href="#">
-              <Image
-                src="/images/nagad.png"
-                alt="logo"
-                width={80}
-                height={80}
-              />
+            <p className="mt-4">{description}</p>
+            <h4 className="font-bold mt-4 mb-2">Share Now</h4>
+            <div className="flex items-center gap-2">
+              <Icon>
+                <Facebook color="#e8e3e3" />
+              </Icon>
+              <Icon>
+                <Linkedin color="#e8e3e3" />
+              </Icon>
+              <Icon>
+                <Youtube color="#e8e3e3" />
+              </Icon>
+              <Icon>
+                <Mail color="#e8e3e3" />
+              </Icon>
+              <Icon>
+                <Send color="#e8e3e3" />
+              </Icon>
+            </div>
+          </aside>
+          <nav>
+            <header className="font-bold mb-6">Useful Links</header>
+            {usefulLinks.map((link, index) => (
+              <a key={index} href="#" className="block mb-2">
+                {link?.title}
+              </a>
+            ))}
+          </nav>
+          <nav>
+            <header className="font-bold mb-6">Popular Courses</header>
+            {popularCourses.map((link, index) => (
+              <a key={index} href="#" className="block mb-2">
+                {link?.title}
+              </a>
+            ))}
+          </nav>
+          <nav>
+            <header className="font-bold mb-6">Contact Info</header>
+            <div className="flex items-center gap-2">
+              <Icon>
+                <Phone color="#e8e3e3" size={25} />
+              </Icon>
+              <p>+88 01321231802</p>
+            </div>
+            <div className="flex items-center gap-2 mt-4">
+              <Icon>
+                <Mail color="#e8e3e3" />
+              </Icon>
+              <p>learn.bdcalling@gmail.com</p>
+            </div>
+            <div className="flex items-center gap-2 mt-4">
+              <Icon>
+                <MapPinned size={40} color="#e8e3e3" absoluteStrokeWidth />
+              </Icon>
+              <p>
+                Daisy Garden, House 14,Block A, Banasree, main road, Dhaka-1219
+              </p>
+            </div>
+            <h3 className="my-4 text-lg">Online Transaction Method</h3>
+            <div className="flex gap-1">
+              {paymentImages.map((img, index) => (
+                <div key={index} className="bg-white  rounded-md px-2 py-1">
+                  <a href="#">
+                    <Image
+                      src={img.imgLink}
+                      alt={`${img.title} logo`}
+                      width={80}
+                      height={80}
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+            <div className="bg-white rounded-md px-2 py-1 mt-3 w-[190px] text-center">
+              <a href="#">
+                <Image
+                  src="/images/ssl.png"
+                  alt="logo"
+                  width={150}
+                  height={150}
+                />
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div className="border-t py-6">
+        <div className="container flex items-center justify-between">
+          <div>
+            <a href="#" className="border-r mr-1 px-1">
+              Privacy Policy
             </a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+          <div>
+            <p>© 2023 Learn bdCalling. All Rights Reserved.</p>
           </div>
         </div>
-        <div className="bg-white rounded-md px-2 py-1 mt-3 w-[190px]">
-          <a href="#">
-            <Image src="/images/ssl.png" alt="logo" width={200} height={200} />
-          </a>
-        </div>
-      </nav>
+      </div>
     </footer>
   );
 };

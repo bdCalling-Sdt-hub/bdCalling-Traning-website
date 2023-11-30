@@ -2,7 +2,7 @@ import RootLayout from "@/components/Layouts/RootLayout";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="container">
       <h1 className="text-2xl">This about page</h1>
     </div>
   );

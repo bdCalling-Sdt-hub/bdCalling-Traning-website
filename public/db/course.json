@@ -1,0 +1,213 @@
+{
+  "courses": [
+    {
+      "image": "/images/course1.png",
+      "title": "Certified UI/UX Designer Course",
+      "batchNo": 2,
+      "courseStatus": "online",
+      "duration": "35",
+      "remainSeat": 28,
+      "price": 42000,
+      "rating": 4.2,
+      "countRating": 55
+    },
+    {
+      "image": "/images/course2.png",
+      "title": "Advanced UX Design Workshop",
+      "batchNo": 3,
+      "courseStatus": "offline",
+      "duration": "40",
+      "remainSeat": 25,
+      "price": 45000,
+      "rating": 4.5,
+      "countRating": 60
+    },
+    {
+      "image": "/images/course3.png",
+      "title": "Interactive Web Design Course",
+      "batchNo": 4,
+      "courseStatus": "online",
+      "duration": "30",
+      "remainSeat": 22,
+      "price": 38000,
+      "rating": 4.8,
+      "countRating": 65
+    },
+    {
+      "image": "/images/course4.png",
+      "title": "Mobile App UI Development",
+      "batchNo": 5,
+      "courseStatus": "offline",
+      "duration": "35",
+      "remainSeat": 30,
+      "price": 40000,
+      "rating": 4.3,
+      "countRating": 58
+    },
+    {
+      "image": "/images/course5.png",
+      "title": "UI/UX for E-commerce Platforms",
+      "batchNo": 6,
+      "courseStatus": "online",
+      "duration": "38",
+      "remainSeat": 26,
+      "price": 43000,
+      "rating": 4.7,
+      "countRating": 62
+    },
+    {
+      "image": "/images/course1.png",
+      "title": "Prototyping and Wireframing",
+      "batchNo": 7,
+      "courseStatus": "offline",
+      "duration": "32",
+      "remainSeat": 23,
+      "price": 39000,
+      "rating": 4.6,
+      "countRating": 57
+    },
+    {
+      "image": "/images/course2.png",
+      "title": "User-Centered Design Principles",
+      "batchNo": 8,
+      "courseStatus": "online",
+      "duration": "36",
+      "remainSeat": 27,
+      "price": 41000,
+      "rating": 4.4,
+      "countRating": 63
+    },
+    {
+      "image": "/images/course3.png",
+      "title": "Responsive Design Techniques",
+      "batchNo": 9,
+      "courseStatus": "offline",
+      "duration": "33",
+      "remainSeat": 29,
+      "price": 44000,
+      "rating": 4.9,
+      "countRating": 68
+    },
+    {
+      "image": "/images/course4.png",
+      "title": "Visual Design Fundamentals",
+      "batchNo": 10,
+      "courseStatus": "online",
+      "duration": "37",
+      "remainSeat": 24,
+      "price": 42000,
+      "rating": 4.2,
+      "countRating": 55
+    },
+    {
+      "image": "/images/course5.png",
+      "title": "Design Thinking Workshop",
+      "batchNo": 11,
+      "courseStatus": "offline",
+      "duration": "39",
+      "remainSeat": 21,
+      "price": 46000,
+      "rating": 4.1,
+      "countRating": 52
+    },
+    {
+      "image": "/images/course1.png",
+      "title": "Animation in User Interface",
+      "batchNo": 12,
+      "courseStatus": "online",
+      "duration": "31",
+      "remainSeat": 28,
+      "price": 40000,
+      "rating": 4.5,
+      "countRating": 60
+    },
+    {
+      "image": "/images/course2.png",
+      "title": "UX Research and Testing",
+      "batchNo": 13,
+      "courseStatus": "offline",
+      "duration": "34",
+      "remainSeat": 25,
+      "price": 43000,
+      "rating": 4.8,
+      "countRating": 65
+    },
+    {
+      "image": "/images/course3.png",
+      "title": "Designing for Accessibility",
+      "batchNo": 14,
+      "courseStatus": "online",
+      "duration": "36",
+      "remainSeat": 22,
+      "price": 41000,
+      "rating": 4.7,
+      "countRating": 62
+    },
+    {
+      "image": "/images/course4.png",
+      "title": "Creative UI/UX Portfolio Building",
+      "batchNo": 15,
+      "courseStatus": "offline",
+      "duration": "40",
+      "remainSeat": 30,
+      "price": 45000,
+      "rating": 4.3,
+      "countRating": 58
+    },
+    {
+      "image": "/images/course5.png",
+      "title": "UI/UX Trends and Innovations",
+      "batchNo": 16,
+      "courseStatus": "online",
+      "duration": "38",
+      "remainSeat": 26,
+      "price": 47000,
+      "rating": 4.6,
+      "countRating": 57
+    },
+    {
+      "image": "/images/course1.png",
+      "title": "Usability Principles in Design",
+      "batchNo": 17,
+      "courseStatus": "offline",
+      "duration": "33",
+      "remainSeat": 23,
+      "price": 42000,
+      "rating": 4.4,
+      "countRating": 63
+    },
+    {
+      "image": "/images/course2.png",
+      "title": "Collaborative Design Workflows",
+      "batchNo": 18,
+      "courseStatus": "online",
+      "duration": "35",
+      "remainSeat": 27,
+      "price": 44000,
+      "rating": 4.9,
+      "countRating": 68
+    },
+    {
+      "image": "/images/course3.png",
+      "title": "UI/UX for Mobile Games",
+      "batchNo": 19,
+      "courseStatus": "offline",
+      "duration": "32",
+      "remainSeat": 24,
+      "price": 40000,
+      "rating": 4.2,
+      "countRating": 55
+    },
+    {
+      "image": "/images/course4.png",
+      "title": "Social Media App Design",
+      "batchNo": 20,
+      "courseStatus": "online",
+      "duration": "37",
+      "remainSeat": 21,
+      "price": 46000,
+      "rating": 4.1,
+      "countRating": 52
+    }
+  ]
+}

@@ -1,9 +1,12 @@
+import Banner from "@/components/Home/Banner";
+import Courses from "@/components/Home/Courses";
 import RootLayout from "@/components/Layouts/RootLayout";
 
 const HomePage = () => {
   return (
-    <div>
-      <h1 className="text-2xl">This is home page</h1>
+    <div className="container">
+      <Banner />
+      <Courses />
     </div>
   );
 };

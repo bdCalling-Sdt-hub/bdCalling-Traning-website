@@ -2,7 +2,7 @@ import RootLayout from "@/components/Layouts/RootLayout";
 
 const ContactPage = () => {
   return (
-    <div>
+    <div className="container">
       <h1 className="text-2xl">This contact page</h1>
     </div>
   );
