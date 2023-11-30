@@ -1,5 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
-import CourseCard from "@/components/ui/courseCard";
+import CourseCard from "@/shared/CourseCard";
 import coursesList from "../../../public/db/course.json";
 
 const CoursesPage = () => {

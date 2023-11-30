@@ -2,8 +2,8 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import coursesList from "../../../public/db/course.json";
+import CourseCard from "../../shared/CourseCard";
 import { Button } from "../ui/button";
-import CourseCard from "../ui/courseCard";
 
 const Courses = () => {
   const [title, setTitle] = useState("all");
@@ -21,7 +21,7 @@ const Courses = () => {
 
   return (
     <div>
-      <div className="flex  justify-between">
+      <div className="flex justify-between mt-24">
         <div>
           <h3>Top Course</h3>
           <h2 className="text-2xl font-bold">Most popular courses</h2>
@@ -35,16 +35,16 @@ const Courses = () => {
 
       <div className=" mt-8 text-center flex flex-col lg:flex-row  gap-2">
         <Button
+          variant="link"
           onClick={() => setTitle("all")}
-          className={`${
-            title === "all" ? "bg-[#1796fd] text-white" : ""
-          } border py-3 px-2 md:px-5 rounded-md`}
+          className={`${title === "all" ? "bg-[#1796fd] text-white" : ""} `}
         >
           All
         </Button>
         {categoryLists.map((category, index) => (
           <Button
             key={index}
+            variant="link"
             onClick={() => setTitle(category.title)}
             className={`${
               title === category.title ? "bg-[#1796fd] text-white" : ""

@@ -9,7 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 import Image from "next/image";
-import footerLink from "../../../public/db/footer.json";
+import footerLink from "../../public/db/footer.json";
 
 const Footer = () => {
   const { usefulLinks, popularCourses, description, contacts, paymentImages } =

@@ -1,6 +1,6 @@
-import { BookOpenText, Clock8, Users } from "lucide-react";
+import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
 import Image from "next/image";
-import { Button } from "./button";
+import { Button } from "../components/ui/button";
 
 const CourseCard = ({ course }) => {
   const {
@@ -15,7 +15,7 @@ const CourseCard = ({ course }) => {
     title,
   } = course;
   return (
-    <div className="shadow p-3  rounded-md">
+    <div className="p-3 rounded-lg shadow">
       <div>
         <Image
           src={image}
@@ -31,27 +31,41 @@ const CourseCard = ({ course }) => {
             <BookOpenText size={20} />
             Batch {batchNo}
           </p>
-          <div className="bg-[#1796fd] text-white rounded-sm py-1 px-5">
+          <div className="bg-primary text-white rounded-md py-1 px-5">
             {courseStatus}
           </div>
         </div>
         <div className="flex items-center justify-between mt-4 border-b pb-2">
           <p size={20} className="flex items-center gap-1">
-            <Users />
+            <UsersRound size={20} />
             {remainSeat} Seats Left
           </p>
           <p size={18} className="flex items-center gap-1">
-            <Clock8 />
+            <Clock8 size={20} />
             {duration} Days Lest
           </p>
         </div>
-        <h2>{title}</h2>
-        <div className="flex items-center justify-between mt-4">
+        <h2 className="my-3">{title}</h2>
+        <div className="flex items-center justify-between my-4">
           <p>{price}BDT</p>
-          <p>{rating}(20)</p>
+          <div className="flex items-center gap-1">
+            <div className="flex">
+              <Star size={20} color="#ffc60b" />
+              <Star size={20} color="#ffc60b" />
+              <Star size={20} color="#ffc60b" />
+              <Star size={20} color="#ffc60b" />
+              <Star size={20} color="#ffc60b" />
+            </div>
+            {rating}(20)
+          </div>
         </div>
       </div>
-      <Button className="w-full">Enroll Now</Button>
+      <Button
+        variant="outline"
+        className="w-full border border-[#2492EB] text-[#2492EB] py-5"
+      >
+        Enroll Now
+      </Button>
     </div>
   );
 };
