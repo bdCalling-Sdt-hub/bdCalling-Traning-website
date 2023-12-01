@@ -32,7 +32,6 @@ const Courses = () => {
           </Button>
         </Link>
       </div>
-
       <div className=" mt-8 text-center flex flex-col lg:flex-row  gap-2">
         <Button
           variant="link"
@@ -54,12 +53,12 @@ const Courses = () => {
           </Button>
         ))}
       </div>
-
       <div className="grid grid-cols-3 gap-4 my-12">
-        {courses.slice(0, 9).map((course, index) => (
+        {courses.slice(0, 6).map((course, index) => (
           <CourseCard key={index} course={course} />
         ))}
       </div>
+      ;
     </div>
   );
 };
