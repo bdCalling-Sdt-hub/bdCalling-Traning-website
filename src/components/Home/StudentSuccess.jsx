@@ -1,7 +1,7 @@
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import HeadingText from "../ui/headingText";
+import HeadingText from "../Common/headingText";
 
 // Import Swiper styles
 import "swiper/css";
@@ -36,7 +36,7 @@ const StudentSuccess = () => {
                 height="490px"
                 src={video}
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 className="rounded-md"
               ></iframe>

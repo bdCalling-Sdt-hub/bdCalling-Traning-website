@@ -1,7 +1,6 @@
 import { Calendar, Clock8 } from "lucide-react";
-import Image from "next/image";
+import HeadingText from "../Common/headingText";
 import { Button } from "../ui/button";
-import HeadingText from "../ui/headingText";
 const Event = () => {
   const events = [
     {
@@ -22,13 +21,10 @@ const Event = () => {
       <HeadingText sTitle={"Events"} title={"See our Upcoming Events"} />
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-2 p-3 rounded-lg shadow">
-          <Image
+          <img
             src="/images/event1.png"
             alt="course image"
-            className="rounded-md"
-            width={300}
-            height={300}
-            layout="responsive"
+            className="rounded-md w-full"
           />
           <div className="flex items-center justify-between mt-4">
             <div className="flex gap-5 items-center">
@@ -58,12 +54,10 @@ const Event = () => {
         <div className="space-y-4">
           {events.map((event, index) => (
             <div key={index} className="rounded-lg shadow relative">
-              <Image
+              <img
                 src={event?.image}
                 alt="course image"
                 className="rounded-md h-[300px] w-full object-cover"
-                width={300}
-                height={200}
               />
               <div className="h-24 w-full backdrop-blur-lg border-t bg-[#0000005e] absolute bottom-0 rounded-b-md p-2 text-white">
                 <div className="flex gap-5 items-center">

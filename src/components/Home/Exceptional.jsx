@@ -1,8 +1,6 @@
 import { Check, ChevronRight, Trophy } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import LottiePlane from "../ui/lottie";
 
 const Exceptional = () => {
   const items = [
@@ -14,19 +12,15 @@ const Exceptional = () => {
   return (
     <div className="grid grid-cols-2 gap-16 my-44 items-center justify-center">
       <div className="relative">
-        <Image
-          className="absolute right-0 object-cover"
+        <img
+          className="absolute right-0 object-cover w-[60%]"
           src="/images/exceptional2.png"
           alt="image"
-          width={380}
-          height={200}
         />
-        <div className="absolute -bottom-16 left-12">
-          <Image
+        <div className="absolute -bottom-24 left-12">
+          <img
             src="/images/exceptional1.png"
             alt="image"
-            width={240}
-            height={200}
             className="object-cover"
           />
         </div>
@@ -39,7 +33,7 @@ const Exceptional = () => {
             <p>Awesome Awards</p>
           </div>
         </div>
-        <LottiePlane />
+        {/* <LottiePlane /> */}
       </div>
       <div className="space-y-5">
         <h1 className="text-4xl font-bold">Why We’re Exceptional</h1>

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const Banner = () => {
   return (
     <div className="grid grid-cols-2 gap-40 items-center">
@@ -17,12 +15,7 @@ const Banner = () => {
         </p>
       </div>
       <div>
-        <Image
-          src="/images/banner.png"
-          alt="banner image"
-          width={500}
-          height={500}
-        />
+        <img src="/images/banner.png" alt="banner image" />
       </div>
     </div>
   );

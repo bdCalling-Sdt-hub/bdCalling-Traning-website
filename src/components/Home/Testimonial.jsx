@@ -3,7 +3,7 @@ import "swiper/css";
 import { A11y, Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import testimonials from "../../../public/db/testimonial.json";
-import HeadingText from "../ui/headingText";
+import HeadingText from "../Common/headingText";
 
 // Import Swiper styles
 import "swiper/css";

@@ -1,5 +1,4 @@
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
-import Image from "next/image";
 import { Button } from "../components/ui/button";
 
 const CourseCard = ({ course }) => {
@@ -17,14 +16,7 @@ const CourseCard = ({ course }) => {
   return (
     <div className="p-3 rounded-lg shadow">
       <div>
-        <Image
-          src={image}
-          alt="course image"
-          className="rounded-md"
-          width={300}
-          height={300}
-          layout="responsive"
-        />
+        <img src={image} alt="course image" className="rounded-md w-full" />
         <div className="flex items-center justify-between mt-4">
           <p className="flex items-center gap-1">
             {" "}
