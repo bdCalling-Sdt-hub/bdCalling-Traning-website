@@ -32,7 +32,7 @@ const Courses = () => {
           </Button>
         </Link>
       </div>
-      <div className=" mt-8 text-center flex flex-col lg:flex-row  gap-2">
+      <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2">
         <Button
           variant="link"
           onClick={() => setTitle("all")}

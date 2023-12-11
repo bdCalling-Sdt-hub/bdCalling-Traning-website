@@ -1,8 +1,8 @@
 import About from "@/components/About/About";
 import Experts from "@/components/About/Experts";
-import Subscribe from "@/components/About/Subscribe";
 import TotalCourse from "@/components/About/TotalCourse";
 import WhatBdCalling from "@/components/About/WhatBdCalling";
+import Subscribe from "@/components/Common/Subscribe";
 import RootLayout from "@/components/Layouts/RootLayout";
 
 const AboutPage = () => {
@@ -13,7 +13,10 @@ const AboutPage = () => {
       {/* <OurVision /> */}
       <Experts />
       <TotalCourse />
-      <Subscribe />
+      <Subscribe
+        title="Say Hello to Learn with!"
+        description="Unlock a world of knowledge and endless growth opportunities"
+      />
     </div>
   );
 };
