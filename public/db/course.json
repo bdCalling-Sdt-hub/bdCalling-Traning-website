@@ -9,7 +9,12 @@
       "remainSeat": 28,
       "price": 42000,
       "rating": 4.2,
-      "countRating": 55
+      "countRating": 55,
+      "id": 1,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course2.png",
@@ -20,7 +25,12 @@
       "remainSeat": 25,
       "price": 45000,
       "rating": 4.5,
-      "countRating": 60
+      "countRating": 60,
+      "id": 2,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course3.png",
@@ -31,7 +41,12 @@
       "remainSeat": 22,
       "price": 38000,
       "rating": 4.8,
-      "countRating": 65
+      "countRating": 65,
+      "id": 3,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course4.png",
@@ -42,7 +57,12 @@
       "remainSeat": 30,
       "price": 40000,
       "rating": 4.3,
-      "countRating": 58
+      "countRating": 58,
+      "id": 4,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course5.png",
@@ -53,7 +73,12 @@
       "remainSeat": 26,
       "price": 43000,
       "rating": 4.7,
-      "countRating": 62
+      "countRating": 62,
+      "id": 5,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course1.png",
@@ -64,7 +89,12 @@
       "remainSeat": 23,
       "price": 39000,
       "rating": 4.6,
-      "countRating": 57
+      "countRating": 57,
+      "id": 6,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course2.png",
@@ -75,7 +105,12 @@
       "remainSeat": 27,
       "price": 41000,
       "rating": 4.4,
-      "countRating": 63
+      "countRating": 63,
+      "id": 7,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course3.png",
@@ -86,7 +121,12 @@
       "remainSeat": 29,
       "price": 44000,
       "rating": 4.9,
-      "countRating": 68
+      "countRating": 68,
+      "id": 8,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course4.png",
@@ -97,7 +137,12 @@
       "remainSeat": 24,
       "price": 42000,
       "rating": 4.2,
-      "countRating": 55
+      "countRating": 55,
+      "id": 9,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course5.png",
@@ -108,7 +153,12 @@
       "remainSeat": 21,
       "price": 46000,
       "rating": 4.1,
-      "countRating": 52
+      "countRating": 52,
+      "id": 10,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course1.png",
@@ -119,7 +169,12 @@
       "remainSeat": 28,
       "price": 40000,
       "rating": 4.5,
-      "countRating": 60
+      "countRating": 60,
+      "id": 11,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course2.png",
@@ -130,7 +185,12 @@
       "remainSeat": 25,
       "price": 43000,
       "rating": 4.8,
-      "countRating": 65
+      "countRating": 65,
+      "id": 12,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course3.png",
@@ -141,7 +201,12 @@
       "remainSeat": 22,
       "price": 41000,
       "rating": 4.7,
-      "countRating": 62
+      "countRating": 62,
+      "id": 13,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course4.png",
@@ -152,7 +217,12 @@
       "remainSeat": 30,
       "price": 45000,
       "rating": 4.3,
-      "countRating": 58
+      "countRating": 58,
+      "id": 14,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course5.png",
@@ -163,7 +233,12 @@
       "remainSeat": 26,
       "price": 47000,
       "rating": 4.6,
-      "countRating": 57
+      "countRating": 57,
+      "id": 15,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course1.png",
@@ -174,7 +249,12 @@
       "remainSeat": 23,
       "price": 42000,
       "rating": 4.4,
-      "countRating": 63
+      "countRating": 63,
+      "id": 16,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course2.png",
@@ -185,7 +265,12 @@
       "remainSeat": 27,
       "price": 44000,
       "rating": 4.9,
-      "countRating": 68
+      "countRating": 68,
+      "id": 17,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course3.png",
@@ -196,7 +281,12 @@
       "remainSeat": 24,
       "price": 40000,
       "rating": 4.2,
-      "countRating": 55
+      "countRating": 55,
+      "id": 18,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     },
     {
       "image": "/images/course4.png",
@@ -207,7 +297,12 @@
       "remainSeat": 21,
       "price": 46000,
       "rating": 4.1,
-      "countRating": 52
+      "countRating": 52,
+      "id": 19,
+      "students": "Max 20",
+      "skillLevel": "Advanced",
+      "language": "English",
+      "lessons": 24
     }
   ]
 }

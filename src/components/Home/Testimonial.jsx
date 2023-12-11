@@ -16,10 +16,11 @@ const Testimonial = () => {
     width: "100%",
     height: "450px",
     padding: "0px 18px",
+    marginTop: "50px",
   };
 
   return (
-    <div>
+    <div className="container">
       <HeadingText sTitle={"Testimonial"} title={"What our Student say"} />
       <Swiper
         modules={[Pagination, A11y, Autoplay]}

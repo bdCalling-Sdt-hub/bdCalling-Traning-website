@@ -20,7 +20,7 @@ const Courses = () => {
   const { courses } = coursesList;
 
   return (
-    <div>
+    <div className="container">
       <div className="flex justify-between mt-24">
         <div>
           <h3>Top Course</h3>

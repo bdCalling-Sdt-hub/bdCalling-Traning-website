@@ -17,10 +17,8 @@ import * as React from "react";
 
 const components = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Courses",
+    href: "/courses",
   },
   {
     title: "Hover Card",

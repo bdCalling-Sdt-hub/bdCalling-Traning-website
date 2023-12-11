@@ -11,6 +11,7 @@ const StudentSuccess = () => {
   const swiperContainerStyle = {
     width: "80%",
     height: "500px",
+    marginTop: "40px",
   };
   const videoLinkLists = [
     "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp;start=3",
@@ -18,7 +19,7 @@ const StudentSuccess = () => {
     "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp;start=15",
   ];
   return (
-    <div>
+    <div className="container my-14">
       <HeadingText sTitle={"Story"} title={"Student Success Story"} />
       <Swiper
         modules={[Navigation]}

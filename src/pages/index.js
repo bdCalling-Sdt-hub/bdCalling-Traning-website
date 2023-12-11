@@ -10,7 +10,7 @@ import RootLayout from "@/components/Layouts/RootLayout";
 
 const HomePage = () => {
   return (
-    <div className="container">
+    <div>
       <Banner />
       <Courses />
       <Exceptional />
