@@ -12,8 +12,8 @@ const Subscribe = ({ title, description }) => {
       <div className="mx-56 p-10">
         <div className="flex items-center gap-2">
           <Input type="email" placeholder="Enter your email" />
-          <Button className="flex gap-1">
-            <p className=""> Subscribe</p>
+          <Button className="flex gap-1 bg-primary py-6 px-8">
+            <p className="text-md"> Subscribe</p>
             <SendHorizontal size={20} />
           </Button>
         </div>
