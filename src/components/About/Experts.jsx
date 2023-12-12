@@ -1,18 +1,17 @@
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import expert from "../../../public/db/expert.json";
+import ExpertCard from "../Common/Expert.Card";
 import HeadingText from "../Common/headingText";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import ExpertCard from "./Expert.Card";
 
 const Experts = () => {
   const { expertList } = expert;
   const swiperContainerStyle = {
     width: "100%",
-
     padding: "50px 0",
   };
   return (

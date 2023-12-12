@@ -3,23 +3,23 @@
   "usefulLinks": [
     {
       "title": "About Us",
-      "link": "about"
+      "link": "/about"
     },
     {
       "title": "Contact Us",
-      "link": "contact"
+      "link": "/contact"
     },
     {
       "title": "Success Story",
-      "link": "success-stories"
+      "link": "/success-stories"
     },
     {
       "title": "Free Seminar Schedule",
-      "link": ""
+      "link": "/free-seminar"
     },
     {
       "title": "Mentors",
-      "link": ""
+      "link": "/mentors"
     },
     {
       "title": "Refund Policy",

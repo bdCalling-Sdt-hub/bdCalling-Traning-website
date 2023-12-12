@@ -2,9 +2,9 @@ const ExpertCard = ({ data }) => {
   const { image, name, title } = data;
 
   return (
-    <div className="bg-shadow shadow h-[400px] rounded-lg">
+    <div className="bg-shadow shadow h-[450px] rounded-lg">
       <div className="bg-gray-100 rounded-t-lg">
-        <img src={image} alt="" className="rounded-lg h-[300px]" />
+        <img src={image} alt="" className="rounded-lg h-[350px] w-full" />
       </div>
       <div className="p-2">
         <h1 className="text-black font-bold text-lg">{name}</h1>

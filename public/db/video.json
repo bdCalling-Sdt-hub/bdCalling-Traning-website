@@ -14,11 +14,11 @@
     },
     {
       "category": "Gallery",
-      "video": "https://www.youtube.com/embed/1e21QUZUdoU?si=GQAFH0NnxxB5tfJ_&amp;start=4"
+      "video": "/images/gallery1.png"
     },
     {
       "category": "Success stories",
-      "video": "https://www.youtube.com/embed/NBQfBaABnvw?si=AIiKRn0MhaFGuUgJ&amp;start=6"
+      "video": "https://www.youtube.com/embed/1e21QUZUdoU?si=93MuRckPdq9xbd8t&amp;start=3"
     },
     {
       "category": "Events",
@@ -30,11 +30,11 @@
     },
     {
       "category": "Gallery",
-      "video": "https://www.youtube.com/embed/6TONvow2rp0?si=9I6HTUxeHiKnMuhl&amp;start=8"
+      "video": "/images/gallery2.png"
     },
     {
       "category": "Success stories",
-      "video": "https://www.youtube.com/embed/NBQfBaABnvw?si=AIiKRn0MhaFGuUgJ&amp;start=6"
+      "video": "https://www.youtube.com/embed/2eyKCwAgIS4?si=ZoVBSc-Q4B740XQH&amp;start=58"
     },
     {
       "category": "Events",
@@ -46,7 +46,7 @@
     },
     {
       "category": "Gallery",
-      "video": "https://www.youtube.com/embed/N58lmQhkYY4?si=rjo4g_TckaNoSJJw&amp;start=3"
+      "video": "/images/gallery3.png"
     },
     {
       "category": "Events",
@@ -58,7 +58,23 @@
     },
     {
       "category": "Gallery",
-      "video": "https://www.youtube.com/embed/1e21QUZUdoU?si=GQAFH0NnxxB5tfJ_&amp;start=4"
+      "video": "/images/gallery4.png"
+    },
+    {
+      "category": "Success stories",
+      "video": "https://www.youtube.com/embed/8GFM9jm5ci4?si=Czb3vZ7GUugopfRh"
+    },
+    {
+      "category": "Events",
+      "video": "https://www.youtube.com/embed/b_gJpzG7Qg8?si=jCIR180oeIAd1EKw&amp;start=4"
+    },
+    {
+      "category": "Student Journey",
+      "video": "https://www.youtube.com/embed/oCNbh3tgb4I?si=0jdwXrxWDVYWujvL&amp;start=4"
+    },
+    {
+      "category": "Gallery",
+      "video": "/images/gallery5.png"
     },
     {
       "category": "Success stories",
@@ -74,23 +90,15 @@
     },
     {
       "category": "Gallery",
-      "video": "https://www.youtube.com/embed/6TONvow2rp0?si=9I6HTUxeHiKnMuhl&amp;start=8"
-    },
-    {
-      "category": "Success stories",
-      "video": "https://www.youtube.com/embed/NBQfBaABnvw?si=AIiKRn0MhaFGuUgJ&amp;start=6"
-    },
-    {
-      "category": "Events",
-      "video": "https://www.youtube.com/embed/b_gJpzG7Qg8?si=jCIR180oeIAd1EKw&amp;start=4"
-    },
-    {
-      "category": "Student Journey",
-      "video": "https://www.youtube.com/embed/oCNbh3tgb4I?si=0jdwXrxWDVYWujvL&amp;start=4"
+      "video": "/images/gallery6.png"
     },
     {
       "category": "Gallery",
-      "video": "https://www.youtube.com/embed/N58lmQhkYY4?si=rjo4g_TckaNoSJJw&amp;start=3"
+      "video": "/images/gallery7.png"
+    },
+    {
+      "category": "Gallery",
+      "video": "/images/gallery8.png"
     }
   ]
 }

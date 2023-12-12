@@ -9,6 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import footerLink from "../../public/db/footer.json";
 
 const Footer = () => {
@@ -51,9 +52,13 @@ const Footer = () => {
           <nav>
             <header className="font-bold mb-6">Useful Links</header>
             {usefulLinks.map((link, index) => (
-              <a key={index} href="#" className="block mb-2">
+              <Link
+                key={index}
+                href={link?.link}
+                className="block mb-2 hover:underline transition"
+              >
                 {link?.title}
-              </a>
+              </Link>
             ))}
           </nav>
           <nav>
