@@ -55,9 +55,9 @@ export function Navbar() {
   return (
     <div className="bg-[#e6f8ff]">
       <div className="container mx-auto flex items-center  justify-between  px-10 py-4">
-        <a href="#">
+        <Link href="/">
           <Image src="/images/logo.png" alt="logo" width={150} height={100} />
-        </a>
+        </Link>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>

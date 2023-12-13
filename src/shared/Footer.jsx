@@ -64,9 +64,13 @@ const Footer = () => {
           <nav>
             <header className="font-bold mb-6">Popular Courses</header>
             {popularCourses.map((link, index) => (
-              <a key={index} href="#" className="block mb-2">
+              <Link
+                key={index}
+                href="/courses"
+                className="block mb-2 hover:underline transition"
+              >
                 {link?.title}
-              </a>
+              </Link>
             ))}
           </nav>
           <nav>
@@ -95,26 +99,26 @@ const Footer = () => {
             <div className="flex gap-1">
               {paymentImages.map((img, index) => (
                 <div key={index} className="bg-white  rounded-md px-2 py-1">
-                  <a href="#">
+                  <Link href="/payment">
                     <Image
                       src={img.imgLink}
                       alt={`${img.title} logo`}
                       width={80}
                       height={80}
                     />
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
             <div className="bg-white rounded-md px-2 py-1 mt-3 w-[190px] text-center">
-              <a href="#">
+              <Link href="/payment">
                 <Image
                   src="/images/ssl.png"
                   alt="logo"
                   width={150}
                   height={150}
                 />
-              </a>
+              </Link>
             </div>
           </nav>
         </div>

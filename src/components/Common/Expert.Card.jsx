@@ -7,8 +7,8 @@ const ExpertCard = ({ data }) => {
         <img src={image} alt="" className="rounded-lg h-[350px] w-full" />
       </div>
       <div className="p-2">
-        <h1 className="text-black font-bold text-lg">{name}</h1>
-        <h1 className="text-black">{title}</h1>
+        <h1 className="text-black font-medium text-lg">{name}</h1>
+        <p className="text-gray-500">{title}</p>
       </div>
     </div>
   );
