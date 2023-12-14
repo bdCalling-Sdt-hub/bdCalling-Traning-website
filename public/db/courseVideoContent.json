@@ -1,0 +1,59 @@
+{
+  "courseVideos": [
+    {
+      "moduleTitle": "Introduction",
+      "moduleNote": "Quotes",
+      "moduleVideos": [
+        "What is user interface (UI)",
+        "What is User Experience (UX)"
+      ]
+    },
+    {
+      "moduleTitle": "Design Principles",
+      "moduleNote": "Fundamental concepts",
+      "moduleVideos": [
+        "Grid Systems in UI Design",
+        "Color Theory for UX",
+        "Microinteractions",
+        "Feedback and Response Design",
+        "Planning and Conducting Usability Tests",
+        "Analyzing Usability Data"
+      ]
+    },
+    {
+      "moduleTitle": "Wireframing and Prototyping",
+      "moduleNote": "Creating visual representations",
+      "moduleVideos": [
+        "Introduction to Wireframing",
+        "Prototyping Tools Overview",
+        "Responsive Design",
+        "Mobile Navigation Patterns"
+      ]
+    },
+    {
+      "moduleTitle": "User Research",
+      "moduleNote": "Understanding user needs",
+      "moduleVideos": ["User Interviews", "Surveys and Analytics"]
+    },
+    {
+      "moduleTitle": "Information Architecture",
+      "moduleNote": "Organizing content effectively",
+      "moduleVideos": ["Navigation Design", "Card Sorting Techniques"]
+    },
+    {
+      "moduleTitle": "Visual Design",
+      "moduleNote": "Creating appealing interfaces",
+      "moduleVideos": ["Typography in UI", "Iconography and Imagery"]
+    },
+    {
+      "moduleTitle": "Interaction Design",
+      "moduleNote": "Designing user interactions",
+      "moduleVideos": ["Microinteractions", "Feedback and Response Design"]
+    },
+    {
+      "moduleTitle": "Mobile UX Design",
+      "moduleNote": "Optimizing for smaller screens",
+      "moduleVideos": []
+    }
+  ]
+}

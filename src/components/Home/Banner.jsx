@@ -22,9 +22,9 @@ const Banner = () => {
     <div className="bg-gradient-to-r from-[#F3F3F3] to-[#EAFCFF] h-auto py-14">
       <div className="grid grid-cols-2 gap-40 items-center container">
         <div className="space-y-4">
-          <h2 className="text-2xl">Welcome to</h2>
-          <h1 className="text-4xl font-bold">
-            Learn With <span className="text-[#1696fd]">bdCalling</span>
+          <h2 className="text-4xl">Welcome to</h2>
+          <h1 className="text-5xl font-bold">
+            <span className="text-[#1696fd]">bdCalling academy</span>
           </h1>
           <p>
             Welcome to Learn with bdCalling , an innovative learning platform!
@@ -74,7 +74,11 @@ const Banner = () => {
           </div>
         </div>
         <div>
-          <img src="/images/banner.png" alt="banner image" />
+          <img
+            src="/images/banner2.png"
+            className="w-[70%]"
+            alt="banner image"
+          />
         </div>
       </div>
     </div>
