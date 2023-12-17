@@ -1,59 +1,119 @@
 {
-  "courseVideos": [
+  "modules": [
     {
-      "moduleTitle": "Introduction",
-      "moduleNote": "Quotes",
-      "moduleVideos": [
-        "What is user interface (UI)",
-        "What is User Experience (UX)"
+      "name": "Python Introduction",
+      "modules": [
+        {
+          "name": "Getting Started",
+          "video": "OVoFqb-ki7c"
+        },
+        {
+          "name": "Keywords and Identifiers",
+          "video": "CApqwc4Tjp8"
+        },
+        {
+          "name": "Statements and Comments",
+          "video": "iOFXY2lH-vo"
+        },
+        {
+          "_id": "4",
+          "name": "Variable",
+          "video": "VR72eGYw5hw"
+        },
+        {
+          "name": "Data Types",
+          "video": "J4H5TM0aC0c"
+        },
+        {
+          "_id": "6",
+          "name": "Data Type Conversion",
+          "video": "8Eg3Hvz3kpo"
+        },
+        {
+          "name": "Operators",
+          "video": "QDBMBYjF9z4"
+        }
       ]
     },
     {
-      "moduleTitle": "Design Principles",
-      "moduleNote": "Fundamental concepts",
-      "moduleVideos": [
-        "Grid Systems in UI Design",
-        "Color Theory for UX",
-        "Microinteractions",
-        "Feedback and Response Design",
-        "Planning and Conducting Usability Tests",
-        "Analyzing Usability Data"
+      "name": "Python Flow Control",
+      "modules": [
+        {
+          "name": "If...else",
+          "video": "1UgUSBRz2qU"
+        },
+        {
+          "name": "Nested If...else",
+          "video": "ggQiI-rWjG4"
+        },
+        {
+          "name": "For Loop",
+          "video": "UJNGZI2nbq0"
+        },
+        {
+          "name": "Nested For Loop",
+          "video": "Y5ZBXdOVrGw"
+        },
+        {
+          "_id": "12",
+          "name": "While Loop",
+          "video": "Umt5YNcy0kI"
+        },
+        {
+          "name": "Nested While Loop",
+          "video": "W0LmqsKg_-A"
+        },
+        {
+          "name": "Break and Continue",
+          "video": "kmmeCzf9uw0"
+        }
       ]
     },
     {
-      "moduleTitle": "Wireframing and Prototyping",
-      "moduleNote": "Creating visual representations",
-      "moduleVideos": [
-        "Introduction to Wireframing",
-        "Prototyping Tools Overview",
-        "Responsive Design",
-        "Mobile Navigation Patterns"
+      "name": "Python Function",
+      "modules": [
+        {
+          "name": "Python Function",
+          "video": "m9o9itPDjAs"
+        },
+        {
+          "name": "Function Arguments",
+          "video": "1O2Ut2K8ong"
+        },
+        {
+          "name": "Python Recursion",
+          "video": "GTWxn75Nf-k"
+        }
       ]
     },
     {
-      "moduleTitle": "User Research",
-      "moduleNote": "Understanding user needs",
-      "moduleVideos": ["User Interviews", "Surveys and Analytics"]
-    },
-    {
-      "moduleTitle": "Information Architecture",
-      "moduleNote": "Organizing content effectively",
-      "moduleVideos": ["Navigation Design", "Card Sorting Techniques"]
-    },
-    {
-      "moduleTitle": "Visual Design",
-      "moduleNote": "Creating appealing interfaces",
-      "moduleVideos": ["Typography in UI", "Iconography and Imagery"]
-    },
-    {
-      "moduleTitle": "Interaction Design",
-      "moduleNote": "Designing user interactions",
-      "moduleVideos": ["Microinteractions", "Feedback and Response Design"]
-    },
-    {
-      "moduleTitle": "Mobile UX Design",
-      "moduleNote": "Optimizing for smaller screens",
-      "moduleVideos": []
+      "name": "Python Data Types",
+      "modules": [
+        {
+          "name": "Python Numbers",
+          "video": "9ib33lpfZK4"
+        },
+        {
+          "name": "Python String",
+          "video": "XN_voIlgG4c"
+        },
+        {
+          "name": "Python List",
+          "video": "XwEZtkfgF2k"
+        },
+        {
+          "name": "Python Tuple",
+          "video": "BOysCcj2w04"
+        },
+        {
+          "name": "Python Set",
+          "video": "YVyWORhFnCU"
+        },
+        {
+          "name": "Python Dictionary",
+          "video": "RQ9XfR7yax0"
+        }
+      ]
     }
   ]
 }

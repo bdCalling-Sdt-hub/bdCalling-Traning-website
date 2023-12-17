@@ -11,6 +11,14 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import {
+  BookOpenText,
+  Briefcase,
+  Gift,
+  GraduationCap,
+  LineChart,
+  Speech,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
@@ -19,35 +27,32 @@ const components = [
   {
     title: "Courses",
     href: "/courses",
+    icon: <BookOpenText color="#7c3aed" />,
   },
   {
-    title: "Hover Card",
+    title: "Career Opportunities",
     href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    icon: <LineChart color="#4f46e5" />,
   },
   {
-    title: "Progress",
+    title: "Payment Support",
     href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    icon: <Gift color="#db2777" />,
   },
   {
-    title: "Scroll-area",
+    title: "Certificate",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    icon: <GraduationCap color="#65a30d" />,
   },
   {
-    title: "Tabs",
+    title: "Open Job Position",
     href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    icon: <Briefcase color="#16a34a" />,
   },
   {
-    title: "Tooltip",
+    title: "Helpline",
     href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    icon: <Speech color="#ca8a04" />,
   },
 ];
 
@@ -62,7 +67,9 @@ export function Navbar() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink
+                  className={`${navigationMenuTriggerStyle()} `}
+                >
                   Home
                 </NavigationMenuLink>
               </Link>
@@ -77,16 +84,24 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Coursers</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
+                <ul className="grid w-[200px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[450px] ">
+                  {components.map((component) => {
+                    const uri = (
+                      <div className="flex items-center gap-2">
+                        <span>{component.icon}</span>
+                        <span>{component.title}</span>
+                      </div>
+                    );
+                    return (
+                      <ListItem
+                        key={component.title}
+                        title={uri}
+                        href={component.href}
+                      >
+                        {component.description}
+                      </ListItem>
+                    );
+                  })}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>

@@ -1,12 +1,24 @@
 import AccordionCard from "@/components/Common/AccordionCard";
 import FlexItem from "@/components/Common/FlexItem";
+import { Button } from "@/components/ui/button";
 import { Check, FileText, Play } from "lucide-react";
+import { useState } from "react";
 import courseVideoList from "../../../../public/db/courseVideoContent.json";
 import curriculum from "../../../../public/db/curriculum.json";
 
 const Curriculum = () => {
   const { courseFeatures, jobPositions, solutions, certificate } = curriculum;
-  const { courseVideos } = courseVideoList;
+  const { modules } = courseVideoList;
+  const [video, setVideo] = useState();
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentVideoIndex(currentVideoIndex + 1);
+  };
+
+  const handlePrevious = () => {
+    setCurrentVideoIndex(currentVideoIndex - 1);
+  };
 
   return (
     <div className="mt-5">
@@ -26,33 +38,56 @@ const Curriculum = () => {
         </div>
       </div>
       <div>
+        <div className="aspect-w-16 aspect-h-9">
+          <iframe
+            src={`https://www.youtube.com/embed/${video?.video}`}
+            title="YouTube video player"
+            frameborder="0"
+            className="rounded w-full h-[495px]"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="my-3">
+          <h2 className="text-xl font-medium">
+            {video?.no + 1}- {video?.name}
+          </h2>
+        </div>
+        <div className="flex gap-2 items-center my-3 justify-end">
+          <Button className="bg-primary px-5" onClick={handlePrevious}>
+            Previous
+          </Button>
+          <Button className="bg-primary px-5" onClick={handleNext}>
+            Next
+          </Button>
+        </div>
         <h1 className="text-xl  font-bold">Course Content</h1>
         <div className="my-8">
-          {courseVideos.map((item, index) => (
+          {modules.map((module, index) => (
             <div key={index} className="mb-4">
-              <AccordionCard title={item.moduleTitle}>
-                <div className="py-2 cursor-pointer">
-                  <FlexItem justify="justify-between">
+              <AccordionCard title={module.name}>
+                {module.note && (
+                  <Button variant="link" className="block">
                     <FlexItem gap="gap-2">
                       <FileText size={20} />
-                      <p className="text-[#2492EB] text-[16px]">
-                        {item.moduleNote}
-                      </p>
+                      <p className="text-[#2492EB]">{module.note}</p>
                     </FlexItem>
-                    <p className="font-medium">00:04</p>
-                  </FlexItem>
-                </div>
-                {item?.moduleVideos?.map((item, index) => {
+                  </Button>
+                )}
+                {module?.modules?.map((video, index) => {
+                  const value = { ...video, no: index };
                   return (
-                    <div className="py-2 cursor-pointer" key={index}>
-                      <FlexItem justify="justify-between">
-                        <FlexItem gap="gap-2">
-                          <Play size={20} />
-                          <p className="text-[#2492EB]">{item}</p>
-                        </FlexItem>
-                        <p className="font-medium">00:04</p>
+                    <Button
+                      variant="link"
+                      className="block"
+                      key={index}
+                      onClick={() => setVideo(value)}
+                    >
+                      <FlexItem gap="gap-2">
+                        <Play size={20} />
+                        <p className="text-[#2492EB]">{video.name}</p>
                       </FlexItem>
-                    </div>
+                    </Button>
                   );
                 })}
               </AccordionCard>
