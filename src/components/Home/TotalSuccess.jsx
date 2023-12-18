@@ -8,9 +8,9 @@ const TotalSuccess = () => {
   ];
 
   return (
-    <div className="bg-primary  px-10 rounded-md h-[250px] my-14">
+    <div className="bg-primary  px-10 rounded-md lg:h-[250px] my-14">
       <div className="container">
-        <div className="grid grid-cols-5 text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 text-center">
           {successList.map((success, index) => (
             <div key={index} className="text-white mt-24 space-y-2">
               <h1 className="text-4xl">{success.total}</h1>

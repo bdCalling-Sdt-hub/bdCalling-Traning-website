@@ -20,8 +20,8 @@ const Banner = () => {
   ];
   return (
     <div className="bg-gradient-to-r from-[#F3F3F3] to-[#EAFCFF] h-auto py-14">
-      <div className="grid grid-cols-2 gap-40 items-center container">
-        <div className="space-y-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-40 items-center container">
+        <div className="space-y-4 order-2 lg:order-1">
           <h2 className="text-4xl">Welcome to</h2>
           <h1 className="text-5xl font-bold">
             <span className="text-[#1696fd]">bdCalling academy</span>
@@ -33,14 +33,14 @@ const Banner = () => {
             lessons, and expert instructors, all designed to help you reach your
             full potential.
           </p>
-          <div className="bg-white  shadow  rounded-full h-14 flex items-center  gap-2 px-2">
+          <div className="bg-white  shadow  rounded-full h-14 flex items-center gap-1 lg:gap-2 px-2">
             <input
               type="text"
               placeholder="Search here..."
-              className=" h-full w-[72%]  bg-transparent outline-none"
+              className=" h-full w-[55%] lg:w-[72%]  bg-transparent outline-none"
             />
             <DropdownMenu>
-              <DropdownMenuTrigger className="border h-[80%] px-4 rounded-3xl bg-[#e1ecf4] text-primary flex  items-center">
+              <DropdownMenuTrigger className="border h-[80%] px-2 lg:px-4 rounded-3xl bg-[#e1ecf4] text-primary flex  items-center">
                 Course <ChevronDown />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -73,7 +73,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="order-1 lg:order-2">
           <img
             src="/images/banner2.png"
             className="w-[70%]"

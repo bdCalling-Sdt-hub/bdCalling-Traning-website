@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#e6f8ff]">
       <div className="container py-16">
-        <div className="grid grid-cols-4 gap-8 text-base-content">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 text-base-content">
           <aside>
             <a href="#">
               <Image
@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t py-6">
-        <div className="container flex items-center justify-between">
+        <div className="container lg:flex items-center justify-between">
           <div>
             <a href="#" className="border-r mr-1 px-1">
               Privacy Policy

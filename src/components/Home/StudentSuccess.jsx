@@ -9,8 +9,8 @@ import "swiper/css/navigation";
 
 const StudentSuccess = () => {
   const swiperContainerStyle = {
-    width: "80%",
-    height: "500px",
+    width: "100%",
+    height: "550px",
     marginTop: "40px",
   };
   const videoLinkLists = [
@@ -21,30 +21,29 @@ const StudentSuccess = () => {
   return (
     <div className="container my-14">
       <HeadingText sTitle={"Story"} title={"Student Success Story"} />
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={10}
-        slidesPerView={1}
-        navigation
-        centeredSlides
-        style={swiperContainerStyle}
-      >
-        {videoLinkLists.map((video, index) => (
-          <SwiperSlide key={index} className="bg-primary p-1 rounded-md">
-            <div className="shadow  rounded-md border relative flex justify-center text-center">
-              <iframe
-                width="100%"
-                height="490px"
-                src={video}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                className="rounded-md"
-              ></iframe>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="lg:mx-32">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={10}
+          slidesPerView={1}
+          navigation
+          style={swiperContainerStyle}
+        >
+          {videoLinkLists.map((video, index) => (
+            <SwiperSlide key={index}>
+              <div className=" rounded-md   text-center">
+                <iframe
+                  src={video}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  className="rounded-md w-full h-[400px] lg:h-[550px]"
+                ></iframe>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };

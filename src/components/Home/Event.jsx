@@ -19,7 +19,7 @@ const Event = () => {
   return (
     <div className="my-12 container">
       <HeadingText sTitle={"Events"} title={"See our Upcoming Events"} />
-      <div className="grid grid-cols-3 gap-4 mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
         <div className="col-span-2 p-3 rounded-lg shadow">
           <img
             src="/images/event1.png"
@@ -57,7 +57,7 @@ const Event = () => {
               <img
                 src={event?.image}
                 alt="course image"
-                className="rounded-md h-[300px] w-full object-cover"
+                className="rounded-md h-[300px] w-full"
               />
               <div className="h-24 w-full backdrop-blur-lg border-t bg-[#0000005e] absolute bottom-0 rounded-b-md p-2 text-white">
                 <div className="flex gap-5 items-center">

@@ -10,7 +10,7 @@ const Exceptional = () => {
     "Lifetime access",
   ];
   return (
-    <div className="grid grid-cols-2 gap-16 my-24 items-center justify-center container">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 my-24 items-center justify-center container">
       <div className="relative">
         <img src="/images/exceptional2.png" className="ml-auto" alt="image" />
         <div className="absolute bottom-0 left-12">

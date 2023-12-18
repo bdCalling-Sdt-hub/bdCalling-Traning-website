@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 
-import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,6 +18,7 @@ import {
   LineChart,
   Speech,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
@@ -57,6 +57,9 @@ const components = [
 ];
 
 export function Navbar() {
+  const DynamicAuthHomepage = dynamic(() => import("@/components/Auth/index"), {
+    ssr: false,
+  });
   return (
     <div className="bg-[#e6f8ff]">
       <div className="container mx-auto flex items-center  justify-between  px-10 py-4">
@@ -122,7 +125,7 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
         <div>
-          <Button className="bg-[#1796fd]">Login</Button>
+          <DynamicAuthHomepage />
         </div>
       </div>
     </div>
