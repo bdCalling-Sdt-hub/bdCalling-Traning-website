@@ -37,18 +37,14 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-10 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:text-primary hover:text-slate-900 focus:text-primary focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-primary data-[state=open]:bg-slate-100/50 dark:bg-slate-950  dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50"
+  "group inline-flex h-10 w-max items-center justify-center rounded-md  px-4 py-2 text-[15px]  transition-colors hover:text-[#1798fd]  focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-[#1798fd] data-[state=open]:text-[#1798fd]"
 );
 
 const NavigationMenuTrigger = React.forwardRef(
   ({ className, children, ...props }, ref) => (
     <NavigationMenuPrimitive.Trigger
       ref={ref}
-      className={cn(
-        navigationMenuTriggerStyle(),
-        "group bg-transparent",
-        className
-      )}
+      className={cn(navigationMenuTriggerStyle(), "group ", className)}
       {...props}
     >
       {children}
@@ -83,7 +79,7 @@ const NavigationMenuViewport = React.forwardRef(
     <div className={cn("absolute left-0 top-full flex justify-center")}>
       <NavigationMenuPrimitive.Viewport
         className={cn(
-          "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md  text-slate-950 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]  dark:bg-slate-950 dark:text-slate-50",
+          "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md  text-slate-950 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
           className
         )}
         ref={ref}
