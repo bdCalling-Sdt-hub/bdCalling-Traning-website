@@ -15,7 +15,7 @@ const Experts = () => {
     padding: "50px 0",
   };
   return (
-    <div className="my-8">
+    <div className="my-8 bg-blue-50 p-5 rounded-md">
       <HeadingText sTitle="Our Mentors" title="Meet our Experts mentors" />
       <p className="text-center">
         Develop skills with the best instructors in the country, click the

@@ -1,6 +1,6 @@
 const WhatBdCalling = () => {
   return (
-    <div className="grid grid-cols-2 gap-10  items-center relative mb-64">
+    <div className="grid grid-cols-2 gap-10  items-center relative mt-20 mb-64">
       <div>
         <p className="text-primary font-medium">What Is bdCalling</p>
         <h1 className="text-4xl font-bold my-1">

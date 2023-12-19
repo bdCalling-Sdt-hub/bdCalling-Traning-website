@@ -14,11 +14,7 @@ const Exceptional = () => {
       <div className="relative">
         <img src="/images/exceptional2.png" className="ml-auto" alt="image" />
         <div className="absolute bottom-0 left-12">
-          <img
-            src="/images/exceptional1.png"
-            alt="image"
-            className="object-cover"
-          />
+          <img src="/images/exceptional1.png" alt="image" />
         </div>
         <div className="absolute top-5 left-32 w-[200px] bg-white shadow text-center p-3 rounded-md">
           <div className="bg-primary w-12 h-12 rounded-md flex justify-center items-center mt-[-35px]">
@@ -29,12 +25,12 @@ const Exceptional = () => {
             <p>Awesome Awards</p>
           </div>
         </div>
-        {/* <LottiePlane /> */}
+        <div className="absolute bottom-0">{/* <LottiePlane /> */}</div>
       </div>
       <div className="space-y-5">
         <h1 className="text-4xl font-bold">Why We’re Exceptional</h1>
         <p>
-          Learn with bdCalling offers various courses and upon successful
+          bdCalling Academy offers various courses and upon successful
           completion, we offer job opportunities within our company.
           Additionally, we provide scholarships in different categories to
           support aspiring individuals. We guarantee a refund if anyone is
@@ -42,7 +38,7 @@ const Exceptional = () => {
           experience with real client projects, ensuring a comprehensive
           learning experience.
         </p>
-        <div className="bg-gray-200  rounded-md relative ">
+        <div className="bg-gray-100  rounded-md relative ">
           <h1 className="font-bold  bg-primary w-[200px] p-3 rounded-br-full text-white">
             Flexible Classes
           </h1>

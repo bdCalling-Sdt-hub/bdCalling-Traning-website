@@ -59,7 +59,7 @@ const Event = () => {
                 alt="course image"
                 className="rounded-md h-[300px] w-full"
               />
-              <div className="h-24 w-full backdrop-blur-lg border-t bg-[#0000005e] absolute bottom-0 rounded-b-md p-2 text-white">
+              <div className="h-24 w-full backdrop-blur-lg border-t bg-[#44444491] absolute bottom-0 rounded-b-md p-2 text-white">
                 <div className="flex gap-5 items-center">
                   <p size={18} className="flex items-center gap-1">
                     <Calendar size={20} />

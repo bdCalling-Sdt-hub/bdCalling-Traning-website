@@ -1,5 +1,6 @@
 import About from "@/components/About/About";
 import Experts from "@/components/About/Experts";
+import OurVision from "@/components/About/OurVision";
 import TotalCourse from "@/components/About/TotalCourse";
 import WhatBdCalling from "@/components/About/WhatBdCalling";
 import Subscribe from "@/components/Common/Subscribe";
@@ -10,7 +11,7 @@ const AboutPage = () => {
     <div className="container">
       <About />
       <WhatBdCalling />
-      {/* <OurVision /> */}
+      <OurVision />
       <Experts />
       <TotalCourse />
       <Subscribe

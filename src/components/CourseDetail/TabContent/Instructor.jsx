@@ -14,11 +14,11 @@ const Instructor = () => {
               Top Rated Freelancer at Upwork;
             </p>
             <p>
-              Learn with bdCalling&#39;s courses are very practical and focused
-              on real-world skills.&#39; - Student x I would recommend Learn
-              with bdCalling to anyone who is looking to advance their
-              career&#39; - Student y Learn with bdCalling&#39;s courses are
-              very well-produced and easy to follow.
+              bdCalling Academy&#39;s courses are very practical and focused on
+              real-world skills.&#39; - Student x I would recommend Learn with
+              bdCalling to anyone who is looking to advance their career&#39; -
+              Student y bdCalling Academy&#39;s courses are very well-produced
+              and easy to follow.
             </p>
           </div>
         </div>

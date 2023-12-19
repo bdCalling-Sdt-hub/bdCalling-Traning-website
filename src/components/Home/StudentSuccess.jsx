@@ -1,51 +1,101 @@
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import styles from "@/styles/home.module.css";
+import { Play } from "lucide-react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeadingText from "../Common/headingText";
 
-// Import Swiper styles
+import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
+import { AspectRatio } from "../ui/aspect-ratio";
 
 const StudentSuccess = () => {
+  const [videoLink, setVideoLink] = useState("");
   const swiperContainerStyle = {
     width: "100%",
-    height: "550px",
+    height: "400px",
     marginTop: "40px",
   };
   const videoLinkLists = [
-    "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp;start=3",
-    "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp;start=36",
-    "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp;start=15",
+    {
+      video:
+        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp;start=3",
+      thumb: "/images/thumbnail1.jpg",
+    },
+    {
+      video:
+        "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp;start=36",
+      thumb: "/images/thumbnail1.jpg",
+    },
+    {
+      video:
+        "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp;start=15",
+      thumb: "/images/thumbnail1.jpg",
+    },
   ];
   return (
     <div className="container my-14">
       <HeadingText sTitle={"Story"} title={"Student Success Story"} />
-      <div className="lg:mx-32">
+      <Dialog>
         <Swiper
           modules={[Navigation]}
           spaceBetween={10}
-          slidesPerView={1}
+          slidesPerView={2}
           navigation
           style={swiperContainerStyle}
         >
-          {videoLinkLists.map((video, index) => (
+          {videoLinkLists.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-md   text-center">
-                <iframe
-                  src={video}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  className="rounded-md w-full h-[400px] lg:h-[550px]"
-                ></iframe>
+              <div className="relative">
+                <AspectRatio ratio={16 / 9} className="bg-muted">
+                  <img
+                    src={item.thumb}
+                    alt=""
+                    className="w-full h-[400px] rounded-md"
+                  />
+                </AspectRatio>
+                <div
+                  onClick={() => setVideoLink(item.video)}
+                  className="absolute top-0 left-0 w-full h-96 flex justify-center items-center cursor-pointer"
+                >
+                  <div className={`${styles.playBtn}`}>
+                    <DialogTrigger>
+                      <Play />
+                    </DialogTrigger>
+                  </div>
+                </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+
+        <DialogContent>
+          <AspectRatio ratio={16 / 9} className="bg-muted">
+            <iframe
+              src={videoLink}
+              title="YouTube video player"
+              allow="autoplay; "
+              className="rounded-md w-full h-[450px]"
+            ></iframe>
+          </AspectRatio>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
 
 export default StudentSuccess;
+
+{
+  /* <div className="rounded-md text-center">
+  <iframe
+    src={video}
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    className="rounded-md w-full h-[400px] lg:h-[400px]"
+  ></iframe>
+</div>; */
+}

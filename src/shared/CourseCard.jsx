@@ -1,7 +1,7 @@
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Button } from "../components/ui/button";
-import Link from "next/link";
 
 const CourseCard = ({ course }) => {
   const {

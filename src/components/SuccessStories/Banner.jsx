@@ -20,7 +20,7 @@ const Banner = () => {
     <div>
       <TopHeading
         blueText={title}
-        description="At Learn With bdCalling IT, we believe that success is a journey, not
+        description="At bdCalling Academy IT, we believe that success is a journey, not
           a destination. That&#39;s why we&#39;re always looking for new and
           innovative ways to help our learners achieve their goals. In this
           section, we share the stories of our learners who have used our

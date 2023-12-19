@@ -4,6 +4,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import styles from "@/styles/home.module.css";
 import { ChevronDown, Search, Star } from "lucide-react";
 
 const Banner = () => {
@@ -19,21 +20,23 @@ const Banner = () => {
     "Prototyping and Wireframing",
   ];
   return (
-    <div className="bg-gradient-to-r from-[#F3F3F3] to-[#EAFCFF] h-auto py-14">
+    <div className={`${styles.homeBanner}`}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-40 items-center container">
         <div className="space-y-4 order-2 lg:order-1">
-          <h2 className="text-4xl">Welcome to</h2>
+          <h2 className="text-3xl px-5 rounded bg-gradient-to-b from-[#93efff] to-[#F3F3F3] text-[#2397fb] ,  w-2/4 py-1">
+            Welcome to
+          </h2>
           <h1 className="text-5xl font-bold">
-            <span className="text-[#1696fd]">bdCalling academy</span>
+            <span className="text-[#1696fd]">bdCalling Academy</span>
           </h1>
           <p>
-            Welcome to Learn with bdCalling , an innovative learning platform!
-            Get ready to engage on a journey of knowledge with our innovative
+            Welcome to bdCalling Academy , an innovative learning platform! Get
+            ready to engage on a journey of knowledge with our innovative
             learning platform. Explore a wide range of courses, interactive
             lessons, and expert instructors, all designed to help you reach your
             full potential.
           </p>
-          <div className="bg-white  shadow  rounded-full h-14 flex items-center gap-1 lg:gap-2 px-2">
+          <div className="bg-white shadow rounded-full h-14 flex items-center gap-1 lg:gap-2 px-2 pl-5">
             <input
               type="text"
               placeholder="Search here..."
@@ -61,12 +64,12 @@ const Banner = () => {
               {" "}
               <h2 className="font-bold text-2xl">1000+</h2>
               <div className="flex items-center gap-1 font-bold text-2xl">
-                4.1
+                4.0
                 <div className="flex">
-                  <Star size={20} color="#ffc60b" />
-                  <Star size={20} color="#ffc60b" />
-                  <Star size={20} color="#ffc60b" />
-                  <Star size={20} color="#ffc60b" />
+                  <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                  <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                  <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                  <Star size={20} color="#ffc60b" fill="#ffc60b" />
                   <Star size={20} color="#ffc60b" />
                 </div>
               </div>
@@ -74,11 +77,7 @@ const Banner = () => {
           </div>
         </div>
         <div className="order-1 lg:order-2">
-          <img
-            src="/images/banner2.png"
-            className="w-[70%]"
-            alt="banner image"
-          />
+          <img src="/images/bannerImg.png" alt="banner image" />
         </div>
       </div>
     </div>

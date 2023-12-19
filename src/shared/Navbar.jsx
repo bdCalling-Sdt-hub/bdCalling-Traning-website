@@ -61,10 +61,10 @@ export function Navbar() {
     ssr: false,
   });
   return (
-    <div className="bg-[#e6f8ff]">
+    <div className="bg-[#e6f8ff] sticky top-0 z-10">
       <div className="container mx-auto flex items-center  justify-between  px-10 py-4">
         <Link href="/">
-          <Image src="/images/logo.png" alt="logo" width={150} height={100} />
+          <Image src="/images/logo.png" alt="logo" width={140} height={100} />
         </Link>
         <NavigationMenu>
           <NavigationMenuList>
@@ -85,7 +85,7 @@ export function Navbar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Coursers</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[200px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[450px] ">
                   {components.map((component) => {

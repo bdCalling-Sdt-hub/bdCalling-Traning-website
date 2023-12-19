@@ -21,32 +21,27 @@
     {
       "image": "/images/expert5.png",
       "name": "Babul Mridha",
-      "title": "Certified APP Developer with Flutter"
-    },
-    {
-      "image": "/images/expert6.png",
-      "name": "Rakibul Islam Shiku",
-      "title": "Certified APP Developer with Flutter"
+      "title": "Software Engineer"
     },
     {
       "image": "/images/expert1.png",
       "name": "Md Shamin Miah",
-      "title": "Certified Lead Generation-Data Entry Expert"
+      "title": "Lead Generation-Data Entry Expert"
     },
     {
       "image": "/images/expert2.png",
       "name": "Rony Hossen",
-      "title": "Certified Wordpress Specialist"
+      "title": "Wordpress Specialist"
     },
     {
       "image": "/images/expert3.png",
       "name": "Ashraful",
-      "title": "Certified UI/UX Designer"
+      "title": "UI/UX Designer"
     },
     {
       "image": "/images/expert4.png",
       "name": "Md. Sazib Hossain",
-      "title": "Certified Digital Marketing Specialist"
+      "title": "Digital Marketing Specialist"
     }
   ]
 }

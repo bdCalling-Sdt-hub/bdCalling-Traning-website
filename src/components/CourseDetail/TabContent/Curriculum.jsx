@@ -1,5 +1,6 @@
 import AccordionCard from "@/components/Common/AccordionCard";
 import FlexItem from "@/components/Common/FlexItem";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Check, FileText, Play } from "lucide-react";
 import { useState } from "react";
@@ -38,7 +39,7 @@ const Curriculum = () => {
         </div>
       </div>
       <div>
-        <div className="aspect-w-16 aspect-h-9">
+        <AspectRatio ratio={16 / 9} className="bg-muted">
           <iframe
             src={`https://www.youtube.com/embed/${video?.video}`}
             title="YouTube video player"
@@ -47,7 +48,8 @@ const Curriculum = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
             allowfullscreen
           ></iframe>
-        </div>
+        </AspectRatio>
+
         <div className="my-3">
           <h2 className="text-xl font-medium">
             {video?.no + 1}- {video?.name}
