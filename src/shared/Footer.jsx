@@ -99,26 +99,22 @@ const Footer = () => {
             <div className="flex gap-1">
               {paymentImages.map((img, index) => (
                 <div key={index} className="bg-white  rounded-md px-2 py-1">
-                  <Link href="/payment">
-                    <Image
-                      src={img.imgLink}
-                      alt={`${img.title} logo`}
-                      width={80}
-                      height={80}
-                    />
-                  </Link>
+                  <Image
+                    src={img.imgLink}
+                    alt={`${img.title} logo`}
+                    width={80}
+                    height={80}
+                  />
                 </div>
               ))}
             </div>
             <div className="bg-white rounded-md px-2 py-1 mt-3 w-[190px] text-center">
-              <Link href="/payment">
-                <Image
-                  src="/images/ssl.png"
-                  alt="logo"
-                  width={150}
-                  height={150}
-                />
-              </Link>
+              <Image
+                src="/images/ssl.png"
+                alt="logo"
+                width={150}
+                height={150}
+              />
             </div>
           </nav>
         </div>

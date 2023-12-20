@@ -3,6 +3,7 @@ import CourseDetailDescription from "@/components/CourseDetail/CourseDetailDescr
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Book, Clock, Globe, Presentation, Users } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import courseList from "../../../public/db/course.json";
 
@@ -69,7 +70,9 @@ const CourseDetail = () => {
               <h2 className="text-2xl font-bold text-white">
                 BDT {course?.price}
               </h2>
-              <Button className="  bg-white text-primary">Enroll Now</Button>
+              <Link href="/payment">
+                <Button className="  bg-white text-primary">Enroll Now</Button>
+              </Link>
             </div>
           </div>
         </div>

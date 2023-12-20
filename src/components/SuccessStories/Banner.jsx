@@ -1,6 +1,7 @@
 import { useState } from "react";
 import videos from "../../../public/db/video.json";
 import TopHeading from "../Common/TopHeading";
+import { AspectRatio } from "../ui/aspect-ratio";
 import { Button } from "../ui/button";
 
 const Banner = () => {
@@ -44,28 +45,23 @@ const Banner = () => {
         {title === "Gallery"
           ? filterVideo.map((item, index) => (
               <div key={index} className=" rounded-md ">
-                <img
-                  src={item.video}
-                  alt=""
-                  className="w-full h-[350px] object-cover rounded-md"
-                />
+                <AspectRatio ratio={15 / 9} key={index}>
+                  <img
+                    src={item.video}
+                    alt=""
+                    className="w-full h-[400px] object-cover rounded-md"
+                  />
+                </AspectRatio>
               </div>
             ))
           : filterVideo.map((item, index) => (
-              <div
-                key={index}
-                className="shadow p-2 rounded-md border relative flex justify-center text-center"
-              >
+              <AspectRatio ratio={15 / 9} key={index}>
                 <iframe
-                  width="100%"
-                  height="400px"
                   src={item?.video}
-                  title="YouTube video player"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  className="rounded-md"
+                  className="rounded-md w-full h-[400px]"
                 ></iframe>
-              </div>
+              </AspectRatio>
             ))}
       </div>
       <Button className="mt-5 mx-auto block">See More</Button>

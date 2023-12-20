@@ -58,7 +58,7 @@ const Exceptional = () => {
             </div>
           ))}
         </div>
-        <Link href="#">
+        <Link href="/about">
           <Button
             variant="outline"
             className="text-primary border-primary px-6 text-md py-6 mt-8"

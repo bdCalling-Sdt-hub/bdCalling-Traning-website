@@ -21,18 +21,18 @@ const StudentSuccess = () => {
   const videoLinkLists = [
     {
       video:
-        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp;start=3",
-      thumb: "/images/thumbnail1.jpg",
+        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
+      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
     },
     {
       video:
-        "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp;start=36",
-      thumb: "/images/thumbnail1.jpg",
+        "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp&autoplay=1",
+      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
     },
     {
       video:
-        "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp;start=15",
-      thumb: "/images/thumbnail1.jpg",
+        "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp&autoplay=1",
+      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
     },
   ];
   return (
@@ -48,17 +48,18 @@ const StudentSuccess = () => {
         >
           {videoLinkLists.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="relative">
-                <AspectRatio ratio={16 / 9} className="bg-muted">
+              <div className="relative w-full h-full">
+                <div className="w-full h-full">
                   <img
                     src={item.thumb}
                     alt=""
-                    className="w-full h-[400px] rounded-md"
+                    className="w-full h-full rounded-md"
                   />
-                </AspectRatio>
+                </div>
+
                 <div
                   onClick={() => setVideoLink(item.video)}
-                  className="absolute top-0 left-0 w-full h-96 flex justify-center items-center cursor-pointer"
+                  className="absolute top-0 left-0 h-full w-full  flex justify-center items-center cursor-pointer"
                 >
                   <div className={`${styles.playBtn}`}>
                     <DialogTrigger>
@@ -76,7 +77,7 @@ const StudentSuccess = () => {
             <iframe
               src={videoLink}
               title="YouTube video player"
-              allow="autoplay; "
+              allow="autoplay;"
               className="rounded-md w-full h-[450px]"
             ></iframe>
           </AspectRatio>
