@@ -15,7 +15,7 @@ const Experts = () => {
     padding: "50px 0",
   };
   return (
-    <div className="my-8 bg-blue-50 p-5 rounded-md">
+    <div className="my-8 bg-blue-50 p-2 lg:p-5 rounded-md">
       <HeadingText sTitle="Our Mentors" title="Meet our Experts mentors" />
       <p className="text-center">
         Develop skills with the best instructors in the country, click the
@@ -24,7 +24,12 @@ const Experts = () => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={15}
-        slidesPerView={4}
+        slidesPerView={1}
+        breakpoints={{
+          689: {
+            slidesPerView: 4,
+          },
+        }}
         navigation
         style={swiperContainerStyle}
       >

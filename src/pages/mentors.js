@@ -3,6 +3,7 @@ import Subscribe from "@/components/Common/Subscribe";
 import TopHeading from "@/components/Common/TopHeading";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
+import MetaTag from "@/shared/MetaTag";
 import { useState } from "react";
 import expert from "../../public/db/expert.json";
 
@@ -14,6 +15,7 @@ const Mentors = () => {
 
   return (
     <div className="container">
+      <MetaTag title="Mentors" />
       <TopHeading
         blueText={title}
         description="For over 3 years, our team of dedicated expert mentors has been the driving force behind the transformation of countless individuals into IT experts. With unwavering commitment, we've successfully guided over 2560 individuals from diverse backgrounds into the thriving world of Information Technology. Our mentors possess a unique blend of academic excellence and real-world job experience, making them the perfect guides on your journey towards a bright and promising career. Join us today, and let our experienced mentors illuminate your path to success in the ever-evolving IT landscape"
@@ -34,7 +36,7 @@ const Mentors = () => {
           </Button>
         ))}
       </div>
-      <div className="grid grid-cols-4 gap-3 my-12">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 my-12">
         {title === "Mentors" &&
           expertList.map((item, index) => (
             <ExpertCard key={index} data={item} />

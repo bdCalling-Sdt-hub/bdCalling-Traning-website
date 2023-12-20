@@ -14,7 +14,7 @@ const TotalCourse = () => {
           Master the Skills to drive <br /> your career
         </h2>
       </div>
-      <div className="grid grid-cols-4 gap-5 text-center">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 text-center">
         {successList.map((success, index) => (
           <div
             key={index}

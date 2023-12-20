@@ -23,7 +23,7 @@ const SearchCourse = () => {
       <input
         type="text"
         placeholder="Search here..."
-        className=" h-full w-[88%] bg-transparent outline-none"
+        className="h-full w-[50%] lg:w-[88%] bg-transparent outline-none"
       />
       <DropdownMenu>
         <DropdownMenuTrigger className="border h-[80%] px-4 rounded-3xl bg-[#e1ecf4] text-primary flex  items-center">

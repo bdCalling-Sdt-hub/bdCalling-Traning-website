@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import MetaTag from "@/shared/MetaTag";
 
 const FreeSeminar = () => {
   const catagories = [
@@ -25,7 +26,8 @@ const FreeSeminar = () => {
     "Prototyping and Wireframing",
   ];
   return (
-    <div className="container w-2/6 my-14">
+    <div className="container lg:w-2/6 my-14">
+      <MetaTag title="Free Seminar" />
       <TopHeading blueText="JOIN FREE SEMINAR" />
       <form action="" className="space-y-3">
         <Input type="text" placeholder="Your Name" />

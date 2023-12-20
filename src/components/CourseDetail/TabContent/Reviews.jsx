@@ -3,7 +3,10 @@ const Reviews = () => {
   return (
     <div className="mt-5">
       {[...Array(5)].map((item, index) => (
-        <div className="flex items-center gap-4 mb-5 border-b pb-5" key={index}>
+        <div
+          className="flex flex-col lg:flex-row items-center gap-4 mb-5 border-b pb-5"
+          key={index}
+        >
           <img
             src="/images/feedbackProfile.png"
             className="w-36 h-36 rounded-full"

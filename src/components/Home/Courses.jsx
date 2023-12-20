@@ -36,7 +36,9 @@ const Courses = () => {
         <Button
           variant="link"
           onClick={() => setTitle("all")}
-          className={`${title === "all" ? "bg-[#1796fd] text-white" : ""} `}
+          className={`${
+            title === "all" ? "bg-[#1796fd] text-white" : ""
+          } text-md font-medium`}
         >
           All
         </Button>
@@ -47,7 +49,7 @@ const Courses = () => {
             onClick={() => setTitle(category.title)}
             className={`${
               title === category.title ? "bg-[#1796fd] text-white" : ""
-            }  rounded-md`}
+            }  text-md font-medium`}
           >
             {category.title}
           </Button>
@@ -58,7 +60,6 @@ const Courses = () => {
           <CourseCard key={index} course={course} />
         ))}
       </div>
-      ;
     </div>
   );
 };

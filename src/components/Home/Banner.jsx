@@ -23,7 +23,7 @@ const Banner = () => {
     <div className={`${styles.homeBanner}`}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-40 items-center container">
         <div className="space-y-4 order-2 lg:order-1">
-          <h2 className="text-3xl px-5 rounded bg-gradient-to-b from-[#93efff] to-[#F3F3F3] text-[#2397fb] ,  w-2/4 py-1">
+          <h2 className="text-3xl px-5 rounded bg-gradient-to-b from-[#93efff] to-[#F3F3F3] text-[#2397fb] , w-2/4 py-1">
             Welcome to
           </h2>
           <h1 className="text-5xl font-bold">

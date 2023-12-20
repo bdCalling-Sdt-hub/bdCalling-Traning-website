@@ -1,6 +1,5 @@
 import { Star } from "lucide-react";
 import { useState } from "react";
-import FlexItem from "../Common/FlexItem";
 import { Button } from "../ui/button";
 import Curriculum from "./TabContent/Curriculum";
 import Instructor from "./TabContent/Instructor";
@@ -13,7 +12,7 @@ const CourseDetailDescription = () => {
   return (
     <div>
       <img src="/images/courseDetail.png" alt="" className="w-full mb-8" />
-      <FlexItem gap="gap-4">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
         <img src="/images/instructor.png" alt="" />
         <div>
           <h2 className="font-bold">Ashraful</h2>
@@ -32,9 +31,9 @@ const CourseDetailDescription = () => {
           </div>
           (20 Reviews)
         </div>
-      </FlexItem>
+      </div>
       <div className="bg-gray-100 p-4 rounded-md mt-8">
-        <FlexItem gap="gap-2">
+        <div className="flex flex-col lg:flex-row items-center gap-2">
           {buttons.map((btnText, index) => (
             <Button
               key={index}
@@ -47,7 +46,7 @@ const CourseDetailDescription = () => {
               {btnText}
             </Button>
           ))}
-        </FlexItem>
+        </div>
       </div>
       {title === "Overview" && <Overview />}
       {title === "Curriculum" && <Curriculum />}

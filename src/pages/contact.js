@@ -1,6 +1,7 @@
 import TopHeading from "@/components/Common/TopHeading";
 import FormSection from "@/components/Contact/FormSection";
 import RootLayout from "@/components/Layouts/RootLayout";
+import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
 
 const ContactPage = () => {
@@ -10,6 +11,7 @@ const ContactPage = () => {
   });
   return (
     <div className="container">
+      <MetaTag title="Contact" />
       <TopHeading blueText="CONTACT US" />
       <FormSection />
       <DynamicMap />

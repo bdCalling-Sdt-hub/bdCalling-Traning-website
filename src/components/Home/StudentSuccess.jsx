@@ -42,7 +42,12 @@ const StudentSuccess = () => {
         <Swiper
           modules={[Navigation]}
           spaceBetween={10}
-          slidesPerView={2}
+          slidesPerView={1}
+          breakpoints={{
+            689: {
+              slidesPerView: 2,
+            },
+          }}
           navigation
           style={swiperContainerStyle}
         >
@@ -88,15 +93,3 @@ const StudentSuccess = () => {
 };
 
 export default StudentSuccess;
-
-{
-  /* <div className="rounded-md text-center">
-  <iframe
-    src={video}
-    title="YouTube video player"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    className="rounded-md w-full h-[400px] lg:h-[400px]"
-  ></iframe>
-</div>; */
-}

@@ -1,6 +1,7 @@
 import Subscribe from "@/components/Common/Subscribe";
 import RootLayout from "@/components/Layouts/RootLayout";
 import PopularCourses from "@/components/SuccessStories/PopularCourses";
+import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
 
 const SuccessStoriesPage = () => {
@@ -12,6 +13,7 @@ const SuccessStoriesPage = () => {
   );
   return (
     <div className="container">
+      <MetaTag title="Success Stories" />
       <DynamicBanner />
       <PopularCourses />
       <Subscribe

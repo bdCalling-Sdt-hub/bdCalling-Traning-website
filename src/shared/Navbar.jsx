@@ -1,10 +1,39 @@
-import { Button } from "@/components/ui/button";
-import { AlignJustify, X } from "lucide-react";
+import { AlignRight, X } from "lucide-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isActive, setIsActive] = useState("Home");
+  const DynamicAuthHomepage = dynamic(() => import("@/components/Auth/index"), {
+    ssr: false,
+  });
+
+  const items = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "About Us",
+      path: "/about",
+    },
+    {
+      title: "Courses",
+      path: "/courses",
+    },
+    {
+      title: "Success Stories",
+      path: "/success-stories",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
+  ];
+
+  console.log(isActive);
 
   return (
     <div className="bg-[#e6f8ff] sticky top-0 z-50 py-4">
@@ -17,7 +46,7 @@ const Navbar = () => {
             className="lg:hidden cursor-pointer text-white active:duration-300"
             onClick={() => setOpen(!open)}
           >
-            {!open ? <AlignJustify /> : <X />}
+            {!open ? <AlignRight color="#1796fd" /> : <X color="#1796fd" />}
           </div>
         </div>
 
@@ -26,22 +55,19 @@ const Navbar = () => {
             open ? "left-0 top-14 w-full" : "left-0 -top-96"
           }`}
         >
-          <li className="link-nav">
-            <Link href="/our-creators">Our Creators</Link>
-          </li>
-          <li className="link-nav">
-            <Link href="/who-we-are">Who are we</Link>
-          </li>
-          <li className="link-nav">
-            <Link href="/how-it-work">How it works</Link>
-          </li>
-          <li className="link-nav">
-            <Link href="/contact">Contact</Link>
-          </li>
+          {items.map((item, index) => (
+            <li
+              className={`hover:text-primary  ${
+                isActive === item.title ? "text-primary" : "text-black"
+              } `}
+              key={index}
+              onClick={() => setIsActive(item.title)}
+            >
+              <Link href={item.path}>{item.title}</Link>
+            </li>
+          ))}
 
-          <Button className="text-white bg-primary px-4 py-3 rounded-md transition img-shadow cursor-pointer">
-            Login
-          </Button>
+          <DynamicAuthHomepage />
         </ul>
       </nav>
     </div>

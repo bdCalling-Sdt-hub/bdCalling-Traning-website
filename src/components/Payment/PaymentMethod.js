@@ -5,7 +5,7 @@ import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 const PaymentMethod = () => {
   return (
-    <div className="grid grid-cols-2 gap-4 mb-12 mx-32">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12 lg:mx-32">
       <div>
         <div className="border border-[#2492EB] rounded-md p-4">
           <div>

@@ -27,7 +27,7 @@ const Curriculum = () => {
         <h1 className="text-xl  font-bold">
           What you will learn by doing the course
         </h1>
-        <div className="grid grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
           {courseFeatures.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
               <p>
@@ -44,7 +44,7 @@ const Curriculum = () => {
             src={`https://www.youtube.com/embed/${video?.video}`}
             title="YouTube video player"
             frameborder="0"
-            className="rounded w-full h-[495px]"
+            className="rounded w-full h-[200px] lg:h-[495px]"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
             allowfullscreen
           ></iframe>
@@ -106,7 +106,7 @@ const Curriculum = () => {
       </div>
       <div>
         <h1 className="text-xl  font-bold">Open Job Positions</h1>
-        <div className="grid grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
           {jobPositions.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
               <p>

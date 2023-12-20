@@ -1,5 +1,3 @@
-import FlexItem from "@/components/Common/FlexItem";
-
 const Overview = () => {
   return (
     <div>
@@ -30,7 +28,7 @@ const Overview = () => {
       </div>
       <div>
         <h1 className="text-2xl font-bold my-10">Career Opportunities</h1>
-        <FlexItem gap="gap-5">
+        <div className="flex flex-col lg:flex-row items-center gap-5">
           <div>
             <img src="/images/opportunities1.svg" alt="" />
             <p className="mt-4">
@@ -50,7 +48,7 @@ const Overview = () => {
               skills to stand out in the job market.
             </p>
           </div>
-        </FlexItem>
+        </div>
       </div>
       <div className="mt-5">
         <h2 className="text-xl font-bold border-b pb-2 mb-4">Helpline</h2>

@@ -46,7 +46,7 @@ const FormSection = () => {
     "Prototyping and Wireframing",
   ];
   return (
-    <div className="grid grid-cols-2 gap-14 my-16">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 my-16">
       <div>
         <h2 className="text-[#2492EB] font-bold text-xl mb-4">
           Let&#39;s Talk

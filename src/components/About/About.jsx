@@ -2,7 +2,7 @@ import { Button } from "../ui/button";
 
 const About = () => {
   return (
-    <div className="grid grid-cols-2  items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
       <div>
         <img src="/images/banner.png" alt="banner image" />
       </div>

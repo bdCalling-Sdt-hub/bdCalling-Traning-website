@@ -2,6 +2,7 @@ import FlexItem from "@/components/Common/FlexItem";
 import CourseDetailDescription from "@/components/CourseDetail/CourseDetailDescription";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
+import MetaTag from "@/shared/MetaTag";
 import { Book, Clock, Globe, Presentation, Users } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -45,11 +46,12 @@ const CourseDetail = () => {
 
   return (
     <div className="container my-10">
-      <div className="grid grid-cols-3 gap-7">
+      <MetaTag title="Courses Details" />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
         <div className="col-span-2">
           <CourseDetailDescription />
         </div>
-        <div>
+        <div className="w-full">
           <div className="shadow rounded-md p-4">
             <h1 className="font-bold border-b border-dashed pb-2">
               Course Features

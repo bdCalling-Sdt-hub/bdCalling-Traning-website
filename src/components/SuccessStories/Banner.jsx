@@ -41,7 +41,7 @@ const Banner = () => {
           </Button>
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-3 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
         {title === "Gallery"
           ? filterVideo.map((item, index) => (
               <div key={index} className=" rounded-md ">
@@ -59,7 +59,7 @@ const Banner = () => {
                 <iframe
                   src={item?.video}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  className="rounded-md w-full h-[400px]"
+                  className="rounded-md w-full h-[200px] lg:h-[400px]"
                 ></iframe>
               </AspectRatio>
             ))}
