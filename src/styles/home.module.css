@@ -1,11 +1,25 @@
 .homeBanner {
-  background: linear-gradient(#eafcff, #f3f3f3), url("/images/banner_bg.png");
+  background: linear-gradient(to left, #eafcff, #f3f3f3),
+    url("/images/banner_bg.png");
   width: 100%;
   height: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding: 100px 0px;
+  position: relative;
+}
+
+.homeBanner::before {
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: url("/images/imgLeft.png");
+  background-size: cover;
+  background-position: bottom;
 }
 
 .playBtn {

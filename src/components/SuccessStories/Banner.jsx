@@ -58,7 +58,6 @@ const Banner = () => {
               <AspectRatio ratio={15 / 9} key={index}>
                 <iframe
                   src={item?.video}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   className="rounded-md w-full h-[200px] lg:h-[400px]"
                 ></iframe>
               </AspectRatio>

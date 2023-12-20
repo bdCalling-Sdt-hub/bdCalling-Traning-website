@@ -38,11 +38,16 @@ const Exceptional = () => {
           experience with real client projects, ensuring a comprehensive
           learning experience.
         </p>
-        <div className="bg-gray-100  rounded-md relative ">
-          <h1 className="font-bold  bg-primary w-[200px] p-3 rounded-br-full text-white">
+        <div className="bg-gray-100 rounded-md rounded-l-[55px] relative h-36">
+          <img
+            src="/images/flexible.png"
+            className="absolute top-0 left-0"
+            alt=""
+          />
+          <h1 className="font-bold   text-white absolute left-28 pt-2">
             Flexible Classes
           </h1>
-          <p className="px-4 py-3">
+          <p className="text-sm px-4 py-3 absolute left-24 top-10">
             Fit education into your life, not the other way around. Flexible
             classes are designed to adapt to your busy schedule, so you can
             learn what you want when you want.
