@@ -4,7 +4,11 @@ const About = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
       <div>
-        <img src="/images/banner.png" alt="banner image" />
+        <img
+          src="/images/banner.png"
+          className="animate__animated animate__zoomIn"
+          alt="banner image"
+        />
       </div>
       <div>
         <h1 className="text-4xl font-bold text-[#1696fd]">About Us</h1>

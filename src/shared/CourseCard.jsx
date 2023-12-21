@@ -1,6 +1,6 @@
+import { motion } from "framer-motion";
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { Button } from "../components/ui/button";
 
 const CourseCard = ({ course }) => {
@@ -16,10 +16,13 @@ const CourseCard = ({ course }) => {
     remainSeat,
     title,
   } = course;
-  const router = useRouter();
+
   return (
     <Link href={`/courses/${id}`}>
-      <div className="p-3 rounded-lg shadow hover:shadow-xl hover:scale-[102%] transition-all cursor-pointer">
+      <motion.div
+        whileTap={{ scale: 0.5 }}
+        className="p-3 rounded-lg shadow hover:shadow-xl hover:scale-[102%] transition-all animate__animated animate__jackInTheBox"
+      >
         <div>
           <img src={image} alt="course image" className="rounded-md w-full" />
           <div className="flex items-center justify-between mt-4">
@@ -63,7 +66,7 @@ const CourseCard = ({ course }) => {
         >
           Enroll Now
         </Button>
-      </div>
+      </motion.div>
     </Link>
   );
 };

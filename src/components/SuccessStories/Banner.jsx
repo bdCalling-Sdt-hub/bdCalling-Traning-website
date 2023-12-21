@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import videos from "../../../public/db/video.json";
 import TopHeading from "../Common/TopHeading";
@@ -44,15 +45,20 @@ const Banner = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
         {title === "Gallery"
           ? filterVideo.map((item, index) => (
-              <div key={index} className=" rounded-md ">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.5 }}
+                key={index}
+                className=" rounded-md "
+              >
                 <AspectRatio ratio={15 / 9} key={index}>
                   <img
                     src={item.video}
                     alt=""
-                    className="w-full h-[400px] object-cover rounded-md"
+                    className="w-full h-[400px] object-cover rounded-md animate__animated animate__jackInTheBox"
                   />
                 </AspectRatio>
-              </div>
+              </motion.div>
             ))
           : filterVideo.map((item, index) => (
               <AspectRatio ratio={15 / 9} key={index}>

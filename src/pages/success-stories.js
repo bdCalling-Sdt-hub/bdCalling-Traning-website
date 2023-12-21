@@ -1,3 +1,4 @@
+import Reveal from "@/animation/FramerMotion/Reveal";
 import Subscribe from "@/components/Common/Subscribe";
 import RootLayout from "@/components/Layouts/RootLayout";
 import PopularCourses from "@/components/SuccessStories/PopularCourses";
@@ -15,11 +16,15 @@ const SuccessStoriesPage = () => {
     <div className="container">
       <MetaTag title="Success Stories" />
       <DynamicBanner />
-      <PopularCourses />
-      <Subscribe
-        title="Join our dynamic team"
-        description="Unlock a world of knowledge and endless growth opportunities"
-      />
+      <Reveal>
+        <PopularCourses />
+      </Reveal>
+      <Reveal>
+        <Subscribe
+          title="Join our dynamic team"
+          description="Unlock a world of knowledge and endless growth opportunities"
+        />
+      </Reveal>
     </div>
   );
 };

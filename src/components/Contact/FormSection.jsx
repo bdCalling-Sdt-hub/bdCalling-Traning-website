@@ -1,3 +1,4 @@
+import Reveal from "@/animation/FramerMotion/Reveal";
 import {
   Select,
   SelectContent,
@@ -51,22 +52,26 @@ const FormSection = () => {
         <h2 className="text-[#2492EB] font-bold text-xl mb-4">
           Let&#39;s Talk
         </h2>
-        <p>
-          You are welcomed to visit our office for any information related to
-          course and training. You can also reach us through the hotline number
-          or messenger.
-        </p>
-        {contacts.map((item, index) => (
-          <div key={index} className="my-5">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-white shadow flex items-center justify-center rounded-full">
-                {item.icon}
+        <Reveal>
+          <p>
+            You are welcomed to visit our office for any information related to
+            course and training. You can also reach us through the hotline
+            number or messenger.
+          </p>
+        </Reveal>
+        <Reveal>
+          {contacts.map((item, index) => (
+            <div key={index} className="my-5">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-white shadow flex items-center justify-center rounded-full">
+                  {item.icon}
+                </div>
+                <p>{item.title}</p>
               </div>
-              <p>{item.title}</p>
+              <p className="ml-10">{item.value}</p>
             </div>
-            <p className="ml-10">{item.value}</p>
-          </div>
-        ))}
+          ))}
+        </Reveal>
       </div>
       <div>
         <h2 className="text-[#2492EB] font-bold text-xl mb-4">

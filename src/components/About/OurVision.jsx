@@ -8,7 +8,7 @@ const OurVision = () => {
             <img src="/images/mission.png" alt="" />
           </i>
           <div className="content">
-            <h2>Our Mission</h2>
+            <h2 className="">Our Mission</h2>
             <p>
               At bdCalling Academy, our mission is clear and gripping to empower
               individuals with the knowledge and skills they need to thrive in a

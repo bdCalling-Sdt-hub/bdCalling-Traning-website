@@ -1,14 +1,17 @@
+import { motion } from "framer-motion";
 import { AlignRight, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [isActive, setIsActive] = useState("Home");
   const DynamicAuthHomepage = dynamic(() => import("@/components/Auth/index"), {
     ssr: false,
   });
+
+  const path = usePathname();
 
   const items = [
     {
@@ -33,8 +36,6 @@ const Navbar = () => {
     },
   ];
 
-  console.log(isActive);
-
   return (
     <div className="bg-[#e6f8ff] sticky top-0 z-50 py-4">
       <nav className="container lg:flex items-center w-full justify-between ">
@@ -56,14 +57,17 @@ const Navbar = () => {
           }`}
         >
           {items.map((item, index) => (
-            <li
-              className={`hover:text-primary  ${
-                isActive === item.title ? "text-primary" : "text-black"
-              } `}
-              key={index}
-              onClick={() => setIsActive(item.title)}
-            >
-              <Link href={item.path}>{item.title}</Link>
+            <li key={index}>
+              <motion.div whileTap={{ scale: 0.5 }}>
+                <Link
+                  className={`${
+                    item.path === path ? "text-primary font-bold" : "text-black"
+                  } `}
+                  href={item.path}
+                >
+                  {item.title}
+                </Link>
+              </motion.div>
             </li>
           ))}
 

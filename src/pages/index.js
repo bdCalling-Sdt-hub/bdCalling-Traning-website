@@ -1,3 +1,4 @@
+import Reveal from "@/animation/FramerMotion/Reveal";
 import Banner from "@/components/Home/Banner";
 import Courses from "@/components/Home/Courses";
 import Event from "@/components/Home/Event";
@@ -14,13 +15,27 @@ const HomePage = () => {
     <div>
       <MetaTag title="bdCalling Academy" />
       <Banner />
-      <Courses />
-      <Exceptional />
-      <Event />
-      <StudentSuccess />
-      <Testimonial />
-      <TotalSuccess />
-      <JoinUs />
+      <Reveal>
+        <Courses />
+      </Reveal>
+      <Reveal>
+        <Exceptional />
+      </Reveal>
+      <Reveal>
+        <Event />
+      </Reveal>
+      <Reveal>
+        <StudentSuccess />
+      </Reveal>
+      <Reveal>
+        <Testimonial />
+      </Reveal>
+      <Reveal>
+        <TotalSuccess />
+      </Reveal>
+      <Reveal>
+        <JoinUs />
+      </Reveal>
     </div>
   );
 };

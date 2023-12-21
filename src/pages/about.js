@@ -1,3 +1,4 @@
+import Reveal from "@/animation/FramerMotion/Reveal";
 import About from "@/components/About/About";
 import Experts from "@/components/About/Experts";
 import OurVision from "@/components/About/OurVision";
@@ -11,15 +12,23 @@ const AboutPage = () => {
   return (
     <div className="container">
       <MetaTag title="About" />
-      <About />
-      <WhatBdCalling />
+      <Reveal>
+        <About />
+      </Reveal>
+      <Reveal>
+        <WhatBdCalling />
+      </Reveal>
       <OurVision />
       <Experts />
-      <TotalCourse />
-      <Subscribe
-        title="Say Hello to Learn with!"
-        description="Unlock a world of knowledge and endless growth opportunities"
-      />
+      <Reveal>
+        <TotalCourse />
+      </Reveal>
+      <Reveal>
+        <Subscribe
+          title="Say Hello to Learn with!"
+          description="Unlock a world of knowledge and endless growth opportunities"
+        />
+      </Reveal>
     </div>
   );
 };

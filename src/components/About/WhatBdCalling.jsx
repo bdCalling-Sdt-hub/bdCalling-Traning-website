@@ -25,14 +25,22 @@ const WhatBdCalling = () => {
           <img
             src="/images/aboutWhat1.png"
             alt="image"
-            className="w-full h-80 object-cover"
+            className="w-full h-80 object-cover animate__animated animate__zoomIn"
           />
         </div>
         <div className="shadow p-[0px] absolute -bottom-48">
-          <img src="/images/aboutWhat2.png" alt="image" className="w-full" />
+          <img
+            src="/images/aboutWhat2.png"
+            alt="image"
+            className="w-full animate__animated animate__zoomIn"
+          />
         </div>
         <div className="shadow p-[0px] absolute -bottom-56 right-0">
-          <img src="/images/aboutWhat3.png" alt="image" className="w-full" />
+          <img
+            src="/images/aboutWhat3.png"
+            alt="image"
+            className="w-full animate__animated animate__zoomIn"
+          />
         </div>
       </div>
     </div>

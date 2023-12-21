@@ -26,7 +26,7 @@ const Event = () => {
             alt="course image"
             className="rounded-md w-full"
           />
-          <div className="flex items-center justify-between mt-4">
+          <div className="lg:flex items-center justify-between mt-4">
             <div className="flex gap-5 items-center">
               <p size={18} className="flex items-center gap-1">
                 <Calendar size={20} />

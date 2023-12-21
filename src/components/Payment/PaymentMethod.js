@@ -58,10 +58,10 @@ const PaymentMethod = () => {
           <p>For Any Queries, Call +88 01321231802</p>
         </div>
       </div>
-      <div className="border border-[#2492EB] rounded-md p-4">
+      <div className="border border-[#2492EB] rounded-md p-4 ">
         <h1 className=" font-medium mb-5 text-lg">Payment Medium</h1>
         <RadioGroup defaultValue="comfortable">
-          <div className="flex items-center space-x-2 mb-1">
+          <div className="flex items-center space-x-2 mb-1 animate__animated animate__bounceIn">
             <RadioGroupItem value="default" id="r1" />
             <label
               htmlFor="r1"
@@ -71,7 +71,7 @@ const PaymentMethod = () => {
               <p className="text-xl text-[#E2136E]">Payment</p>
             </label>
           </div>
-          <div className="flex items-center space-x-2 mb-1">
+          <div className="flex items-center space-x-2 mb-1 animate__animated animate__bounceIn">
             <RadioGroupItem value="comfortable" id="r2" />
             <label
               htmlFor="r2"
@@ -81,7 +81,7 @@ const PaymentMethod = () => {
               <p className="text-xl text-[#EC2428]">Payment</p>
             </label>
           </div>
-          <div className="flex items-center space-x-2 mb-1">
+          <div className="flex items-center space-x-2 mb-1 animate__animated animate__bounceIn">
             <RadioGroupItem value="compact" id="r3" />
             <label
               htmlFor="r3"
