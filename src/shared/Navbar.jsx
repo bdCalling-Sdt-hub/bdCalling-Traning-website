@@ -43,12 +43,13 @@ const Navbar = () => {
           <Link href="/">
             <img className="w-24 md:w-36" src="/images/logo.png" alt="logo" />
           </Link>
-          <div
+          <motion.div
+            whileTap={{ scale: 1.2, transition: { duration: 0.5 } }}
             className="lg:hidden cursor-pointer text-white active:duration-300"
             onClick={() => setOpen(!open)}
           >
             {!open ? <AlignRight color="#1796fd" /> : <X color="#1796fd" />}
-          </div>
+          </motion.div>
         </div>
 
         <ul
