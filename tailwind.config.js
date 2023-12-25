@@ -12,7 +12,7 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1350px",
       },
     },
     extend: {
@@ -33,6 +33,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      boxShadow: {
+        one: " rgba(149, 157, 165, 0.2) 0px 8px 24px",
       },
     },
   },

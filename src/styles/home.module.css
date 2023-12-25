@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 100px 0px;
+  padding: 80px 0;
   position: relative;
 }
 
@@ -48,4 +48,31 @@
     transform: scale(1);
     box-shadow: 0 0 0 5.5px #fb23408e;
   }
+}
+
+/*framer motion*/
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 60px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  color: #353434;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
 }

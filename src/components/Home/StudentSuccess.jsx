@@ -37,7 +37,7 @@ const StudentSuccess = () => {
   ];
   return (
     <div className="container my-14">
-      <HeadingText sTitle={"Story"} title={"Student Success Story"} />
+      <HeadingText title={"Success story"} />
       <Dialog>
         <Swiper
           modules={[Navigation]}

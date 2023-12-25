@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 
@@ -19,16 +19,24 @@ const CourseCard = ({ course }) => {
 
   return (
     <Link href={`/courses/${id}`}>
-      <motion.div
-        whileTap={{ scale: 0.5 }}
-        className="p-3 rounded-lg shadow hover:shadow-xl hover:scale-[102%] transition-all animate__animated animate__jackInTheBox"
+      <div
+        className="rounded-2xl hover:-translate-y-4 duration-500 transition-all group"
+        style={{
+          boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+        }}
       >
-        <div>
-          <img src={image} alt="course image" className="rounded-md w-full" />
-          <div className="flex items-center justify-between mt-4">
+        <Image
+          src={image}
+          alt="course image"
+          width={400}
+          height={250}
+          className="rounded-t-2xl w-full"
+        />
+        <div className="p-3">
+          <div className="flex items-center justify-between">
             <p className="flex items-center gap-1">
               {" "}
-              <BookOpenText size={20} />
+              <BookOpenText size={20} color="#1796fd" />
               Batch {batchNo}
             </p>
             <div className="bg-primary text-white rounded-md py-1 px-5">
@@ -37,36 +45,36 @@ const CourseCard = ({ course }) => {
           </div>
           <div className="flex items-center justify-between mt-4 border-b pb-2">
             <p size={20} className="flex items-center gap-1">
-              <UsersRound size={20} />
+              <UsersRound size={20} color="#1796fd" />
               {remainSeat} Seats Left
             </p>
             <p size={18} className="flex items-center gap-1">
-              <Clock8 size={20} />
+              <Clock8 size={20} color="#1796fd" />
               {duration} Days Lest
             </p>
           </div>
-          <h2 className="my-3">{title}</h2>
+          <h2 className="my-3 text-lg">{title}</h2>
           <div className="flex items-center justify-between my-4">
-            <p>{price}BDT</p>
+            <div className="flex gap-4 items-center">
+              <h2 className="text-lg font-bold text-gray-700">{price}BDT</h2>
+              <p className="line-through">BDT3,000</p>
+            </div>
             <div className="flex items-center gap-1">
               <div className="flex">
-                <Star size={20} color="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
+                <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                <Star size={20} color="#ffc60b" fill="#ffc60b" />
                 <Star size={20} color="#ffc60b" />
               </div>
               {rating}(20)
             </div>
           </div>
+          <Button className="w-full border  text-white py-6 text-md group-hover:bg-primary duration-300">
+            Enroll Now
+          </Button>
         </div>
-        <Button
-          variant="outline"
-          className="w-full border border-[#2492EB] text-[#2492EB] py-5"
-        >
-          Enroll Now
-        </Button>
-      </motion.div>
+      </div>
     </Link>
   );
 };

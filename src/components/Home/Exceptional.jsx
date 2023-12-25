@@ -1,4 +1,4 @@
-import { Check, ChevronRight, Trophy } from "lucide-react";
+import { ArrowUpRight, Check, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
@@ -64,12 +64,13 @@ const Exceptional = () => {
           ))}
         </div>
         <Link href="/about">
-          <Button
-            variant="outline"
-            className="text-primary border-primary px-6 text-md py-6 mt-8"
-          >
+          <Button className="text-white border-primary px-4 text-md py-6 mt-8 group transition-all">
             More About{" "}
-            <ChevronRight color="#1796fd" size={15} className="ml-1" />
+            <ArrowUpRight
+              color="#1796fd"
+              size={20}
+              className="ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 duration-100"
+            />
           </Button>
         </Link>
       </div>

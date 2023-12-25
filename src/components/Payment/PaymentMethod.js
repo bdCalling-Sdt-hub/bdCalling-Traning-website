@@ -42,7 +42,7 @@ const PaymentMethod = () => {
               </FlexItem>
               <FlexItem justify="justify-between">
                 <p>Discount</p>
-                <p className="line-through">BDT3,000</p>
+                <p className="">BDT3,000</p>
               </FlexItem>
             </div>
             <FlexItem justify="justify-between">

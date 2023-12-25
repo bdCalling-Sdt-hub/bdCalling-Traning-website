@@ -18,7 +18,7 @@ const Event = () => {
   ];
   return (
     <div className="my-12 container">
-      <HeadingText sTitle={"Events"} title={"See our Upcoming Events"} />
+      <HeadingText title={"Upcoming Events"} />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
         <div className="col-span-2 p-3 rounded-lg shadow">
           <img
