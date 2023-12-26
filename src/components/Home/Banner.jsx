@@ -88,11 +88,12 @@ const Banner = () => {
       </div>
       <div className=" py-2">
         <ParallaxText baseVelocity={-1}>
-          Wordpress✨Digital Marketing✨Grapics✨UX/UI Design✨Lead & Data Entry
+          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead &
+          Data Entry
         </ParallaxText>
         <ParallaxText baseVelocity={1}>
-          {" "}
-          Wordpress✨Digital Marketing✨Grapics✨UX/UI Design✨Lead & Data Entry
+          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead &
+          Data Entry
         </ParallaxText>
       </div>
     </>

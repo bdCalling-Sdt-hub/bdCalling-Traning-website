@@ -1,8 +1,8 @@
 {
   "courses": [
     {
-      "image": "/images/course1.png",
-      "title": "Certified UI/UX Designer Course",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "title": "Certified Digital Marketing Course",
       "batchNo": 2,
       "courseStatus": "online",
       "duration": "35",
@@ -14,11 +14,12 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "Digital Marketing"
     },
     {
-      "image": "/images/course2.png",
-      "title": "Advanced UX Design Workshop",
+      "image": "/images/coursesImage/Graphics-Design.jpg",
+      "title": "Graphic Design",
       "batchNo": 3,
       "courseStatus": "offline",
       "duration": "40",
@@ -30,11 +31,12 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "Graphics Design"
     },
     {
-      "image": "/images/course3.png",
-      "title": "Interactive Web Design Course",
+      "image": "/images/coursesImage/Wordpress.jpg",
+      "title": "Wordpress",
       "batchNo": 4,
       "courseStatus": "online",
       "duration": "30",
@@ -46,11 +48,12 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "Wordpress"
     },
     {
-      "image": "/images/course4.png",
-      "title": "Mobile App UI Development",
+      "image": "/images/coursesImage/Web-Design.jpg",
+      "title": "Web Design",
       "batchNo": 5,
       "courseStatus": "offline",
       "duration": "35",
@@ -62,11 +65,12 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "Front-End"
     },
     {
-      "image": "/images/course5.png",
-      "title": "UI/UX for E-commerce Platforms",
+      "image": "/images/coursesImage/Lead-Generation.jpg",
+      "title": "Lead Generation and Data Entry",
       "batchNo": 6,
       "courseStatus": "online",
       "duration": "38",
@@ -78,11 +82,12 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "Lead & Data Entry"
     },
     {
-      "image": "/images/course1.png",
-      "title": "Prototyping and Wireframing",
+      "image": "/images/coursesImage/mobileDevelopment.jpg",
+      "title": "Mobile apps development",
       "batchNo": 7,
       "courseStatus": "offline",
       "duration": "32",
@@ -94,11 +99,12 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "APP Development"
     },
     {
-      "image": "/images/course2.png",
-      "title": "User-Centered Design Principles",
+      "image": "/images/coursesImage/UI-UX.jpg",
+      "title": "Advanced UI/Ux Design",
       "batchNo": 8,
       "courseStatus": "online",
       "duration": "36",
@@ -110,11 +116,12 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "UX/UI Design"
     },
     {
-      "image": "/images/course3.png",
-      "title": "Responsive Design Techniques",
+      "image": "/images/coursesImage/Front-End.jpg",
+      "title": "Fronted Development",
       "batchNo": 9,
       "courseStatus": "offline",
       "duration": "33",
@@ -126,10 +133,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "Front-End"
     },
     {
-      "image": "/images/course4.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Visual Design Fundamentals",
       "batchNo": 10,
       "courseStatus": "online",
@@ -142,10 +150,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course5.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Design Thinking Workshop",
       "batchNo": 11,
       "courseStatus": "offline",
@@ -158,10 +167,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course1.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Animation in User Interface",
       "batchNo": 12,
       "courseStatus": "online",
@@ -174,10 +184,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course2.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "UX Research and Testing",
       "batchNo": 13,
       "courseStatus": "offline",
@@ -190,10 +201,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course3.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Designing for Accessibility",
       "batchNo": 14,
       "courseStatus": "online",
@@ -206,10 +218,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course4.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Creative UI/UX Portfolio Building",
       "batchNo": 15,
       "courseStatus": "offline",
@@ -222,10 +235,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course5.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "UI/UX Trends and Innovations",
       "batchNo": 16,
       "courseStatus": "online",
@@ -238,10 +252,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course1.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Usability Principles in Design",
       "batchNo": 17,
       "courseStatus": "offline",
@@ -254,10 +269,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course2.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Collaborative Design Workflows",
       "batchNo": 18,
       "courseStatus": "online",
@@ -270,10 +286,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course3.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "UI/UX for Mobile Games",
       "batchNo": 19,
       "courseStatus": "offline",
@@ -286,10 +303,11 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     },
     {
-      "image": "/images/course4.png",
+      "image": "/images/coursesImage/DigitalMarketing.jpg",
       "title": "Social Media App Design",
       "batchNo": 20,
       "courseStatus": "online",
@@ -302,7 +320,8 @@
       "students": "Max 20",
       "skillLevel": "Advanced",
       "language": "English",
-      "lessons": 24
+      "lessons": 24,
+      "category": "ux/ui design"
     }
   ]
 }

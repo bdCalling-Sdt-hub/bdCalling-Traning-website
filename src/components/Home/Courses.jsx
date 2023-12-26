@@ -8,16 +8,23 @@ import { Button } from "../ui/button";
 const Courses = () => {
   const [title, setTitle] = useState("all");
   const categoryLists = [
-    { title: "wordpress" },
+    { title: "Wordpress" },
     { title: "Digital Marketing" },
-    { title: " Graphics" },
-    { title: " UX/UI Design" },
-    { title: " APP Developer" },
-    { title: "Front-End " },
-    { title: " Lead & Data Entry " },
+    { title: "Graphics Design" },
+    { title: "UX/UI Design" },
+    { title: "APP Development" },
+    { title: "Front-End" },
+    { title: "Lead & Data Entry" },
   ];
 
   const { courses } = coursesList;
+
+  let filterCourses;
+  if (title !== "all") {
+    filterCourses = courses.filter((course) => course.category === title);
+  } else {
+    filterCourses = courses;
+  }
 
   return (
     <div className="container">
@@ -56,7 +63,7 @@ const Courses = () => {
         ))}
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-12">
-        {courses.slice(0, 6).map((course, index) => (
+        {filterCourses.slice(0, 6).map((course, index) => (
           <CourseCard key={index} course={course} />
         ))}
       </div>

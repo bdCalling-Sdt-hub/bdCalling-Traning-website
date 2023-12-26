@@ -1,6 +1,6 @@
 import Reveal from "@/animation/FramerMotion/Reveal";
 import Banner from "@/components/Home/Banner";
-import Courses from "@/components/Home/Courses";
+
 import Event from "@/components/Home/Event";
 import Exceptional from "@/components/Home/Exceptional";
 import JoinUs from "@/components/Home/JoinUs";
@@ -9,14 +9,18 @@ import Testimonial from "@/components/Home/Testimonial";
 import TotalSuccess from "@/components/Home/TotalSuccess";
 import RootLayout from "@/components/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
+import dynamic from "next/dynamic";
 
 const HomePage = () => {
+  const DynamicCourses = dynamic(() => import("@/components/Home/Courses"), {
+    loading: () => <h1>Loading...</h1>,
+  });
   return (
     <div>
       <MetaTag title="bdCalling Academy" />
       <Banner />
       <Reveal>
-        <Courses />
+        <DynamicCourses />
       </Reveal>
       <Reveal>
         <Exceptional />

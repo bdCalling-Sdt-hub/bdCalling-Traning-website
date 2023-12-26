@@ -1,4 +1,5 @@
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 
@@ -24,10 +25,12 @@ const CourseCard = ({ course }) => {
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         }}
       >
-        <img
-          src="/images/Digital-Marketing.jpg"
+        <Image
+          src={image}
           alt="course image"
-          className="rounded-t-lg w-full"
+          className="rounded-t-lg w-full h-[240px]"
+          width={400}
+          height={240}
         />
         <div className="p-3">
           <div className="flex items-center justify-between">
@@ -36,7 +39,7 @@ const CourseCard = ({ course }) => {
               <BookOpenText size={20} color="#1796fd" />
               Batch {batchNo}
             </p>
-            <div className="bg-primary text-white rounded-md py-1 px-5">
+            <div className="bg-gradient-to-tr from-[#80b3dd] to-[#0779d6] text-white rounded-md py-1 px-5">
               {courseStatus}
             </div>
           </div>

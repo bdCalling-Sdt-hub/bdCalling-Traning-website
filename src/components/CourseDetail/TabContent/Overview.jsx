@@ -54,7 +54,7 @@ const Overview = () => {
         <h2 className="text-xl font-bold border-b pb-2 mb-4">Helpline</h2>
         <p>
           For any queries regarding this batch, call{" "}
-          <span className="font-bold">+88 01321231828</span> (09 Am to 06 Pm)
+          <span className="font-bold">+88 01321231802</span> (09 Am to 06 Pm)
         </p>
       </div>
       <div className="mt-5">
