@@ -47,7 +47,7 @@ const Exceptional = () => {
           <h1 className="font-bold   text-white absolute left-28 pt-2">
             Flexible Classes
           </h1>
-          <p className="text-[11px] lg:text-[14px] text-justify px-4 py-3 absolute left-24 top-10">
+          <p className="text-[11px] lg:text-[16px] text-justify px-4 py-3 absolute left-24 top-10">
             Fit education into your life, not the other way around. Flexible
             classes are designed to adapt to your busy schedule, so you can
             learn what you want when you want.

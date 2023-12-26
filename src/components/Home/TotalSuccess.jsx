@@ -20,7 +20,7 @@ const TotalSuccess = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 text-center">
           {successList.map((success, index) => (
             <div key={index} className="text-white mt-24 space-y-2">
-              <h1 className="text-4xl">
+              <h1 className="text-4xl font-semibold">
                 {isInView && (
                   <CountUp start={0} end={`${success.total}`} duration={5} />
                 )}

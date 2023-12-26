@@ -1,13 +1,19 @@
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import CountUp from "react-countup";
+
 const TotalCourse = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const successList = [
-    { title: "Courses", total: "25+" },
-    { title: "Certified Teachers", total: "25+" },
-    { title: "Students Enroll", total: "2160+" },
-    { title: "Success Ratio", total: "90%" },
+    { title: "Courses", total: 25 },
+    { title: "Certified Teachers", total: 25 },
+    { title: "Students Enroll", total: 2160 },
+    { title: "Success Ratio", total: 90 },
   ];
 
   return (
-    <div className="bg-primary  py-20 px-10 rounded-md  my-14">
+    <div ref={ref} className="bg-primary  py-20 px-10 rounded-md  my-14">
       <div className="text-center mb-10">
         <p className="text-white mb-3">What is bdCalling</p>
         <h2 className="text-4xl text-white">
@@ -18,9 +24,14 @@ const TotalCourse = () => {
         {successList.map((success, index) => (
           <div
             key={index}
-            className="bg-white px-5 py-14 rounded-md text-primary"
+            className="bg-white px-5 py-14 rounded-md text-primary space-y-2"
           >
-            <h1 className="text-4xl font-bold mb-2">{success.total}</h1>
+            <h1 className="text-4xl font-semibold">
+              {isInView && (
+                <CountUp start={0} end={`${success.total}`} duration={5} />
+              )}
+              +
+            </h1>
             <p>{success.title}</p>
           </div>
         ))}
