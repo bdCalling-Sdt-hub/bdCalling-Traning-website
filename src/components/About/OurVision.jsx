@@ -27,7 +27,7 @@ const OurVision = () => {
             <h2>Our Vision</h2>
             <p>
               Develop the skills and experience you need to succeed, and get
-              noticed by the best companies.Meet real people who turned their
+              noticed by the best companies. Meet real people who turned their
               education into incredible careers. At bdCalling Academy, we
               believe that everyone should have the opportunity to learn and
               grow, and achieve their career goals.
@@ -41,15 +41,28 @@ const OurVision = () => {
           </i>
           <div className="content">
             <h2>Our Values</h2>
-            <p>
-              Unlock Your Creativity: Inspire learners to tap into their
-              creative potential with our platforms innovative courses and
-              resources.
-            </p>
-            <p>
-              Integrity at the Core: Emphasize the correctness and ethical
-              standards our platform upholds in delivering quality education.
-            </p>
+            <div className="space-y-2">
+              <p>
+                <span className="font-bold">Unlock Your Creativity:</span>{" "}
+                Inspire learners to tap into their creative potential with our
+                platform&#39;s innovative courses and resources.
+              </p>
+              <p>
+                <span className="font-bold">Integrity at the Core:</span>{" "}
+                Emphasize the correctness and ethical standards our platform
+                upholds in delivering quality education.
+              </p>
+              <p>
+                <span className="font-bold">Collaborative Learning:</span>{" "}
+                Highlight the power of collaborative learning experiences that
+                foster teamwork and a sense of community among users.
+              </p>
+              <p>
+                <span className="font-bold">Explore Excellence:</span> Encourage
+                learners to strive for excellence in their education and
+                personal growth through our learning platform.
+              </p>
+            </div>
           </div>
         </div>
         <div className="timeline-container right">
@@ -63,9 +76,9 @@ const OurVision = () => {
               Since our inception in 2014, our company has been dedicated to
               providing top-notch digital services to clients across the world.
               Over the years, our commitment to solving complex problems has not
-              only fueled our growth but also enriched our knowledge base. Learn
-              with bdCalling believe that by using our knowledge and skill , we
-              can create a positive impact on society. 
+              only fueled our growth but also enriched our knowledge base.
+              bdCalling Academy believes that by using our knowledge and skill ,
+              we can create a positive impact on society.  
             </p>
           </div>
         </div>

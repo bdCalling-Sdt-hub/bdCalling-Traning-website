@@ -18,7 +18,7 @@ const Mentors = () => {
       <MetaTag title="Mentors" />
       <TopHeading
         blueText={title}
-        description="For over 3 years, our team of dedicated expert mentors has been the driving force behind the transformation of countless individuals into IT experts. With unwavering commitment, we've successfully guided over 2560 individuals from diverse backgrounds into the thriving world of Information Technology. Our mentors possess a unique blend of academic excellence and real-world job experience, making them the perfect guides on your journey towards a bright and promising career. Join us today, and let our experienced mentors illuminate your path to success in the ever-evolving IT landscape"
+        description="For over 10 years, our team of dedicated expert mentors has been the driving force behind the transformation of countless individuals into IT experts. With unwavering commitment, we've successfully guided over 20500 individuals from diverse backgrounds into the thriving world of Information Technology. Our mentors possess a unique blend of academic excellence and real-world job experience, making them the perfect guides on your journey towards a bright and promising career. Join us today, and let our experienced mentors illuminate your path to success in the ever-evolving IT landscape"
       />
       <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2 border-b pb-2 mb-10">
         {categoryLists.map((category, index) => (

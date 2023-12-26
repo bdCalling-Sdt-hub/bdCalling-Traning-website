@@ -54,9 +54,9 @@ const FormSection = () => {
         </h2>
         <Reveal>
           <p>
-            You are welcomed to visit our office for any information related to
-            course and training. You can also reach us through the hotline
-            number or messenger.
+            For all your needs, Bdcalling Academy is there. For information
+            about the course, contact the number below or visit Bdcalling
+            Academy directly. And you can send messages through Facebook.
           </p>
         </Reveal>
         <Reveal>

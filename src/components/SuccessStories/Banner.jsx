@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import descriptions from "../../../public/db/successStories.json";
 import videos from "../../../public/db/video.json";
 import TopHeading from "../Common/TopHeading";
 import { AspectRatio } from "../ui/aspect-ratio";
@@ -8,6 +9,7 @@ import { Button } from "../ui/button";
 const Banner = () => {
   const [title, setTitle] = useState("Success stories");
   const { videoList } = videos;
+  const { successStories, studentJourney, gallery, events } = descriptions;
 
   const categoryLists = [
     { title: "Success stories" },
@@ -18,16 +20,20 @@ const Banner = () => {
 
   const filterVideo = videoList.filter((item) => item.category === title);
 
+  const description =
+    title === "Success stories"
+      ? successStories
+      : title === "Events"
+      ? events
+      : title === "Student Journey"
+      ? studentJourney
+      : title === "Gallery"
+      ? ""
+      : "";
+
   return (
     <div>
-      <TopHeading
-        blueText={title}
-        description="At bdCalling Academy IT, we believe that success is a journey, not
-          a destination. That&#39;s why we&#39;re always looking for new and
-          innovative ways to help our learners achieve their goals. In this
-          section, we share the stories of our learners who have used our
-          products and services to achieve their own success."
-      />
+      <TopHeading blueText={title} description={description} />
       <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2">
         {categoryLists.map((category, index) => (
           <Button

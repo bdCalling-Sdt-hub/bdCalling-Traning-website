@@ -16,6 +16,7 @@ const Testimonial = () => {
     width: "100%",
     height: "450px",
     marginTop: "50px",
+    padding: "0 10px",
   };
 
   return (
@@ -24,7 +25,7 @@ const Testimonial = () => {
       <div className="lg:mx-28">
         <Swiper
           modules={[Pagination, A11y, Autoplay]}
-          spaceBetween={20}
+          spaceBetween={10}
           slidesPerView={1}
           autoplay={{
             delay: 2500,
@@ -40,7 +41,12 @@ const Testimonial = () => {
         >
           {testimonialList.map((testimonial, index) => (
             <SwiperSlide key={index} className="mt-16">
-              <div className="shadow p-5 rounded-md border relative flex justify-center h-[350px] lg:h-[340px] text-center">
+              <div
+                className="p-5 rounded-md relative flex justify-center h-[350px] lg:h-[340px] text-center"
+                style={{
+                  boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                }}
+              >
                 <div className="absolute -top-14 bg-white p-1 shadow rounded-full">
                   <Image
                     src={testimonial?.image}

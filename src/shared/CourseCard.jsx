@@ -1,5 +1,4 @@
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 
@@ -20,17 +19,15 @@ const CourseCard = ({ course }) => {
   return (
     <Link href={`/courses/${id}`}>
       <div
-        className="rounded-2xl hover:-translate-y-4 duration-500 transition-all group"
+        className="rounded-lg hover:-translate-y-5 duration-300 transition-all group bg-gradient-to-tr from-[#fdfdfd] to-[#fffcfc] "
         style={{
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         }}
       >
-        <Image
-          src={image}
+        <img
+          src="/images/Digital-Marketing.jpg"
           alt="course image"
-          width={400}
-          height={250}
-          className="rounded-t-2xl w-full"
+          className="rounded-t-lg w-full"
         />
         <div className="p-3">
           <div className="flex items-center justify-between">

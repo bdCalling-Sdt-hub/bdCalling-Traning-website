@@ -33,10 +33,12 @@ const CoursesPage = () => {
     <div className="container">
       <MetaTag title="Courses" />
       <div className="text-center my-10">
-        <h1 className="text-5xl font-bold">Course</h1>
+        <h1 className="text-5xl font-bold mb-2">Course</h1>
         <p>
-          Unlock your IT potential with bdCAlling today and embark on a journey
-          of learning and growth!
+          Our comprehensive course catalog encompasses a wide range of subjects,
+          from in-demand technical skills to creative pursuits and personal
+          development topics. Delve into the intricacies of coding, master the
+          art of photography, or unlock the secrets of effective communication.
         </p>
         <SearchCourse />
       </div>

@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import styles from "@/styles/home.module.css";
-import { ChevronDown, Search, Star } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 
 const Banner = () => {
   const catagories = [
@@ -24,11 +24,17 @@ const Banner = () => {
   return (
     <>
       <div className={styles.homeBanner}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-40 items-center container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-center container">
           <div className="space-y-4 order-2 lg:order-1">
             <Reveal>
-              <h2 className="text-3xl px-5 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-2/4 py-1 font-medium">
+              <h2 className="text-3xl px-3 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-2/4 py-1 font-medium relative">
                 Grow your career
+                <span
+                  className="absolute text-[18px] bottom-0 right-0 text-black"
+                  style={{ textShadow: "2px 2px 5px #1696fd" }}
+                >
+                  𝓌𝒾𝓉𝒽
+                </span>
               </h2>
             </Reveal>
             <Reveal>
@@ -37,7 +43,7 @@ const Banner = () => {
               </h1>
             </Reveal>
             <Reveal>
-              <p>
+              <p className="text-[18px]">
                 An Innovative learning platform! Get ready to engage on a
                 journey of knowledge with our innovative learning platform.
                 Explore a wide range of courses, interactive lessons, and expert
@@ -45,54 +51,33 @@ const Banner = () => {
               </p>
             </Reveal>
             <Reveal>
-              <div className="bg-white shadow rounded-full h-14 flex items-center gap-1 lg:gap-2 px-2 pl-5">
+              <div className="bg-white lg:w-[80%] shadow rounded-full h-14 flex items-center justify-between gap-1 px-2">
                 <input
                   type="text"
                   placeholder="Search here..."
-                  className=" h-full w-[55%] lg:w-[72%]  bg-transparent outline-none"
+                  className=" h-full w-[55%] lg:w-[80%]  bg-transparent outline-none pl-2"
                 />
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="border h-[80%] px-2 lg:px-4 rounded-3xl bg-[#e1ecf4] text-primary flex  items-center">
-                    Course <ChevronDown />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {catagories.map((category, index) => (
-                      <DropdownMenuItem key={index}>
-                        {category}
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <button className="bg-primary h-11 w-11 flex items-center justify-center rounded-full">
-                  <Search color="#ffd" />
-                </button>
+                <div className="flex items-center gap-1">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="border h-11 flex items-center px-2 lg:px-4 rounded-3xl bg-[#e1ecf4] text-primary ">
+                      Course <ChevronDown />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      {catagories.map((category, index) => (
+                        <DropdownMenuItem key={index}>
+                          {category}
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                  <button className="bg-primary h-11 w-11 flex items-center justify-center rounded-full">
+                    <Search color="#ffd" />
+                  </button>
+                </div>
               </div>
             </Reveal>
-            <div>
-              <Reveal>
-                <p className="mt-8">
-                  Trusted by over 15K Users <br /> worldwide since 2022
-                </p>
-              </Reveal>
-              <Reveal>
-                <div className="flex items-center gap-5 mt-4">
-                  {" "}
-                  <h2 className="font-bold text-2xl">1000+</h2>
-                  <div className="flex items-center gap-1 font-bold text-2xl">
-                    4.0
-                    <div className="flex">
-                      <Star size={20} color="#ffc60b" fill="#ffc60b" />
-                      <Star size={20} color="#ffc60b" fill="#ffc60b" />
-                      <Star size={20} color="#ffc60b" fill="#ffc60b" />
-                      <Star size={20} color="#ffc60b" fill="#ffc60b" />
-                      <Star size={20} color="#ffc60b" />
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
           </div>
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 mx-auto">
             <img
               src="/images/banner5.png"
               className="animate__animated animate__zoomIn"
@@ -101,7 +86,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#e6f8ff] py-2">
+      <div className=" py-2">
         <ParallaxText baseVelocity={-1}>
           Wordpress✨Digital Marketing✨Grapics✨UX/UI Design✨Lead & Data Entry
         </ParallaxText>
