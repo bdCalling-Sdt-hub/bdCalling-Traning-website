@@ -1,18 +1,10 @@
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import animationData from "../../../public/images/plane.json";
 
 const LottiePlane = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
     <div>
-      <Lottie options={defaultOptions} />
+      <Lottie loop play animationData={animationData} />
     </div>
   );
 };

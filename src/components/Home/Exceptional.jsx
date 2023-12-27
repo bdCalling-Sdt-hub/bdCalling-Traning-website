@@ -1,5 +1,6 @@
 import { ArrowUpRight, Check, Trophy } from "lucide-react";
 import Link from "next/link";
+import LottiePlane from "../Common/lottie";
 import { Button } from "../ui/button";
 
 const Exceptional = () => {
@@ -10,7 +11,7 @@ const Exceptional = () => {
     "Lifetime access",
   ];
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 my-24 items-center justify-center container">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 my-36 items-center justify-center container">
       <div className="relative">
         <img src="/images/exceptional2.png" className="ml-auto" alt="image" />
         <div className="absolute bottom-0 left-12">
@@ -25,7 +26,9 @@ const Exceptional = () => {
             <p>Awesome Awards</p>
           </div>
         </div>
-        <div className="absolute bottom-0">{/* <LottiePlane /> */}</div>
+        <div className="absolute bottom-28">
+          <LottiePlane />
+        </div>
       </div>
       <div className="space-y-5">
         <h1 className="text-4xl font-bold">Why We’re Exceptional</h1>
