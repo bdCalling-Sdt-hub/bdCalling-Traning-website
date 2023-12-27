@@ -24,7 +24,7 @@ const TotalSuccess = () => {
                 {isInView && (
                   <CountUp start={0} end={`${success.total}`} duration={5} />
                 )}
-                +
+                {success.title === "Success Ratio" ? "%" : "+"}
               </h1>
               <p>{success.title}</p>
             </div>

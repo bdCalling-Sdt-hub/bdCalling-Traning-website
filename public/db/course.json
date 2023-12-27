@@ -1,7 +1,7 @@
 {
   "courses": [
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Certified Digital Marketing Course",
       "batchNo": 2,
       "courseStatus": "online",
@@ -18,7 +18,7 @@
       "category": "Digital Marketing"
     },
     {
-      "image": "/images/coursesImage/Graphics-Design.jpg",
+      "image": "https://i.ibb.co/Ytv8CZJ/Graphics-Design.jpg",
       "title": "Graphic Design",
       "batchNo": 3,
       "courseStatus": "offline",
@@ -35,7 +35,7 @@
       "category": "Graphics Design"
     },
     {
-      "image": "/images/coursesImage/Wordpress.jpg",
+      "image": "https://i.ibb.co/dBt5yH8/Wordpress.jpg",
       "title": "Wordpress",
       "batchNo": 4,
       "courseStatus": "online",
@@ -52,7 +52,7 @@
       "category": "Wordpress"
     },
     {
-      "image": "/images/coursesImage/Web-Design.jpg",
+      "image": "https://i.ibb.co/fttznct/Web-Design.jpg",
       "title": "Web Design",
       "batchNo": 5,
       "courseStatus": "offline",
@@ -69,7 +69,7 @@
       "category": "Front-End"
     },
     {
-      "image": "/images/coursesImage/Lead-Generation.jpg",
+      "image": "https://i.ibb.co/WtyqR8p/Lead-Generation.jpg",
       "title": "Lead Generation and Data Entry",
       "batchNo": 6,
       "courseStatus": "online",
@@ -86,7 +86,7 @@
       "category": "Lead & Data Entry"
     },
     {
-      "image": "/images/coursesImage/mobileDevelopment.jpg",
+      "image": "https://i.ibb.co/KLfd6bq/mobile-Development.jpg",
       "title": "Mobile apps development",
       "batchNo": 7,
       "courseStatus": "offline",
@@ -103,7 +103,7 @@
       "category": "APP Development"
     },
     {
-      "image": "/images/coursesImage/UI-UX.jpg",
+      "image": "https://i.ibb.co/bQGmWnP/UI-UX.jpg",
       "title": "Advanced UI/Ux Design",
       "batchNo": 8,
       "courseStatus": "online",
@@ -120,7 +120,7 @@
       "category": "UX/UI Design"
     },
     {
-      "image": "/images/coursesImage/Front-End.jpg",
+      "image": "https://i.ibb.co/JvYWpZd/Front-End.jpg",
       "title": "Fronted Development",
       "batchNo": 9,
       "courseStatus": "offline",
@@ -137,7 +137,7 @@
       "category": "Front-End"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Visual Design Fundamentals",
       "batchNo": 10,
       "courseStatus": "online",
@@ -154,7 +154,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Design Thinking Workshop",
       "batchNo": 11,
       "courseStatus": "offline",
@@ -171,7 +171,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Animation in User Interface",
       "batchNo": 12,
       "courseStatus": "online",
@@ -188,7 +188,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "UX Research and Testing",
       "batchNo": 13,
       "courseStatus": "offline",
@@ -205,7 +205,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Designing for Accessibility",
       "batchNo": 14,
       "courseStatus": "online",
@@ -222,7 +222,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Creative UI/UX Portfolio Building",
       "batchNo": 15,
       "courseStatus": "offline",
@@ -239,7 +239,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "UI/UX Trends and Innovations",
       "batchNo": 16,
       "courseStatus": "online",
@@ -256,7 +256,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Usability Principles in Design",
       "batchNo": 17,
       "courseStatus": "offline",
@@ -273,7 +273,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Collaborative Design Workflows",
       "batchNo": 18,
       "courseStatus": "online",
@@ -290,7 +290,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "UI/UX for Mobile Games",
       "batchNo": 19,
       "courseStatus": "offline",
@@ -307,7 +307,7 @@
       "category": "ux/ui design"
     },
     {
-      "image": "/images/coursesImage/DigitalMarketing.jpg",
+      "image": "https://i.ibb.co/3skYzyn/Digital-Marketing.jpg",
       "title": "Social Media App Design",
       "batchNo": 20,
       "courseStatus": "online",
