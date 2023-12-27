@@ -36,7 +36,7 @@ const StudentSuccess = () => {
     },
   ];
   return (
-    <div className="container my-14">
+    <div className="container my-24">
       <HeadingText title={"Success story"} />
       <Dialog>
         <Swiper
@@ -83,7 +83,7 @@ const StudentSuccess = () => {
               src={videoLink}
               title="YouTube video player"
               allow="autoplay;"
-              className="rounded-md w-full h-[450px]"
+              className="rounded-md w-full h-full"
             ></iframe>
           </AspectRatio>
         </DialogContent>

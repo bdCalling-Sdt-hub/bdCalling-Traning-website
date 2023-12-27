@@ -14,9 +14,9 @@ const CoursesPage = () => {
   const [courseLoad, setCourseLoad] = useState(6);
   const coursesFilter = [
     "All Course",
-    "Online Course",
-    "Offline Course",
-    "Video Course",
+    "Online Courses",
+    "Offline Courses",
+    "Recorded Courses",
   ];
   const catagories = [
     "Wordpress",
@@ -34,7 +34,7 @@ const CoursesPage = () => {
       <MetaTag title="Courses" />
       <div className="text-center my-10">
         <h1 className="text-5xl font-bold mb-2">Course</h1>
-        <p>
+        <p className="w-3/4 mx-auto">
           Our comprehensive course catalog encompasses a wide range of subjects,
           from in-demand technical skills to creative pursuits and personal
           development topics. Delve into the intricacies of coding, master the

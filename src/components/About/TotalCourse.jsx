@@ -6,10 +6,10 @@ const TotalCourse = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const successList = [
-    { title: "Courses", total: 25 },
-    { title: "Certified Teachers", total: 25 },
-    { title: "Students Enroll", total: 2160 },
-    { title: "Success Ratio", total: 90 },
+    { title: "Courses", total: 10 },
+    { title: "Certified Teachers", total: 20 },
+    { title: "Students Enroll", total: 1200 },
+    { title: "Success Ratio", total: 80 },
   ];
 
   return (

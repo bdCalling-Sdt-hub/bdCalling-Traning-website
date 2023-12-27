@@ -8,13 +8,13 @@ import { Button } from "../ui/button";
 const Courses = () => {
   const [title, setTitle] = useState("all");
   const categoryLists = [
-    { title: "Wordpress" },
+    { title: "WordPress" },
     { title: "Digital Marketing" },
     { title: "Graphics Design" },
     { title: "UX/UI Design" },
     { title: "APP Development" },
     { title: "Front-End" },
-    { title: "Lead & Data Entry" },
+    { title: "Lead Generation & Data Entry" },
   ];
 
   const { courses } = coursesList;
@@ -30,7 +30,6 @@ const Courses = () => {
     <div className="container">
       <div className="flex justify-between mt-24">
         <div>
-          <h3>Top Course</h3>
           <h2 className="text-2xl font-bold">Most popular courses</h2>
         </div>
         <Link href="/courses">

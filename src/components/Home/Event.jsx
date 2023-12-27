@@ -4,14 +4,14 @@ import { Button } from "../ui/button";
 const Event = () => {
   const events = [
     {
-      image: "/images/event2.png",
-      title: "UI/UX Design",
+      image: "https://i.ibb.co/fttznct/Web-Design.jpg",
+      title: "Web Design",
       date: "30 March, 2023",
       time: "4:00 pm - 6:00 pm",
     },
     {
-      image: "/images/event3.png",
-      title: "Digital Marketing",
+      image: "https://i.ibb.co/dBt5yH8/Wordpress.jpg",
+      title: "Think of Wordpress",
       date: "30 March, 2023",
       time: "4:00 pm - 6:00 pm",
     },
@@ -62,7 +62,7 @@ const Event = () => {
           {events.map((event, index) => (
             <div
               key={index}
-              className="rounded-lg relative px-2 pt-2"
+              className="rounded-lg relative"
               style={{
                 boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
               }}
@@ -72,7 +72,7 @@ const Event = () => {
                 alt="course image"
                 className="rounded-md h-[300px] w-full"
               />
-              <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e97fd]">
+              <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fdcc]">
                 <div className="flex gap-5 items-center">
                   <p size={18} className="flex items-center gap-1">
                     <Calendar size={20} />

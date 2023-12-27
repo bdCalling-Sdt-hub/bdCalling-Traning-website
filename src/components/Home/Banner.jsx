@@ -25,10 +25,10 @@ const Banner = () => {
     <>
       <div className={styles.homeBanner}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-center container">
-          <div className="space-y-4 order-2 lg:order-1">
+          <div className=" order-2 lg:order-1">
             <Reveal>
-              <h2 className="text-3xl px-3 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-2/4 py-1 font-medium relative">
-                Grow your career
+              <h2 className="text-3xl px-3 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-96 py-1 font-medium relative">
+                Let&#39;s Grow your career
                 <span
                   className="absolute text-[18px] bottom-0 right-0 text-black"
                   style={{ textShadow: "2px 2px 5px #1696fd" }}
@@ -38,12 +38,12 @@ const Banner = () => {
               </h2>
             </Reveal>
             <Reveal>
-              <h1 className="text-5xl font-bold">
+              <h1 className="text-6xl font-bold mt-5">
                 <span className="text-[#1696fd]">bdCalling Academy</span>
               </h1>
             </Reveal>
             <Reveal>
-              <p className="text-[18px]">
+              <p className="text-[18px] my-6">
                 An Innovative learning platform! Get ready to engage on a
                 journey of knowledge with our innovative learning platform.
                 Explore a wide range of courses, interactive lessons, and expert
@@ -88,12 +88,12 @@ const Banner = () => {
       </div>
       <div className=" py-2">
         <ParallaxText baseVelocity={-1}>
-          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead &
-          Data Entry
+          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
+          Generation & Data Entry
         </ParallaxText>
         <ParallaxText baseVelocity={1}>
-          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead &
-          Data Entry
+          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
+          Generation & Data Entry
         </ParallaxText>
       </div>
     </>

@@ -52,26 +52,41 @@ const Banner = () => {
         {title === "Gallery"
           ? filterVideo.map((item, index) => (
               <motion.div
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, transition: 0.8 }}
                 whileTap={{ scale: 0.5 }}
                 key={index}
-                className=" rounded-md "
+                className="rounded-md"
               >
-                <AspectRatio ratio={15 / 9} key={index}>
-                  <img
-                    src={item.video}
-                    alt=""
-                    className="w-full h-[400px] object-cover rounded-md animate__animated animate__jackInTheBox"
-                  />
+                <AspectRatio
+                  ratio={16 / 9}
+                  key={index}
+                  style={{ position: "relative" }}
+                >
+                  <div style={{ width: "100%", paddingBottom: "62.5%" }}>
+                    <img
+                      src={item.video}
+                      alt=""
+                      className="w-full h-full absolute top-0 left-0 object-cover rounded-md animate__animated animate__jackInTheBox"
+                    />
+                  </div>
                 </AspectRatio>
               </motion.div>
             ))
           : filterVideo.map((item, index) => (
-              <AspectRatio ratio={15 / 9} key={index}>
-                <iframe
-                  src={item?.video}
-                  className="rounded-md w-full h-[200px] lg:h-[400px]"
-                ></iframe>
+              <AspectRatio
+                ratio={16 / 9}
+                key={index}
+                style={{ position: "relative" }}
+              >
+                <div style={{ width: "100%", paddingBottom: "62.5%" }}>
+                  <iframe
+                    src={item?.video}
+                    title={`Video ${index}`}
+                    className="rounded-md w-full h-full absolute top-0 left-0"
+                    style={{ objectFit: "cover" }}
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </AspectRatio>
             ))}
       </div>
