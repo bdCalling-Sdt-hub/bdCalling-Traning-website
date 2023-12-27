@@ -12,10 +12,7 @@
       "category": "Student Journey",
       "video": "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp;start=15&controls=0"
     },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery1.png"
-    },
+
     {
       "category": "Success stories",
       "video": "https://www.youtube.com/embed/1e21QUZUdoU?si=93MuRckPdq9xbd8t&amp;start=3&controls=0"
@@ -28,10 +25,7 @@
       "category": "Student Journey",
       "video": "https://www.youtube.com/embed/oCNbh3tgb4I?si=0jdwXrxWDVYWujvL&amp;start=4&controls=0"
     },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery2.png"
-    },
+
     {
       "category": "Success stories",
       "video": "https://www.youtube.com/embed/2eyKCwAgIS4?si=ZoVBSc-Q4B740XQH&amp;start=58"
@@ -44,10 +38,7 @@
       "category": "Student Journey",
       "video": "https://www.youtube.com/embed/oCNbh3tgb4I?si=0jdwXrxWDVYWujvL&amp;start=4"
     },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery3.png"
-    },
+
     {
       "category": "Events",
       "video": "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp;start=36&controls=0"
@@ -56,10 +47,7 @@
       "category": "Student Journey",
       "video": "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp;start=15&controls=0"
     },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery4.png"
-    },
+
     {
       "category": "Success stories",
       "video": "https://www.youtube.com/embed/8GFM9jm5ci4?si=Czb3vZ7GUugopfRh&controls=0"
@@ -72,10 +60,7 @@
       "category": "Student Journey",
       "video": "https://www.youtube.com/embed/oCNbh3tgb4I?si=0jdwXrxWDVYWujvL&amp;start=4&controls=0"
     },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery5.png"
-    },
+
     {
       "category": "Success stories",
       "video": "https://www.youtube.com/embed/NBQfBaABnvw?si=AIiKRn0MhaFGuUgJ&amp;start=6&controls=0"
@@ -87,18 +72,6 @@
     {
       "category": "Student Journey",
       "video": "https://www.youtube.com/embed/oCNbh3tgb4I?si=0jdwXrxWDVYWujvL&amp;start=4&controls=0"
-    },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery6.png"
-    },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery7.png"
-    },
-    {
-      "category": "Gallery",
-      "video": "/images/gallery8.png"
     }
   ]
 }
