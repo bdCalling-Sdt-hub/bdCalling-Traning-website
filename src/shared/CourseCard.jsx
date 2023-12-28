@@ -18,7 +18,7 @@ const CourseCard = ({ course }) => {
   } = course;
 
   return (
-    <Link href={`/courses/${id}`}>
+    <Link href={`/courses/${courseStatus}/${id}`}>
       <div
         className="rounded-lg hover:-translate-y-5 duration-300 transition-all group bg-gradient-to-tr from-[#fdfdfd] to-[#fffcfc] "
         style={{

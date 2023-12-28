@@ -1,14 +1,14 @@
 import { useState } from "react";
 import descriptions from "../../../public/db/successStories.json";
-import videos from "../../../public/db/video.json";
 import TopHeading from "../Common/TopHeading";
 import { Button } from "../ui/button";
 import Events from "./components/Events";
 import Gallery from "./components/Gallery";
+import StudentJourney from "./components/StudentJourney";
+import SuccessStories from "./components/SuccessStories";
 
 const Banner = () => {
   const [title, setTitle] = useState("Success stories");
-  const { videoList } = videos;
   const { successStories, studentJourney, gallery, events } = descriptions;
 
   const categoryLists = [
@@ -17,8 +17,6 @@ const Banner = () => {
     { title: "Student Journey" },
     { title: "Gallery" },
   ];
-
-  const filterVideo = videoList.filter((item) => item.category === title);
 
   const description =
     title === "Success stories"
@@ -49,8 +47,10 @@ const Banner = () => {
         ))}
       </div>
       <div>
-        {title === "Gallery" && <Gallery />}
+        {title === "Success stories" && <SuccessStories />}
         {title === "Events" && <Events />}
+        {title === "Student Journey" && <StudentJourney />}
+        {title === "Gallery" && <Gallery />}
       </div>
       <Button className="mt-5 mx-auto block">See More</Button>
     </div>

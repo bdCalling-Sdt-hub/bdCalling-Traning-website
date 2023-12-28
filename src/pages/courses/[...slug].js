@@ -11,10 +11,11 @@ import courseList from "../../../public/db/course.json";
 const CourseDetail = () => {
   const { courses } = courseList;
   const router = useRouter();
-  const id = router.query.id;
-  const filterCourse = courses.filter((course) => course.id.toString() === id);
+  const params = router.query.slug;
 
-  const [course] = filterCourse;
+  const id = params[1];
+
+  const course = courses.find((course) => course.id.toString() === id);
 
   const features = [
     {
@@ -49,7 +50,7 @@ const CourseDetail = () => {
       <MetaTag title="Courses Details" />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
         <div className="col-span-2">
-          <CourseDetailDescription />
+          <CourseDetailDescription data={course} />
         </div>
         <div className="w-full">
           <div className="shadow rounded-md p-4">
@@ -69,9 +70,7 @@ const CourseDetail = () => {
             ))}
             <div className="bg-primary text-center rounded-md py-6 mt-14  space-y-2">
               <h2 className="text-lg text-gray-200">Course Fee Offline</h2>
-              <h2 className="text-2xl font-bold text-white">
-                BDT {course?.price}
-              </h2>
+              <h2 className="text-2xl font-bold text-white">BDT 15000</h2>
               <Link href="/payment">
                 <Button className="  bg-white text-primary">Enroll Now</Button>
               </Link>

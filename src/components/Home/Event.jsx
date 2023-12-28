@@ -75,7 +75,7 @@ const Event = () => {
               <img
                 src={event?.image}
                 alt="course image"
-                className="rounded-md h-[320px] w-full"
+                className="rounded-md h-[320px] w-full p-4"
               />
               <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fde1]">
                 <div className="flex gap-5 items-center">

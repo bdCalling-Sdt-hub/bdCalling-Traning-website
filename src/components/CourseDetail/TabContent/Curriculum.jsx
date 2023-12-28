@@ -1,26 +1,11 @@
-import AccordionCard from "@/components/Common/AccordionCard";
-import FlexItem from "@/components/Common/FlexItem";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Button } from "@/components/ui/button";
-import { Check, FileText, Play } from "lucide-react";
-import { useState } from "react";
+import { Check } from "lucide-react";
 import courseVideoList from "../../../../public/db/courseVideoContent.json";
 import curriculum from "../../../../public/db/curriculum.json";
+import VideoContent from "../VideoContent";
 
-const Curriculum = () => {
+const Curriculum = ({ data }) => {
   const { courseFeatures, jobPositions, solutions, certificate } = curriculum;
   const { modules } = courseVideoList;
-  const [video, setVideo] = useState();
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentVideoIndex(currentVideoIndex + 1);
-  };
-
-  const handlePrevious = () => {
-    setCurrentVideoIndex(currentVideoIndex - 1);
-  };
-
   return (
     <div className="mt-5">
       <div>
@@ -28,7 +13,7 @@ const Curriculum = () => {
           What you will learn by doing the course
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
-          {courseFeatures.map((item, index) => (
+          {data?.courseOutline.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
               <p>
                 <Check size={20} color="#2492EB" />
@@ -38,71 +23,15 @@ const Curriculum = () => {
           ))}
         </div>
       </div>
-      <div>
-        <AspectRatio ratio={16 / 9} className="bg-muted">
-          <iframe
-            src={`https://www.youtube.com/embed/${video?.video}`}
-            title="YouTube video player"
-            frameborder="0"
-            className="rounded w-full h-[200px] lg:h-[495px]"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-            allowfullscreen
-          ></iframe>
-        </AspectRatio>
-
-        <div className="my-3">
-          <h2 className="text-xl font-medium">
-            {video?.no + 1}- {video?.name}
-          </h2>
-        </div>
-        <div className="flex gap-2 items-center my-3 justify-end">
-          <Button className="bg-primary px-5" onClick={handlePrevious}>
-            Previous
-          </Button>
-          <Button className="bg-primary px-5" onClick={handleNext}>
-            Next
-          </Button>
-        </div>
-        <h1 className="text-xl  font-bold">Course Content</h1>
-        <div className="my-8">
-          {modules.map((module, index) => (
-            <div key={index} className="mb-4">
-              <AccordionCard title={module.name}>
-                {module.note && (
-                  <Button variant="link" className="block">
-                    <FlexItem gap="gap-2">
-                      <FileText size={20} />
-                      <p className="text-[#2492EB]">{module.note}</p>
-                    </FlexItem>
-                  </Button>
-                )}
-                {module?.modules?.map((video, index) => {
-                  const value = { ...video, no: index };
-                  return (
-                    <Button
-                      variant="link"
-                      className="block"
-                      key={index}
-                      onClick={() => setVideo(value)}
-                    >
-                      <FlexItem gap="gap-2">
-                        <Play size={20} />
-                        <p className="text-[#2492EB]">{video.name}</p>
-                      </FlexItem>
-                    </Button>
-                  );
-                })}
-              </AccordionCard>
-            </div>
-          ))}
-        </div>
-      </div>
+      <div>{data?.courseStatus === "video" && <VideoContent />}</div>
       <div className="bg-gray-100 p-5 rounded-md my-14">
         <h1 className="text-xl font-bold mb-3">Software You&#39;ll Learn</h1>
-        <div className="flex items-center gap-2">
-          <img src="/images/figma.png" alt="" />
-          <p className="font-medium">Figma</p>
-        </div>
+        {data?.tools.map((item, index) => (
+          <div className="flex items-center gap-2" key={index}>
+            <img src="/images/figma.png" alt="" />
+            <p className="">{item}</p>
+          </div>
+        ))}
       </div>
       <div>
         <h1 className="text-xl  font-bold">Open Job Positions</h1>

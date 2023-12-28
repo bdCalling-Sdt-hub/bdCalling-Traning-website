@@ -1,10 +1,15 @@
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
-import { AlignRight, X } from "lucide-react";
+import { AlignRight, ChevronDown, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const DynamicAuthHomepage = dynamic(() => import("@/components/Auth/index"), {
@@ -24,7 +29,21 @@ const Navbar = () => {
     },
     {
       title: "Courses",
-      path: "/courses",
+      path: "/courses/offline",
+      children: [
+        {
+          title: "Offline",
+          path: "/offline",
+        },
+        {
+          title: "Online",
+          path: "/online",
+        },
+        {
+          title: "Video",
+          path: "/video",
+        },
+      ],
     },
     {
       title: "Success Stories",
@@ -59,16 +78,31 @@ const Navbar = () => {
         >
           {items.map((item, index) => (
             <li key={index}>
-              <motion.div whileTap={{ scale: 0.5 }}>
-                <Link
-                  className={`${
-                    item.path === path ? "text-primary font-bold" : "text-black"
-                  } `}
-                  href={item.path}
-                >
-                  {item.title}
-                </Link>
-              </motion.div>
+              <Link
+                className={`${
+                  item.path === path ? "text-primary font-bold" : "text-black"
+                } `}
+                href={item.path}
+              >
+                {item.title !== "Courses" ? (
+                  item.title
+                ) : (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="flex items-center">
+                      Courses <ChevronDown size={20} />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      {item.children.map((item, index) => (
+                        <DropdownMenuItem key={index}>
+                          <Link href={`/courses/${item.path}`}>
+                            {item.title}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )}
+              </Link>
             </li>
           ))}
 
