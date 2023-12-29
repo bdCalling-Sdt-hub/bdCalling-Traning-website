@@ -11,8 +11,6 @@ const CourseDetailDescription = ({ data: course }) => {
   const buttons = ["Overview", "Curriculum", "Reviews", "Instructor"];
   const router = useRouter();
 
-  console.log(course);
-
   return (
     <div>
       <img src="/images/courseDetail.png" alt="" className="w-full mb-8" />
@@ -36,7 +34,7 @@ const CourseDetailDescription = ({ data: course }) => {
       {title === "Overview" && <Overview data={course} />}
       {title === "Curriculum" && <Curriculum data={course} />}
       {title === "Reviews" && <Reviews />}
-      {title === "Instructor" && <Instructor />}
+      {title === "Instructor" && <Instructor data={course} />}
     </div>
   );
 };

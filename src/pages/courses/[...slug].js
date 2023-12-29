@@ -68,9 +68,13 @@ const CourseDetail = () => {
                 </FlexItem>
               </div>
             ))}
-            <div className="bg-primary text-center rounded-md py-6 mt-14  space-y-2">
-              <h2 className="text-lg text-gray-200">Course Fee Offline</h2>
-              <h2 className="text-2xl font-bold text-white">BDT 15000</h2>
+            <div className="bg-primary text-center rounded-md py-6 mt-14">
+              <h2 className="text-lg text-gray-200">
+                Course Fee {course?.courseStatus}
+              </h2>
+              <h2 className="text-2xl font-bold text-white my-2">
+                BDT{course?.price}
+              </h2>
               <Link href="/payment">
                 <Button className="  bg-white text-primary">Enroll Now</Button>
               </Link>

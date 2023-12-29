@@ -6,12 +6,20 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import CourseCard from "@/shared/CourseCard";
 import MetaTag from "@/shared/MetaTag";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import coursesList from "../../../public/db/course.json";
 
 const CoursesPage = () => {
   const { courses } = coursesList;
   const [courseLoad, setCourseLoad] = useState(6);
+  const router = useRouter();
+  const status = router.query.type;
+
+  let filterCourses = courses.filter(
+    (course) => course.courseStatus === status
+  );
+
   const coursesFilter = [
     "All Course",
     "Online Courses",
@@ -58,16 +66,24 @@ const CoursesPage = () => {
         </div>
         <div className="col-span-2">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {courses.slice(0, courseLoad).map((course, index) => (
-              <CourseCard key={index} course={course} />
-            ))}
+            {filterCourses.length > 0 &&
+              filterCourses
+                .slice(0, courseLoad)
+                .map((course, index) => (
+                  <CourseCard key={index} course={course} />
+                ))}
           </div>
-          <Button
-            className="mt-5 mx-auto block"
-            onClick={() => setCourseLoad(courseLoad + 6)}
-          >
-            See More
-          </Button>
+          {filterCourses.length === 0 && (
+            <p className="text-center text-xl">{status} Courses not found</p>
+          )}
+          {filterCourses.length > 0 && (
+            <Button
+              className="mt-8 mx-auto block"
+              onClick={() => setCourseLoad(courseLoad + 6)}
+            >
+              See More
+            </Button>
+          )}
         </div>
       </div>
       <JoinNow />

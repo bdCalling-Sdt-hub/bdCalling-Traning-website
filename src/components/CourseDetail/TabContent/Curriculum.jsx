@@ -1,11 +1,9 @@
 import { Check } from "lucide-react";
-import courseVideoList from "../../../../public/db/courseVideoContent.json";
 import curriculum from "../../../../public/db/curriculum.json";
 import VideoContent from "../VideoContent";
 
 const Curriculum = ({ data }) => {
-  const { courseFeatures, jobPositions, solutions, certificate } = curriculum;
-  const { modules } = courseVideoList;
+  const { solutions, certificate } = curriculum;
   return (
     <div className="mt-5">
       <div>
@@ -28,15 +26,17 @@ const Curriculum = ({ data }) => {
         <h1 className="text-xl font-bold mb-3">Software You&#39;ll Learn</h1>
         {data?.tools.map((item, index) => (
           <div className="flex items-center gap-2" key={index}>
-            <img src="/images/figma.png" alt="" />
-            <p className="">{item}</p>
+            <p>
+              <Check size={20} color="#2492EB" />
+            </p>
+            <p>{item}</p>
           </div>
         ))}
       </div>
       <div>
         <h1 className="text-xl  font-bold">Open Job Positions</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
-          {jobPositions.map((item, index) => (
+          {data?.job.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
               <p>
                 <div className="w-3 h-3 bg-primary rounded-full"></div>

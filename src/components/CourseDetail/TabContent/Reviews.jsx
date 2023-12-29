@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 const Reviews = () => {
   return (
     <div className="mt-5">
@@ -9,20 +8,11 @@ const Reviews = () => {
         >
           <img
             src="/images/feedbackProfile.png"
-            className="w-36 h-36 rounded-full"
+            className="w-24 h-24 rounded-full"
             alt=""
           />
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <h1 className="text-xl font-bold">David Shon</h1>
-              <div className="flex">
-                <Star size={20} color="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
-              </div>
-            </div>
+            <h1 className="text-xl font-bold">David Shon</h1>
             <p>
               bdCalling Academy&#39;s courses are very practical and focused on
               real-world skills.&#39; - Student x I would recommend Learn with
