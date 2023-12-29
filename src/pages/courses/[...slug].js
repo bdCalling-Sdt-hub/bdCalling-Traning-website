@@ -13,9 +13,13 @@ const CourseDetail = () => {
   const router = useRouter();
   const params = router.query.slug;
 
-  const id = params[1];
+  let id;
+  let course;
 
-  const course = courses.find((course) => course.id.toString() === id);
+  if (Array.isArray(params) && params.length >= 2) {
+    id = params[1];
+    course = courses.find((course) => course.id.toString() === id);
+  }
 
   const features = [
     {
