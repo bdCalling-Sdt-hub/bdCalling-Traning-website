@@ -8,11 +8,7 @@ import "swiper/css/navigation";
 
 const SuccessStories = () => {
   const [videoLink, setVideoLink] = useState("");
-  const swiperContainerStyle = {
-    width: "100%",
-    height: "400px",
-    marginTop: "40px",
-  };
+
   const videoLinkLists = [
     {
       video:

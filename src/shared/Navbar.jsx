@@ -106,7 +106,7 @@ const Navbar = () => {
             </li>
           ))}
 
-          <DynamicAuthHomepage />
+          {/* <DynamicAuthHomepage /> */}
         </ul>
       </nav>
     </div>

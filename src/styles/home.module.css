@@ -2,11 +2,10 @@
   background: linear-gradient(to left, #eafcff, #f3f3f3),
     url("/images/banner_bg.png");
   width: 100%;
-  height: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 50px 0;
+
   position: relative;
 }
 

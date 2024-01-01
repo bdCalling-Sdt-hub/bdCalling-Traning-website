@@ -7,9 +7,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import styles from "@/styles/home.module.css";
-import { ChevronDown, Search } from "lucide-react";
+import { ChevronDown, Play, Search } from "lucide-react";
+import { useState } from "react";
+import { AspectRatio } from "../ui/aspect-ratio";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const Banner = () => {
+  const [videoLink, setVideoLink] = useState("");
   const catagories = [
     "Wordpress",
     "Digital Marketing",
@@ -21,13 +25,20 @@ const Banner = () => {
     "Visual Design Fundamentals",
     "Prototyping and Wireframing",
   ];
+  const videoLinkLists = [
+    {
+      video:
+        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
+      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+    },
+  ];
   return (
     <>
       <div className={styles.homeBanner}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-center container">
-          <div className=" order-2 lg:order-1">
+        <div className="lg:flex items-center container py-16">
+          <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
-              <h2 className="text-3xl px-3 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-96 py-1 font-medium relative">
+              <h2 className="text-2xl px-3 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-80 py-1 font-medium relative">
                 Let&#39;s Grow your career
                 <span
                   className="absolute text-[18px] bottom-0 right-0 text-black"
@@ -43,7 +54,7 @@ const Banner = () => {
               </h1>
             </Reveal>
             <Reveal>
-              <p className="text-[18px] my-6">
+              <p className="text-[18px] my-6 lg:w-3/4">
                 An Innovative learning platform! Get ready to engage on a
                 journey of knowledge with our innovative learning platform.
                 Explore a wide range of courses, interactive lessons, and expert
@@ -77,12 +88,43 @@ const Banner = () => {
               </div>
             </Reveal>
           </div>
-          <div className="order-1 lg:order-2 mx-auto">
-            <img
-              src="/images/banner5.png"
-              className="animate__animated animate__zoomIn"
-              alt="banner image"
-            />
+          <div className="order-1 lg:order-2 w-full lg:w-[800px] mt-4 lg:mt-0">
+            <Dialog>
+              {videoLinkLists.map((item, index) => (
+                <div key={index}>
+                  <div className={`relative`}>
+                    <img
+                      src={item.thumb}
+                      alt=""
+                      className="w-full  lg:h-[420px] rounded-md"
+                    />
+
+                    <div
+                      onClick={() => setVideoLink(item.video)}
+                      className="absolute top-0 left-0 h-full w-full  flex justify-center items-center cursor-pointer"
+                    >
+                      <div className={`${styles.playBtn}`}>
+                        <DialogTrigger>
+                          <Play />
+                        </DialogTrigger>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              <DialogContent>
+                <AspectRatio ratio={16 / 9} className="bg-muted">
+                  <iframe
+                    src={videoLink}
+                    title="YouTube video player"
+                    allow="autoplay;"
+                    className="rounded-md w-full h-full"
+                    allowFullScreen
+                  ></iframe>
+                </AspectRatio>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
