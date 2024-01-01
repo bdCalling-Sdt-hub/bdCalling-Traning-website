@@ -1,0 +1,10 @@
+.courseCard {
+  background: linear-gradient(70deg, #083a5f, #131313);
+  color: #ebe9e9;
+  transition: all 0.4s;
+}
+
+.courseCard:hover {
+  background: #ffffff;
+  color: #131313;
+}

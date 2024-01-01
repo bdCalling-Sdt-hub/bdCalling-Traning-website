@@ -1,3 +1,4 @@
+import styles from "@/styles/card.module.css";
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +21,7 @@ const CourseCard = ({ course }) => {
   return (
     <Link href={`/courses/${courseStatus}/${id}`}>
       <div
-        className="rounded-lg hover:-translate-y-5 duration-300 transition-all group bg-gradient-to-tr from-[#fdfdfd] to-[#fffcfc] "
+        className={`rounded-lg hover:-translate-y-5 duration-300 transition-all group ${styles.courseCard}`}
         style={{
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         }}
@@ -56,7 +57,7 @@ const CourseCard = ({ course }) => {
           <h2 className="my-3 text-lg">{title}</h2>
           <div className="flex items-center justify-between my-4">
             <div className="flex gap-4 items-center">
-              <h2 className="text-lg font-bold text-gray-700">{price}BDT</h2>
+              <h2 className="text-lg font-bold">{price}BDT</h2>
               <p className="line-through">BDT3,000</p>
             </div>
             <div className="flex items-center gap-1">
@@ -70,7 +71,7 @@ const CourseCard = ({ course }) => {
               {rating}(20)
             </div>
           </div>
-          <Button className="w-full border  text-white py-6 text-md group-hover:bg-primary duration-300">
+          <Button className="w-full shadow bg-gradient-to-b from-[#083c5f] to-[#131313]  text-white py-6 text-md group-hover:bg-primary duration-300">
             Enroll Now
           </Button>
         </div>
