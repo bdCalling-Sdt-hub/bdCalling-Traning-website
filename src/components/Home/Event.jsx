@@ -43,7 +43,7 @@ const Event = () => {
                 </p>
                 <p size={18} className="flex items-center gap-1">
                   <Clock8 size={22} color="#1796fd" />
-                  <span className="font-bold text-gray-600">05:00</span>
+                  <span className="font-bold text-gray-600">05:00 pm</span>
                 </p>
               </div>
               <p className="text-green-500 text-lg">Online</p>
@@ -57,7 +57,7 @@ const Event = () => {
               December 30, 7 pm up to 100% scholarship facility
             </p>
             <Link href="/free-seminar">
-              <Button className="bg-primary mt-5">Join Event</Button>
+              <Button className="bg-primary mt-5">Join Seminar</Button>
             </Link>
           </div>
         </div>

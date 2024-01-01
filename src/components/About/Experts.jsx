@@ -16,7 +16,7 @@ const Experts = () => {
   };
   return (
     <div className="my-8 bg-blue-50 p-2 lg:p-5 rounded-md">
-      <HeadingText sTitle="Our Mentors" title="Meet our Experts mentors" />
+      <HeadingText sTitle="Our Mentors" title="Meet Our Experts Mentors" />
       <p className="text-center">
         Develop skills with the best instructors in the country, click the
         button below.

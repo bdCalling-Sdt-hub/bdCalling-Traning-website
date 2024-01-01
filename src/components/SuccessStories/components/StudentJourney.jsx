@@ -32,7 +32,6 @@ const StudentJourney = () => {
     },
   ];
   const animationType = [
-    "animate__backInDown",
     "animate__backInLeft",
     "animate__backInRight",
     "animate__backInUp",

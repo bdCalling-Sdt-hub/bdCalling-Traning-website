@@ -9,8 +9,6 @@ import {
 import styles from "@/styles/home.module.css";
 import { ChevronDown, Play, Search } from "lucide-react";
 import { useState } from "react";
-import { AspectRatio } from "../ui/aspect-ratio";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const Banner = () => {
   const [videoLink, setVideoLink] = useState("");
@@ -28,8 +26,8 @@ const Banner = () => {
   const videoLinkLists = [
     {
       video:
-        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+        "https://www.youtube.com/embed/ffnmrtUCqC4?si=FlyPr62vubLgRA90&autoplay=1",
+      thumb: "https://i.postimg.cc/3WQKT0zD/Skill-Development-Thumbnail-02.jpg",
     },
   ];
   return (
@@ -39,7 +37,7 @@ const Banner = () => {
           <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
               <h2 className="text-2xl px-3 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-80 py-1 font-medium relative">
-                Let&#39;s Grow your career
+                Let&#39;s Grow Your Career
                 <span
                   className="absolute text-[18px] bottom-0 right-0 text-black"
                   style={{ textShadow: "2px 2px 5px #1696fd" }}
@@ -54,7 +52,7 @@ const Banner = () => {
               </h1>
             </Reveal>
             <Reveal>
-              <p className="text-[18px] my-6 lg:w-3/4">
+              <p className="text-[16px] my-6 lg:w-5/6">
                 An Innovative learning platform! Get ready to engage on a
                 journey of knowledge with our innovative learning platform.
                 Explore a wide range of courses, interactive lessons, and expert
@@ -71,7 +69,7 @@ const Banner = () => {
                 <div className="flex items-center gap-1">
                   <DropdownMenu>
                     <DropdownMenuTrigger className="border h-11 flex items-center px-2 lg:px-4 rounded-3xl bg-[#e1ecf4] text-primary ">
-                      Course <ChevronDown />
+                      Courses <ChevronDown />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
                       {catagories.map((category, index) => (
@@ -88,43 +86,39 @@ const Banner = () => {
               </div>
             </Reveal>
           </div>
-          <div className="order-1 lg:order-2 w-full lg:w-[800px] mt-4 lg:mt-0">
-            <Dialog>
-              {videoLinkLists.map((item, index) => (
-                <div key={index}>
-                  <div className={`relative`}>
+          <div className="order-1 lg:order-2 w-full lg:w-[700px] mt-4 lg:mt-0 bg-[#1696fd] p-3 rounded-3xl drop-shadow">
+            {videoLinkLists.map((item, index) => (
+              <div key={index}>
+                <div className={`relative`}>
+                  {!videoLink ? (
                     <img
                       src={item.thumb}
                       alt=""
-                      className="w-full  lg:h-[420px] rounded-md"
+                      className="w-full  lg:h-[300px] rounded-2xl"
                     />
+                  ) : (
+                    <iframe
+                      src={videoLink}
+                      title="YouTube video player"
+                      allow="autoplay;"
+                      className="w-full  lg:h-[300px] rounded-2xl"
+                      allowFullScreen
+                    ></iframe>
+                  )}
 
+                  {!videoLink && (
                     <div
                       onClick={() => setVideoLink(item.video)}
                       className="absolute top-0 left-0 h-full w-full  flex justify-center items-center cursor-pointer"
                     >
                       <div className={`${styles.playBtn}`}>
-                        <DialogTrigger>
-                          <Play />
-                        </DialogTrigger>
+                        <Play />
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
-              ))}
-
-              <DialogContent>
-                <AspectRatio ratio={16 / 9} className="bg-muted">
-                  <iframe
-                    src={videoLink}
-                    title="YouTube video player"
-                    allow="autoplay;"
-                    className="rounded-md w-full h-full"
-                    allowFullScreen
-                  ></iframe>
-                </AspectRatio>
-              </DialogContent>
-            </Dialog>
+              </div>
+            ))}
           </div>
         </div>
       </div>

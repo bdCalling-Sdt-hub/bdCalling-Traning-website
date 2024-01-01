@@ -1,4 +1,5 @@
 import { Button } from "../ui/button";
+import Link from "next/link"
 
 const JoinUs = () => {
   return (
@@ -7,9 +8,11 @@ const JoinUs = () => {
         Start Your Best Online/Offline
         <br /> Course with Us
       </h2>
-      <Button className="px-16 py-6 text-xl bg-white text-primary">
-        Join Us
-      </Button>
+      <Link href="/contact">
+        <Button className="px-16 py-6 text-xl bg-white text-primary">
+          Join Us
+        </Button>
+      </Link>
     </div>
   );
 };

@@ -3,7 +3,7 @@ const About = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
       <div>
         <img
-          src="/images/banner.png"
+          src="https://i.postimg.cc/zXpKhbyk/About-Us-Page.gif"
           className="animate__animated animate__zoomIn"
           alt="banner image"
         />

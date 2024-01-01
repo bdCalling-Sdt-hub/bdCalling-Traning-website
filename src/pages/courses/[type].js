@@ -41,7 +41,7 @@ const CoursesPage = () => {
     <div className="container">
       <MetaTag title="Courses" />
       <div className="text-center my-10">
-        <h1 className="text-5xl font-bold mb-2">Course</h1>
+        <h1 className="text-5xl font-bold mb-2">Courses</h1>
         <p className="w-3/4 mx-auto">
           Our comprehensive course catalog encompasses a wide range of subjects,
           from in-demand technical skills to creative pursuits and personal

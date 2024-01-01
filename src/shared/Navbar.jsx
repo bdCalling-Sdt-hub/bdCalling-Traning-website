@@ -32,15 +32,15 @@ const Navbar = () => {
       path: "/courses/offline",
       children: [
         {
-          title: "Offline",
+          title: "Offline Courses",
           path: "/offline",
         },
         {
-          title: "Online",
+          title: "Online Courses",
           path: "/online",
         },
         {
-          title: "Video",
+          title: "Video Courses",
           path: "/video",
         },
       ],
@@ -60,7 +60,7 @@ const Navbar = () => {
       <nav className="container lg:flex items-center w-full justify-between ">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <img className="w-24 md:w-36" src="/images/logo.png" alt="logo" />
+            <img className="w-24 md:w-40" src="/images/logo.png" alt="logo" />
           </Link>
           <motion.div
             whileTap={{ scale: 1.2, transition: { duration: 0.5 } }}
@@ -81,7 +81,7 @@ const Navbar = () => {
               <Link
                 className={`${
                   item.path === path ? "text-primary font-bold" : "text-black"
-                } `}
+                } text-[17px]`}
                 href={item.path}
               >
                 {item.title !== "Courses" ? (

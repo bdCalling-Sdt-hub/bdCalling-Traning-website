@@ -4,7 +4,6 @@ import { Button } from "../ui/button";
 
 const EventCard = ({ index }) => {
   const animationType = [
-    "animate__backInDown",
     "animate__backInLeft",
     "animate__backInRight",
     "animate__backInUp",
@@ -32,7 +31,7 @@ const EventCard = ({ index }) => {
             </p>
             <p size={18} className="flex items-center gap-1">
               <Clock8 size={22} color="#1796fd" />
-              <span className="font-bold text-gray-600">05:00</span>
+              <span className="font-bold text-gray-600">05:00 pm</span>
             </p>
           </div>
           <p className="text-green-500 text-lg">Online</p>

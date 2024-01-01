@@ -21,7 +21,7 @@ const Testimonial = () => {
 
   return (
     <div className="container">
-      <HeadingText sTitle={"Testimonial"} title={"What our Student say"} />
+      <HeadingText sTitle={"Testimonial"} title={"Student's Feedback"} />
       <div className="lg:mx-28">
         <Swiper
           modules={[Pagination, A11y, Autoplay]}

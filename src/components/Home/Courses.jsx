@@ -30,11 +30,11 @@ const Courses = () => {
     <div className="container">
       <div className="flex justify-between mt-24">
         <div>
-          <h2 className="text-2xl font-bold">Most popular courses</h2>
+          <h2 className="text-2xl font-bold">Most Popular Courses</h2>
         </div>
         <Link href="/courses">
           <Button className="bg-[#1796fd]">
-            View Course <ChevronRight color="#e8e3e3" size={15} />
+            View Courses <ChevronRight color="#e8e3e3" size={15} />
           </Button>
         </Link>
       </div>

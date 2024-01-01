@@ -5,7 +5,6 @@ import {
   Mail,
   MapPinned,
   Phone,
-  Send,
   Youtube,
 } from "lucide-react";
 import Image from "next/image";
@@ -32,21 +31,32 @@ const Footer = () => {
             <p className="mt-4">{description}</p>
             <h4 className="font-bold mt-4 mb-2">Share Now</h4>
             <div className="flex items-center gap-2">
-              <Icon>
-                <Facebook color="#e8e3e3" />
-              </Icon>
-              <Icon>
-                <Linkedin color="#e8e3e3" />
-              </Icon>
-              <Icon>
-                <Youtube color="#e8e3e3" />
-              </Icon>
-              <Icon>
-                <Mail color="#e8e3e3" />
-              </Icon>
-              <Icon>
-                <Send color="#e8e3e3" />
-              </Icon>
+              <a
+                href="https://www.facebook.com/bdcallingacademy"
+                target="_blank"
+              >
+                <Icon>
+                  <Facebook color="#e8e3e3" />
+                </Icon>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/bdcallingitltd"
+                target="_blank"
+              >
+                <Icon>
+                  <Linkedin color="#e8e3e3" />
+                </Icon>
+              </a>
+              <a href="https://www.youtube.com/@bdCalling" target="_blank">
+                <Icon>
+                  <Youtube color="#e8e3e3" />
+                </Icon>
+              </a>
+              <a href="mailto:learn.bdcalling@gmail.com">
+                <Icon>
+                  <Mail color="#e8e3e3" />
+                </Icon>
+              </a>
             </div>
           </aside>
           <nav>
@@ -62,7 +72,7 @@ const Footer = () => {
             ))}
           </nav>
           <nav>
-            <header className="font-bold mb-6">Popular Courses</header>
+            <header className="font-bold mb-6">Course Categories</header>
             {popularCourses.map((link, index) => (
               <Link
                 key={index}
@@ -75,18 +85,22 @@ const Footer = () => {
           </nav>
           <nav>
             <header className="font-bold mb-6">Contact Info</header>
-            <div className="flex items-center gap-2">
-              <Icon>
-                <Phone color="#e8e3e3" size={25} />
-              </Icon>
-              <p>+88 01321231802</p>
-            </div>
-            <div className="flex items-center gap-2 mt-4">
-              <Icon>
-                <Mail color="#e8e3e3" />
-              </Icon>
-              <p>learn.bdcalling@gmail.com</p>
-            </div>
+            <a href="tel:+88 01321231802">
+              <div className="flex items-center gap-2">
+                <Icon>
+                  <Phone color="#e8e3e3" size={25} />
+                </Icon>
+                <p>+88 01321231802</p>
+              </div>
+            </a>
+            <a href="mailto:learn.bdcalling@gmail.com">
+              <div className="flex items-center gap-2 mt-4">
+                <Icon>
+                  <Mail color="#e8e3e3" />
+                </Icon>
+                <p>learn.bdcalling@gmail.com</p>
+              </div>
+            </a>
             <div className="flex items-center gap-2 mt-4">
               <Icon>
                 <MapPinned size={40} color="#e8e3e3" absoluteStrokeWidth />

@@ -16,12 +16,13 @@ const CourseCard = ({ course }) => {
     rating,
     remainSeat,
     title,
+    discount,
   } = course;
 
   return (
     <Link href={`/courses/${courseStatus}/${id}`}>
       <div
-        className={`rounded-lg hover:-translate-y-5 duration-300 transition-all group ${styles.courseCard}`}
+        className={`rounded-lg hover:-translate-y-5 group ${styles.courseCard}`}
         style={{
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         }}
@@ -57,8 +58,8 @@ const CourseCard = ({ course }) => {
           <h2 className="my-3 text-lg">{title}</h2>
           <div className="flex items-center justify-between my-4">
             <div className="flex gap-4 items-center">
-              <h2 className="text-lg font-bold">{price}BDT</h2>
-              <p className="line-through">BDT3,000</p>
+              <h2 className="text-lg font-bold">{discount}BDT</h2>
+              <p className="line-through">BDT{price}</p>
             </div>
             <div className="flex items-center gap-1">
               <div className="flex">
@@ -71,7 +72,9 @@ const CourseCard = ({ course }) => {
               {rating}(20)
             </div>
           </div>
-          <Button className="w-full shadow bg-gradient-to-b from-[#083c5f] to-[#131313]  text-white py-6 text-md group-hover:bg-primary duration-300">
+          <Button
+            className={`w-full shadow text-white py-6 text-md ${styles.enrollBtn}`}
+          >
             Enroll Now
           </Button>
         </div>

@@ -67,10 +67,10 @@ const Exceptional = () => {
           ))}
         </div>
         <Link href="/about">
-          <Button className="text-white border-primary px-4 text-md py-6 mt-8 group transition-all">
+          <Button className="text-white border-primary px-4 text-md py-6 mt-8 group transition-all hover:bg-[#1796fd]">
             More About{" "}
             <ArrowUpRight
-              color="#1796fd"
+              color="#fff"
               size={20}
               className="ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 duration-100"
             />

@@ -37,12 +37,16 @@ const StudentSuccess = () => {
   ];
   return (
     <div className="container my-24">
-      <HeadingText title={"Success story"} />
+      <HeadingText title={"Success Story"} />
       <Dialog>
         <Swiper
           modules={[Navigation]}
           spaceBetween={10}
           slidesPerView={1}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             689: {
               slidesPerView: 2,
