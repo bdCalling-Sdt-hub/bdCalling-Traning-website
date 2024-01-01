@@ -12,6 +12,12 @@ const Gallery = () => {
     "/images/gallery/gallery1.png",
   ];
 
+  const animationType = [
+    "animate__backInDown",
+    "animate__backInLeft",
+    "animate__backInRight",
+    "animate__backInUp",
+  ];
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
       {images.map((item, index) => (
@@ -24,7 +30,11 @@ const Gallery = () => {
             <img
               src={item}
               alt=""
-              className="w-full h-full absolute top-0 left-0 object-cover rounded-md animate__animated animate__jackInTheBox"
+              className={`w-full h-full absolute top-0 left-0 object-cover rounded-md animate__animated ${
+                animationType.length <= index
+                  ? animationType[0]
+                  : animationType[index]
+              }`}
             />
           </div>
         </AspectRatio>

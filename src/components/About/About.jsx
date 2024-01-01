@@ -11,16 +11,10 @@ const About = () => {
       <div className="space-y-2">
         <h1 className="text-4xl font-bold text-[#1696fd]">About Us</h1>
         <p>
-          bdCalling IT is a platform offering a diverse range of high-quality
-          courses for individuals looking to acquire and enhance essential
-          skills. They cater to students, professionals, and those eager to
-          explore new horizons with courses in leadership, communication,
-          technical proficiency, creative arts, and personal development. What
-          sets them apart is their commitment to hands-on learning through
-          engaging video lectures, interactive exercises, real-world projects,
-          and expert guidance. Instructors are experts in their fields,
-          dedicated to helping students succeed. bdCalling IT aims to empower
-          individuals for success in today&#39;s dynamic world.
+          We believe in a learner-centered approach, where individuals have the
+          flexibility to learn at their own pace and convenience. Our platform
+          offers a user-friendly interface, making it easy for learners to
+          navigate and access the content they need.
         </p>
       </div>
     </div>

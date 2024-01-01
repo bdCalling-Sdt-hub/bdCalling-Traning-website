@@ -2,10 +2,18 @@ import { Calendar, Clock8 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-const EventCard = () => {
+const EventCard = ({ index }) => {
+  const animationType = [
+    "animate__backInDown",
+    "animate__backInLeft",
+    "animate__backInRight",
+    "animate__backInUp",
+  ];
   return (
     <div
-      className="rounded-lg animate__animated animate__jackInTheBox"
+      className={`rounded-lg animate__animated ${
+        animationType.length <= index ? animationType[0] : animationType[index]
+      }`}
       style={{
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
       }}
@@ -24,7 +32,7 @@ const EventCard = () => {
             </p>
             <p size={18} className="flex items-center gap-1">
               <Clock8 size={22} color="#1796fd" />
-              <span className="font-bold text-gray-600">05:00 UTC+06</span>
+              <span className="font-bold text-gray-600">05:00</span>
             </p>
           </div>
           <p className="text-green-500 text-lg">Online</p>

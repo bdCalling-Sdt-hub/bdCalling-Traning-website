@@ -30,7 +30,7 @@ const Event = () => {
           <img
             src="https://i.ibb.co/gWm1vmk/wordpress-seminar-event-cover-photo.jpg"
             alt="course image"
-            className="rounded-t-lg w-full h-[400px]"
+            className="rounded-t-lg w-full h-[440px]"
           />
           <div className="p-3">
             <div className="lg:flex items-center justify-between">
@@ -43,7 +43,7 @@ const Event = () => {
                 </p>
                 <p size={18} className="flex items-center gap-1">
                   <Clock8 size={22} color="#1796fd" />
-                  <span className="font-bold text-gray-600">05:00 UTC+06</span>
+                  <span className="font-bold text-gray-600">05:00</span>
                 </p>
               </div>
               <p className="text-green-500 text-lg">Online</p>
@@ -54,9 +54,7 @@ const Event = () => {
             <p>
               WordPress is now the most advanced in the web developing career
               but WordPress is still beyond the knowledge of many people! So on
-              December 30, 7 pm up to 100% scholarship facility, Career in
-              WordPress came with bdCalling to tell you more about WordPress. To
-              get up to 100% scholarship by participating in free seminars.
+              December 30, 7 pm up to 100% scholarship facility
             </p>
             <Link href="/free-seminar">
               <Button className="bg-primary mt-5">Join Event</Button>
@@ -75,7 +73,7 @@ const Event = () => {
               <img
                 src={event?.image}
                 alt="course image"
-                className="rounded-md h-[320px] w-full p-4"
+                className="rounded-md h-[320px] w-full"
               />
               <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fde1]">
                 <div className="flex gap-5 items-center">
