@@ -15,24 +15,25 @@ const StudentSuccess = () => {
   const [videoLink, setVideoLink] = useState("");
   const swiperContainerStyle = {
     width: "100%",
-    height: "400px",
+    height: "380px",
     marginTop: "40px",
   };
   const videoLinkLists = [
     {
       video:
         "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+      thumb:
+        "https://i.postimg.cc/9MWM8wLB/Digital-Marketing-Students-Openion-thumbnail.jpg",
     },
     {
       video:
         "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+      thumb: "https://i.postimg.cc/dQ57fnPZ/Flutter-Jisan.jpg",
     },
     {
       video:
         "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+      thumb: "https://i.postimg.cc/gJWKJsNH/Students-Success-Story-Part-03.jpg",
     },
   ];
   return (

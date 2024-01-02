@@ -10,6 +10,12 @@ const Gallery = () => {
     "/images/gallery/gallery3.png",
     "/images/gallery/gallery2.png",
     "/images/gallery/gallery1.png",
+    "https://i.postimg.cc/tC8VtHcC/IMG-2612.jpg",
+    "https://i.postimg.cc/qBbKqKXK/IMG-2845.jpg",
+    "https://i.postimg.cc/6pR4MmsV/IMG-4612.jpg",
+    "https://i.postimg.cc/C5Qn2yL7/IMG-5465.jpg",
+    "https://i.postimg.cc/Vv6b4s15/IMG-5794.jpg",
+    "https://i.postimg.cc/Vv6b4s15/IMG-5794.jpg",
   ];
 
   const animationType = [

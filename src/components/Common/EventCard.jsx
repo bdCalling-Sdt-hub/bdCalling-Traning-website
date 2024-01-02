@@ -2,7 +2,7 @@ import { Calendar, Clock8 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-const EventCard = ({ index }) => {
+const EventCard = ({ data, index }) => {
   const animationType = [
     "animate__backInLeft",
     "animate__backInRight",
@@ -18,7 +18,7 @@ const EventCard = ({ index }) => {
       }}
     >
       <img
-        src="https://i.ibb.co/gWm1vmk/wordpress-seminar-event-cover-photo.jpg"
+        src={data?.image}
         alt="course image"
         className="rounded-t-lg w-full h-[300px]"
       />

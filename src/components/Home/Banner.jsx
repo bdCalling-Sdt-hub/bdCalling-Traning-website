@@ -9,6 +9,7 @@ import {
 import styles from "@/styles/home.module.css";
 import { ChevronDown, Play, Search } from "lucide-react";
 import { useState } from "react";
+import { AspectRatio } from "../ui/aspect-ratio";
 
 const Banner = () => {
   const [videoLink, setVideoLink] = useState("");
@@ -26,7 +27,7 @@ const Banner = () => {
   const videoLinkLists = [
     {
       video:
-        "https://www.youtube.com/embed/ffnmrtUCqC4?si=FlyPr62vubLgRA90&autoplay=1",
+        "https://www.youtube.com/embed/ffnmrtUCqC4?autoplay=1&modestbranding=1&rel=0",
       thumb: "https://i.postimg.cc/3WQKT0zD/Skill-Development-Thumbnail-02.jpg",
     },
   ];
@@ -91,19 +92,23 @@ const Banner = () => {
               <div key={index}>
                 <div className={`relative`}>
                   {!videoLink ? (
-                    <img
-                      src={item.thumb}
-                      alt=""
-                      className="w-full  lg:h-[300px] rounded-2xl"
-                    />
+                    <AspectRatio ratio={16 / 8} className="bg-muted">
+                      <img
+                        src={item.thumb}
+                        alt=""
+                        className="w-full  h-full rounded-2xl"
+                      />
+                    </AspectRatio>
                   ) : (
-                    <iframe
-                      src={videoLink}
-                      title="YouTube video player"
-                      allow="autoplay;"
-                      className="w-full  lg:h-[300px] rounded-2xl"
-                      allowFullScreen
-                    ></iframe>
+                    <AspectRatio ratio={16 / 8} className="bg-muted">
+                      <iframe
+                        src={videoLink}
+                        title="YouTube video player"
+                        allow="autoplay;"
+                        className="w-full h-full rounded-2xl"
+                        allowFullScreen
+                      ></iframe>
+                    </AspectRatio>
                   )}
 
                   {!videoLink && (

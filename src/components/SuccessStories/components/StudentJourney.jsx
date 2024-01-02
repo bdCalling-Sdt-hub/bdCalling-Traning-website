@@ -13,22 +13,26 @@ const StudentJourney = () => {
     {
       video:
         "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+      thumb:
+        "https://i.postimg.cc/HL892xSn/Industrial-Attachment-Thumbnail-03-02.png",
     },
     {
       video:
         "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+      thumb:
+        "https://i.postimg.cc/28775Mtc/Thumbnail-for-Flutter-to-Swapon-02.jpg",
     },
     {
       video:
         "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+      thumb:
+        "https://i.postimg.cc/13RcVMh9/Web-Design-Online-Course-Thumbnail.jpg",
     },
     {
       video:
         "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp&autoplay=1",
-      thumb: "https://static-cse.canva.com/blob/1267202/1600w-wK95f3XNRaM.jpg",
+      thumb:
+        "https://i.postimg.cc/13RcVMh9/Web-Design-Online-Course-Thumbnail.jpg",
     },
   ];
   const animationType = [
