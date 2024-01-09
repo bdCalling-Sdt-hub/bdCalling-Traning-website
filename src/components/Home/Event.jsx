@@ -5,14 +5,16 @@ import { Button } from "../ui/button";
 const Event = () => {
   const events = [
     {
-      image: "https://i.ibb.co/fttznct/Web-Design.jpg",
-      title: "Web Design",
+      image:
+        "https://i.postimg.cc/d1J4nFgy/Digital-Marketing-Training-Program-Post.jpg",
+      title: "Training Program",
       date: "30 March, 2023",
       time: "4:00 pm - 6:00 pm",
     },
     {
-      image: "https://i.ibb.co/dBt5yH8/Wordpress.jpg",
-      title: "Think of Wordpress",
+      image:
+        "https://i.postimg.cc/zfCxnv2N/Digital-Marketing-Seminar-Video-Thumbnail.jpg",
+      title: "Digital Marketing",
       date: "30 March, 2023",
       time: "4:00 pm - 6:00 pm",
     },
@@ -30,7 +32,7 @@ const Event = () => {
           <img
             src="https://i.ibb.co/gWm1vmk/wordpress-seminar-event-cover-photo.jpg"
             alt="course image"
-            className="rounded-t-lg w-full h-[440px]"
+            className="rounded-t-lg w-full h-[410px]"
           />
           <div className="p-3">
             <div className="lg:flex items-center justify-between">
@@ -48,7 +50,7 @@ const Event = () => {
               </div>
               <p className="text-green-500 text-lg">Online</p>
             </div>
-            <h2 className="text-2xl font-bold my-3">
+            <h2 className="text-2xl font-bold my-2">
               Career in WordPress online Seminar
             </h2>
             <p>
@@ -73,9 +75,9 @@ const Event = () => {
               <img
                 src={event?.image}
                 alt="course image"
-                className="rounded-md h-[320px] w-full"
+                className="rounded-md h-[300px] w-full pb-16"
               />
-              <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fde1]">
+              <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fd]">
                 <div className="flex gap-5 items-center">
                   <p size={18} className="flex items-center gap-1">
                     <Calendar size={20} />
