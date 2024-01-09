@@ -1,11 +1,10 @@
 .homeBanner {
-  background: linear-gradient(to left, #eafcff, #f3f3f3),
+  background: linear-gradient(to left, #e6f8ff, #e6f8ff),
     url("/images/banner_bg.png");
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   position: relative;
 }
 
@@ -67,7 +66,7 @@
   display: flex;
   white-space: nowrap;
   flex-wrap: nowrap;
-  color: #535353;
+  color: #f0f0f0;
   align-items: center;
   padding: 5px 0;
 }

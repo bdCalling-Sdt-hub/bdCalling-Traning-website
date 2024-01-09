@@ -10,6 +10,7 @@ import styles from "@/styles/home.module.css";
 import { ChevronDown, Play, Search } from "lucide-react";
 import { useState } from "react";
 import { AspectRatio } from "../ui/aspect-ratio";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const Banner = () => {
   const [videoLink, setVideoLink] = useState("");
@@ -34,13 +35,13 @@ const Banner = () => {
   return (
     <>
       <div className={styles.homeBanner}>
-        <div className="lg:flex items-center container py-16">
+        <div className="lg:flex items-center container py-24">
           <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
-              <h2 className="text-2xl px-3 rounded bg-gradient-to-r from-[#93efff65] to-[#F3F3F3] text-[#2397fb] , w-80 py-1 font-medium relative">
+              <h2 className="text-2xl px-3 rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] , w-80 py-1 font-medium relative">
                 Let&#39;s Grow Your Career
                 <span
-                  className="absolute text-[18px] bottom-0 right-0 text-black"
+                  className="absolute text-[18px] bottom-0 right-0 text-[#4a54e6fa]"
                   style={{ textShadow: "2px 2px 5px #1696fd" }}
                 >
                   𝓌𝒾𝓉𝒽
@@ -87,51 +88,51 @@ const Banner = () => {
               </div>
             </Reveal>
           </div>
-          <div className="order-1 lg:order-2 w-full lg:w-[700px] mt-4 lg:mt-0 bg-[#1696fd] p-3 rounded-3xl drop-shadow">
-            {videoLinkLists.map((item, index) => (
-              <div key={index}>
-                <div className={`relative`}>
-                  {!videoLink ? (
-                    <AspectRatio ratio={16 / 8} className="bg-muted">
-                      <img
-                        src={item.thumb}
-                        alt=""
-                        className="w-full  h-full rounded-2xl"
-                      />
-                    </AspectRatio>
-                  ) : (
-                    <AspectRatio ratio={16 / 8} className="bg-muted">
-                      <iframe
-                        src={videoLink}
-                        title="YouTube video player"
-                        allow="autoplay;"
-                        className="w-full h-full rounded-2xl"
-                        allowFullScreen
-                      ></iframe>
-                    </AspectRatio>
-                  )}
+          <div className="order-1 lg:order-2 w-full lg:w-[700px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#16fdde] p-2 rounded-3xl ">
+            <Dialog>
+              {videoLinkLists.map((item, index) => (
+                <div key={index}>
+                  <div className={`relative w-full`}>
+                    <img
+                      src={item.thumb}
+                      alt=""
+                      className="w-full rounded-3xl"
+                    />
 
-                  {!videoLink && (
                     <div
                       onClick={() => setVideoLink(item.video)}
                       className="absolute top-0 left-0 h-full w-full  flex justify-center items-center cursor-pointer"
                     >
                       <div className={`${styles.playBtn}`}>
-                        <Play />
+                        <DialogTrigger>
+                          <Play />
+                        </DialogTrigger>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+
+              <DialogContent className="w-[80%]">
+                <AspectRatio ratio={16 / 9} className="bg-muted">
+                  <iframe
+                    src={videoLink}
+                    title="YouTube video player"
+                    allow="autoplay;"
+                    className="rounded-md w-full h-full"
+                    allowFullScreen
+                  ></iframe>
+                </AspectRatio>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
-      <div className=" py-2">
-        <ParallaxText baseVelocity={-1}>
+      <div className="py-2 bg-gradient-to-t from-[#167afd] to-[#17b4fd]">
+        {/* <ParallaxText baseVelocity={-1}>
           🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
           Generation & Data Entry
-        </ParallaxText>
+        </ParallaxText> */}
         <ParallaxText baseVelocity={1}>
           🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
           Generation & Data Entry
