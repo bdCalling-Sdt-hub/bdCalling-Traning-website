@@ -1,45 +1,35 @@
 const WhatBdCalling = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10  items-center relative mt-20 mb-64">
-      <div>
-        <p className="text-primary font-medium">What Is bdCalling</p>
-        <h1 className="text-4xl font-bold my-1">
-          Master the Skills to drive <br /> your career
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10  items-center mt-20 mb-64">
+      <div className="space-y-7">
+        <h1 className="text-4xl font-semibold text-primary">
+          What Is bdCalling
         </h1>
         <p>
-          <span className="text-2xl">bdCalling IT</span> is a platform offering
-          a diverse range of high-quality courses for individuals looking to
-          acquire and enhance essential skills. They cater to students,
-          professionals, and those eager to explore new horizons with courses in
-          leadership, communication, technical proficiency, creative arts, and
-          personal development. What sets them apart is their commitment to
-          hands-on learning through engaging video lectures, interactive
-          exercises, real-world projects, and expert guidance. Instructors are
-          experts in their fields, dedicated to helping students succeed.
-          bdCalling IT aims to empower individuals for success in today&#39;s
-          dynamic world.
+          bdCalling IT Ltd is a freelancing-based company that started its
+          journey in 2014 from a small corner of the drawing room of the
+          honorable CEO MD. Monir Hossain of bdCalling IT. We started with a
+          computer that 5 members used. However, bdCalling IT is a company of
+          450 members now. We work in 6 categories Business Support, Web Design
+          and Development, Software Development, Visual and Graphics Design,
+          Digital Marketing, and Skill Development. Additionally, bdCalling IT
+          is working as a group of companies with SMT, SparkTech Agency,
+          Softvence, and Backbenchers Studio.
         </p>
       </div>
-      <div>
-        <div className="shadow p-[0px] w-[88%] mx-auto">
+      <div className="relative">
+        <div className=" w-[88%] mx-auto">
           <img
-            src="/images/aboutWhat1.png"
+            src="https://i.postimg.cc/8CMqRsPW/About-1.jpg"
             alt="image"
-            className="w-full h-80 object-cover animate__animated animate__zoomIn"
+            className="w-full h-80 object-cover rounded-lg animate__animated animate__zoomIn"
           />
         </div>
-        <div className="shadow p-[0px] absolute -bottom-48">
+        <div className="absolute -bottom-32 left-14 p-2 bg-white rounded-full">
           <img
-            src="/images/aboutWhat2.png"
+            src="https://i.postimg.cc/vHSFMpN1/About-3.jpg"
             alt="image"
-            className="w-full animate__animated animate__zoomIn"
-          />
-        </div>
-        <div className="shadow p-[0px] absolute -bottom-56 right-0">
-          <img
-            src="/images/aboutWhat3.png"
-            alt="image"
-            className="w-full animate__animated animate__zoomIn"
+            className="w-[200px] h-[200px] animate__animated animate__zoomIn rounded-[50%] object-cover"
           />
         </div>
       </div>

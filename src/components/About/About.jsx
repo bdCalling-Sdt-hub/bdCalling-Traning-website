@@ -9,7 +9,7 @@ const About = () => {
         />
       </div>
       <div className="space-y-2">
-        <h1 className="text-4xl font-bold text-[#1696fd]">About Us</h1>
+        <h1 className="text-4xl font-semibold text-primary">About Us</h1>
         <p>
           We believe in a learner-centered approach, where individuals have the
           flexibility to learn at their own pace and convenience. Our platform

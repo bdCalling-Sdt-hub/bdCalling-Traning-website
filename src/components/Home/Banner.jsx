@@ -88,7 +88,7 @@ const Banner = () => {
               </div>
             </Reveal>
           </div>
-          <div className="order-1 lg:order-2 w-full lg:w-[700px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#16fdde] p-2 rounded-3xl ">
+          <div className="order-1 lg:order-2 w-full lg:w-[700px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#16fdde] p-2 rounded-3xl animate__animated animate__zoomIn">
             <Dialog>
               {videoLinkLists.map((item, index) => (
                 <div key={index}>
