@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 
 const Login = () => {
   const router = useRouter();
+
+  console.log(router);
   return (
     <div className="container my-24">
       <div className="grid grid-cols-2 items-center">
@@ -35,7 +37,11 @@ const Login = () => {
           </div>
           <Button
             className="w-full py-6 bg-primary"
-            onClick={() => signIn("github")}
+            onClick={() =>
+              signIn("github", {
+                callbackUrl: router.query?.callbackUrl,
+              })
+            }
           >
             Login
           </Button>
