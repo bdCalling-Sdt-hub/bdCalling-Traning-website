@@ -1,30 +1,19 @@
+import { baseUrl } from "@/config";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-import coursesList from "../../../public/db/course.json";
+import { useEffect, useState } from "react";
 import CourseCard from "../../shared/CourseCard";
 import { Button } from "../ui/button";
 
-const Courses = () => {
-  const [title, setTitle] = useState("all");
-  const categoryLists = [
-    { title: "WordPress" },
-    { title: "Digital Marketing" },
-    { title: "Graphics Design" },
-    { title: "UX/UI Design" },
-    { title: "APP Development" },
-    { title: "Front-End" },
-    { title: "Lead Generation & Data Entry" },
-  ];
+const Courses = ({ categories }) => {
+  const [title, setTitle] = useState(0);
+  const [courses, setCourses] = useState([]);
 
-  const { courses } = coursesList;
-
-  let filterCourses;
-  if (title !== "all") {
-    filterCourses = courses.filter((course) => course.category === title);
-  } else {
-    filterCourses = courses;
-  }
+  useEffect(() => {
+    baseUrl
+      .get(`/course?category=${title}`)
+      .then((res) => setCourses(res.data?.data?.data));
+  }, [title]);
 
   return (
     <div className="container">
@@ -41,28 +30,28 @@ const Courses = () => {
       <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2">
         <Button
           variant="link"
-          onClick={() => setTitle("all")}
+          onClick={() => setTitle(0)}
           className={`${
-            title === "all" ? "bg-[#1796fd] text-white" : ""
+            title === 0 ? "bg-[#1796fd] text-white" : ""
           } text-md font-medium`}
         >
           All
         </Button>
-        {categoryLists.map((category, index) => (
+        {categories.map((category, index) => (
           <Button
             key={index}
             variant="link"
-            onClick={() => setTitle(category.title)}
+            onClick={() => setTitle(category.id)}
             className={`${
-              title === category.title ? "bg-[#1796fd] text-white" : ""
-            }  text-md font-medium`}
+              title === category.id ? "bg-[#1796fd] text-white" : ""
+            }  text-md font-medium capitalize`}
           >
-            {category.title}
+            {category.category_name}
           </Button>
         ))}
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-12">
-        {filterCourses.slice(0, 6).map((course, index) => (
+        {courses.map((course, index) => (
           <CourseCard key={index} course={course} />
         ))}
       </div>

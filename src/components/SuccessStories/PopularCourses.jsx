@@ -1,13 +1,21 @@
+import { baseUrl } from "@/config";
 import CourseCard from "@/shared/CourseCard";
-import coursesList from "../../../public/db/course.json";
+import { useEffect, useState } from "react";
 
 const PopularCourses = () => {
-  const { courses } = coursesList;
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    baseUrl.get(`/course`).then((res) => setCourses(res.data?.data?.data));
+  }, []);
+
+  const popularCourse = courses.filter((course) => course.popular === 1);
+
   return (
-    <div>
+    <div className="my-24">
       <h1 className="text-center text-4xl font-bold my-10">Popular Courses</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {courses.slice(0, 3).map((course, index) => (
+        {popularCourse.slice(0, 6).map((course, index) => (
           <CourseCard key={index} course={course} />
         ))}
       </div>

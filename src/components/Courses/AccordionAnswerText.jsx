@@ -1,8 +1,8 @@
 import { Checkbox } from "../ui/checkbox";
 
-const AccordionAnswerText = ({ data, index }) => {
+const AccordionAnswerText = ({ data }) => {
   return (
-    <div className="flex items-center justify-between mb-4">
+    <div className="mb-4">
       <div className="flex items-center gap-2">
         <Checkbox id={data} />
         <label
@@ -12,7 +12,6 @@ const AccordionAnswerText = ({ data, index }) => {
           {data}
         </label>
       </div>
-      <h1>(10)</h1>
     </div>
   );
 };

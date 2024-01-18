@@ -4,28 +4,32 @@ import JoinNow from "@/components/Courses/JoinNow";
 import SearchCourse from "@/components/Courses/SearchCourse";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
+import { baseUrl } from "@/config";
 import CourseCard from "@/shared/CourseCard";
 import MetaTag from "@/shared/MetaTag";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import coursesList from "../../../public/db/course.json";
+import { useEffect, useState } from "react";
 
 const CoursesPage = () => {
-  const { courses } = coursesList;
   const [courseLoad, setCourseLoad] = useState(6);
   const router = useRouter();
+  const [courses, setCourses] = useState([]);
   const status = router.query.type;
+  const [error, setError] = useState("");
 
-  let filterCourses = courses.filter(
-    (course) => course.courseStatus === status
-  );
+  useEffect(() => {
+    baseUrl
+      .get(`/course?status=${status}`)
+      .then((res) => setCourses(res.data?.data?.data))
+      .catch((err) => {
+        setError(err.response?.data?.message);
+        setCourses([]);
+      });
+  }, [status]);
 
-  const coursesFilter = [
-    "All Course",
-    "Online Courses",
-    "Offline Courses",
-    "Recorded Courses",
-  ];
+  console.log(error);
+
+  const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
   const catagories = [
     "Wordpress",
     "Digital Marketing",
@@ -66,17 +70,17 @@ const CoursesPage = () => {
         </div>
         <div className="col-span-2">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {filterCourses.length > 0 &&
-              filterCourses
-                .slice(0, courseLoad)
-                .map((course, index) => (
-                  <CourseCard key={index} course={course} />
-                ))}
+            {courses.length > 0 &&
+              courses.map((course, index) => (
+                <CourseCard key={index} course={course} />
+              ))}
           </div>
-          {filterCourses.length === 0 && (
-            <p className="text-center text-xl">{status} Courses not found</p>
+          {courses.length === 0 && (
+            <p className="text-center text-4xl mt-16 text-gray-200">
+              {status} Courses not found
+            </p>
           )}
-          {filterCourses.length > 0 && (
+          {courses.length > 0 && (
             <Button
               className="mt-8 mx-auto block"
               onClick={() => setCourseLoad(courseLoad + 6)}

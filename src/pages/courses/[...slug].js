@@ -2,24 +2,26 @@ import FlexItem from "@/components/Common/FlexItem";
 import CourseDetailDescription from "@/components/CourseDetail/CourseDetailDescription";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
+import { baseUrl } from "@/config";
 import MetaTag from "@/shared/MetaTag";
 import { Book, Clock, Globe, Presentation, Users } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import courseList from "../../../public/db/course.json";
+import { useEffect } from "react";
 
 const CourseDetail = () => {
-  const { courses } = courseList;
   const router = useRouter();
   const params = router.query.slug;
 
   let id;
   let course;
 
-  if (Array.isArray(params) && params.length >= 2) {
-    id = params[1];
-    course = courses.find((course) => course.id.toString() === id);
-  }
+  useEffect(() => {
+    if (Array.isArray(params) && params.length >= 2) {
+      id = params[1];
+      baseUrl.get(`/class/${id}`).then((res) => console.log(res));
+    }
+  }, [params]);
 
   const features = [
     {

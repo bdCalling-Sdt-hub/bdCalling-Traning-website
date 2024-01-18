@@ -1,3 +1,4 @@
+import { imgUrl } from "@/config";
 import styles from "@/styles/card.module.css";
 import { BookOpenText, Clock8, Star, UsersRound } from "lucide-react";
 import Image from "next/image";
@@ -5,22 +6,23 @@ import Link from "next/link";
 import { Button } from "../components/ui/button";
 
 const CourseCard = ({ course }) => {
+  // console.log(course);
   const {
-    image,
-    batchNo,
+    courseThumbnail,
+    batch,
     countRating,
     id,
-    courseStatus,
+    status,
     duration,
     price,
     rating,
-    remainSeat,
-    title,
-    discount,
+    seat_left,
+    courseName,
+    discount_price,
   } = course;
 
   return (
-    <Link href={`/courses/${courseStatus}/${id}`}>
+    <Link href={`/courses/${status}/${id}`}>
       <div
         className={`rounded-lg hover:-translate-y-5 group ${styles.courseCard}`}
         style={{
@@ -28,7 +30,7 @@ const CourseCard = ({ course }) => {
         }}
       >
         <Image
-          src={image}
+          src={`${imgUrl}/${courseThumbnail}`}
           alt="course image"
           className="rounded-t-lg w-full h-[240px]"
           width={400}
@@ -39,26 +41,26 @@ const CourseCard = ({ course }) => {
             <p className="flex items-center gap-1">
               {" "}
               <BookOpenText size={20} color="#1796fd" />
-              Batch {batchNo}
+              Batch {batch}
             </p>
             <div className="bg-gradient-to-tr from-[#80b3dd] to-[#0779d6] text-white rounded-md py-1 px-5">
-              {courseStatus}
+              {status}
             </div>
           </div>
           <div className="flex items-center justify-between mt-4 border-b pb-2">
             <p size={20} className="flex items-center gap-1">
               <UsersRound size={20} color="#1796fd" />
-              {remainSeat} Seats Left
+              {seat_left} Seats Left
             </p>
             <p size={18} className="flex items-center gap-1">
               <Clock8 size={20} color="#1796fd" />
-              {duration} Days Lest
+              {duration} Days Left
             </p>
           </div>
-          <h2 className="my-3 text-lg">{title}</h2>
+          <h2 className="my-3 text-lg capitalize">{courseName}</h2>
           <div className="flex items-center justify-between my-4">
             <div className="flex gap-4 items-center">
-              <h2 className="text-lg font-bold">{discount}BDT</h2>
+              <h2 className="text-lg font-bold">{discount_price}BDT</h2>
               <p className="line-through">BDT{price}</p>
             </div>
             <div className="flex items-center gap-1">
@@ -67,9 +69,9 @@ const CourseCard = ({ course }) => {
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />
-                <Star size={20} color="#ffc60b" />
+                <Star size={20} color="#ffc60b" fill="#ffc60b" />
               </div>
-              {rating}(20)
+              5(20)
             </div>
           </div>
           <Button

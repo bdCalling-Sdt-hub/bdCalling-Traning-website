@@ -1,18 +1,22 @@
 import Reveal from "@/animation/FramerMotion/Reveal";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { baseUrl } from "@/config";
 import { Clock, Mail, MapPin, PhoneCall } from "lucide-react";
+import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
-const FormSection = () => {
+const FormSection = ({ categories }) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    baseUrl.post("/contacts", data).then((res) => console.log(res.data));
+  };
   const contacts = [
     {
       title: "Give us a call",
@@ -35,17 +39,18 @@ const FormSection = () => {
       icon: <MapPin size={20} color="#2492EB" />,
     },
   ];
-  const catagories = [
-    "Wordpress",
-    "Digital Marketing",
-    "Graphics Design",
-    "UX/UI Design",
-    "APP Developer with Flutter",
-    "Front-End Development",
-    "Lead & Data Entry",
-    "Visual Design Fundamentals",
-    "Prototyping and Wireframing",
-  ];
+
+  // const catagories = [
+  //   "Wordpress",
+  //   "Digital Marketing",
+  //   "Graphics Design",
+  //   "UX/UI Design",
+  //   "APP Developer with Flutter",
+  //   "Front-End Development",
+  //   "Lead & Data Entry",
+  //   "Visual Design Fundamentals",
+  //   "Prototyping and Wireframing",
+  // ];
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 my-16">
       <div>
@@ -77,26 +82,66 @@ const FormSection = () => {
         <h2 className="text-[#2492EB] font-bold text-xl mb-4">
           Inbox your queries
         </h2>
-        <form action="" className="space-y-3">
-          <Input type="text" placeholder="Your Name" />
-          <Input type="email" placeholder="Your Email" />
-          <Input type="number" placeholder="Your Phone number" />
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+          <Input
+            type="text"
+            name="name"
+            {...register("name", { required: true })}
+            placeholder="Your Name"
+          />
+          <p>
+            {errors.name && (
+              <span className="text-red-500">Name is required</span>
+            )}
+          </p>
+          <Input
+            type="email"
+            name="email"
+            {...register("email", { required: true })}
+            placeholder="Your Email"
+          />
+          <p>
+            {errors.email && (
+              <span className="text-red-500">Email is required</span>
+            )}
+          </p>
+          <Input
+            type="number"
+            name="phone"
+            {...register("phone", { required: true })}
+            placeholder="Your Phone number"
+          />
+          <p>
+            {errors.phone && (
+              <span className="text-red-500">Phone number is required</span>
+            )}
+          </p>
 
-          <Select>
-            <SelectTrigger className="h-12">
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {catagories.map((item, index) => (
-                  <SelectItem value={item} key={index}>
-                    {item}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-          <Textarea placeholder="Type your message here." />
+          <select
+            {...register("category")}
+            className="border w-full py-4  rounded-md"
+          >
+            {categories.map((item, index) => (
+              <option
+                value={item.category_name}
+                className="capitalize"
+                key={index}
+              >
+                {item.category_name}
+              </option>
+            ))}
+          </select>
+          <Textarea
+            name="details"
+            {...register("details", { required: true })}
+            placeholder="Type your message here."
+          />
+          <p>
+            {errors.message && (
+              <span className="text-red-500">Message is required</span>
+            )}
+          </p>
+
           <Button type="submit" className="bg-primary">
             Submit
           </Button>

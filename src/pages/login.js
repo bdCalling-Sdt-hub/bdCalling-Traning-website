@@ -2,12 +2,28 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { baseUrl } from "@/config";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 
 const Login = () => {
   const router = useRouter();
 
+  const value = {
+    email: "nurmdopu428@gmail.com",
+    password: "123456",
+  };
+  const getUser = () => {
+    baseUrl
+      .post("/login", value, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((data) => console.log(data));
+  };
+
+  getUser();
   console.log(router);
   return (
     <div className="container my-24">
@@ -73,3 +89,12 @@ export default Login;
 Login.getLayout = function (page) {
   return <RootLayout>{page}</RootLayout>;
 };
+
+// export const getServerSideProps = async () => {
+//   const res = await fetch("http://192.168.10.13:8000/api/login");
+//   const data = await res.json();
+
+//   console.log(data);
+
+//   return {};
+// };

@@ -2,53 +2,87 @@ import TopHeading from "@/components/Common/TopHeading";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { baseUrl } from "@/config";
 import MetaTag from "@/shared/MetaTag";
+import { useForm } from "react-hook-form";
 
-const FreeSeminar = () => {
-  const catagories = [
-    "Wordpress",
-    "Digital Marketing",
-    "Graphics Design",
-    "UX/UI Design",
-    "APP Developer with Flutter",
-    "Front-End Development",
-    "Lead & Data Entry",
-    "Visual Design Fundamentals",
-    "Prototyping and Wireframing",
-  ];
+const FreeSeminar = ({ categories }) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    baseUrl.post("/seminers", data).then((res) => console.log(res.data));
+  };
+
   return (
     <div className="container lg:w-2/6 my-14">
       <MetaTag title="Free Seminar" />
       <TopHeading blueText="JOIN FREE SEMINAR" />
-      <form action="" className="space-y-3">
-        <Input type="text" placeholder="Your Name" />
-        <Input type="email" placeholder="Your Email" />
-        <Input type="number" placeholder="Your Phone number" />
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+        <Input
+          type="text"
+          name="name"
+          {...register("name", { required: true })}
+          placeholder="Your Name"
+        />
+        <p>
+          {errors.name && (
+            <span className="text-red-500">Name is required</span>
+          )}
+        </p>
+        <Input
+          type="email"
+          name="email"
+          {...register("email", { required: true })}
+          placeholder="Your Email"
+        />
+        <p>
+          {errors.email && (
+            <span className="text-red-500">Email is required</span>
+          )}
+        </p>
+        <Input
+          type="number"
+          name="phone"
+          {...register("phone", { required: true })}
+          placeholder="Your Phone number"
+        />
+        <p>
+          {errors.phone && (
+            <span className="text-red-500">Phone number is required</span>
+          )}
+        </p>
 
-        <Select>
-          <SelectTrigger className="h-12">
-            <SelectValue placeholder="Course Select" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              {catagories.map((item, index) => (
-                <SelectItem value={item} key={index}>
-                  {item}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-        <Textarea placeholder="Type your message here." />
+        <select
+          {...register("category")}
+          className="border w-full py-4  rounded-md"
+        >
+          {categories.map((item, index) => (
+            <option
+              value={item.category_name}
+              className="capitalize"
+              key={index}
+            >
+              {item.category_name}
+            </option>
+          ))}
+        </select>
+        <Textarea
+          name="address"
+          {...register("address", { required: true })}
+          placeholder="Type your message here."
+        />
+        <p>
+          {errors.address && (
+            <span className="text-red-500">Address is required</span>
+          )}
+        </p>
+
         <Button type="submit" className="bg-primary">
           Submit
         </Button>
@@ -61,4 +95,18 @@ export default FreeSeminar;
 
 FreeSeminar.getLayout = function (page) {
   return <RootLayout>{page}</RootLayout>;
+};
+
+export const getServerSideProps = async () => {
+  const categoryRes = await baseUrl.get("/category");
+
+  const categoryData = categoryRes.data;
+
+  console.log(categoryData.data);
+
+  return {
+    props: {
+      categories: categoryData.data,
+    },
+  };
 };
