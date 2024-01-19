@@ -7,27 +7,33 @@ import MetaTag from "@/shared/MetaTag";
 import { Book, Clock, Globe, Presentation, Users } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const CourseDetail = () => {
   const router = useRouter();
   const params = router.query.slug;
+  const [courseDetail, setCourseDetail] = useState([]);
 
   let id;
-  let course;
 
   useEffect(() => {
     if (Array.isArray(params) && params.length >= 2) {
       id = params[1];
-      baseUrl.get(`/class/${id}`).then((res) => console.log(res));
+      baseUrl
+        .get(`/class/${id}`)
+        .then((res) => setCourseDetail(res?.data?.data));
     }
   }, [params]);
+
+  const course = courseDetail[0];
+
+  console.log(course?.course);
 
   const features = [
     {
       icon: <Clock size={20} color="#2492EB" />,
       key: "Duration",
-      value: course?.duration,
+      value: `${course?.course?.courseTimeLength} Days`,
     },
     {
       icon: <Book size={20} color="#2492EB" />,
@@ -37,17 +43,17 @@ const CourseDetail = () => {
     {
       icon: <Users size={20} color="#2492EB" />,
       key: "Students",
-      value: course?.students,
+      value: course?.course?.maxStudentLength,
     },
     {
       icon: <Presentation size={20} color="#2492EB" />,
       key: "Skill Level",
-      value: course?.skillLevel,
+      value: course?.course?.skillLevel,
     },
     {
       icon: <Globe size={20} color="#2492EB" />,
       key: "Language",
-      value: course?.language,
+      value: course?.course?.language,
     },
   ];
 
@@ -56,7 +62,7 @@ const CourseDetail = () => {
       <MetaTag title="Courses Details" />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
         <div className="col-span-2">
-          <CourseDetailDescription data={course} />
+          <CourseDetailDescription data={courseDetail} />
         </div>
         <div className="w-full">
           <div className="shadow rounded-md p-4">
@@ -75,11 +81,11 @@ const CourseDetail = () => {
               </div>
             ))}
             <div className="bg-primary text-center rounded-md py-6 mt-14">
-              <h2 className="text-lg text-gray-200">
-                Course Fee {course?.courseStatus}
+              <h2 className="text-xl text-gray-200 font-semibold">
+                Course Fee {course?.course?.status}
               </h2>
               <h2 className="text-2xl font-bold text-white my-2">
-                BDT{course?.price}
+                BDT{course?.course?.price}
               </h2>
               <Link href="/payment">
                 <Button className="  bg-white text-primary">Enroll Now</Button>

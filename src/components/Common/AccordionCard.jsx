@@ -9,7 +9,7 @@ const AccordionCard = ({ children, title }) => {
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
-        <AccordionTrigger>{title}</AccordionTrigger>
+        <AccordionTrigger className="capitalize">{title}</AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>
       </AccordionItem>
     </Accordion>

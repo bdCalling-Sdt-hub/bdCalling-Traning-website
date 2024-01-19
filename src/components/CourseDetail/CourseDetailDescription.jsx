@@ -1,3 +1,4 @@
+import { imgUrl } from "@/config";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -6,14 +7,20 @@ import Instructor from "./TabContent/Instructor";
 import Overview from "./TabContent/Overview";
 import Reviews from "./TabContent/Reviews";
 
-const CourseDetailDescription = ({ data: course }) => {
+const CourseDetailDescription = ({ data }) => {
   const [title, setTitle] = useState("Overview");
   const buttons = ["Overview", "Curriculum", "Reviews", "Instructor"];
   const router = useRouter();
 
+  const [course] = data;
+
   return (
     <div>
-      <img src="/images/courseDetail.png" alt="" className="w-full mb-8" />
+      <img
+        src={`${imgUrl}/${course?.course?.courseThumbnail}`}
+        alt=""
+        className="w-full h-[450px] rounded mb-8"
+      />
 
       <div className="bg-gray-100 p-4 rounded-md mt-8">
         <div className="flex flex-col lg:flex-row items-center gap-2">
@@ -31,10 +38,10 @@ const CourseDetailDescription = ({ data: course }) => {
           ))}
         </div>
       </div>
-      {title === "Overview" && <Overview data={course} />}
-      {title === "Curriculum" && <Curriculum data={course} />}
+      {title === "Overview" && <Overview data={data} />}
+      {title === "Curriculum" && <Curriculum data={data} />}
       {title === "Reviews" && <Reviews />}
-      {title === "Instructor" && <Instructor data={course} />}
+      {title === "Instructor" && <Instructor data={data} />}
     </div>
   );
 };

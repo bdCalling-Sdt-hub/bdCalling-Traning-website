@@ -12,7 +12,8 @@ const Courses = ({ categories }) => {
   useEffect(() => {
     baseUrl
       .get(`/course?category=${title}`)
-      .then((res) => setCourses(res.data?.data?.data));
+      .then((res) => setCourses(res.data?.data?.data))
+      .catch((err) => setCourses([]));
   }, [title]);
 
   return (
@@ -51,9 +52,15 @@ const Courses = ({ categories }) => {
         ))}
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-12">
-        {courses.map((course, index) => (
-          <CourseCard key={index} course={course} />
-        ))}
+        {courses.length > 0 ? (
+          courses.map((course, index) => (
+            <CourseCard key={index} course={course} />
+          ))
+        ) : (
+          <h2 className="text-center col-span-3 text-2xl text-gray-400">
+            Data Not Found
+          </h2>
+        )}
       </div>
     </div>
   );

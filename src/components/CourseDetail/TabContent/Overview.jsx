@@ -1,16 +1,18 @@
 const Overview = ({ data }) => {
+  const [course] = data;
+
   return (
     <div>
       <div className="mt-5 space-y-4">
-        <p className="text-xl">{data?.description}</p>
+        <p className="text-xl">{course?.course?.courseDetails}</p>
       </div>
       <div>
         <h1 className="text-2xl font-bold my-10">Career Opportunities</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {data?.careerOpportunities.map((item, index) => (
+          {course?.course?.careeropportunities?.map((item, index) => (
             <div key={index}>
               <img src="/images/opportunities2.png" alt="" />
-              <p className="mt-4">{item.title}</p>
+              <p className="mt-4">{item}</p>
             </div>
           ))}
         </div>

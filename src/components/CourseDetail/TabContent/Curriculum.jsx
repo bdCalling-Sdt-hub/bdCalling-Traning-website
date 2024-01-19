@@ -4,6 +4,7 @@ import VideoContent from "../VideoContent";
 
 const Curriculum = ({ data }) => {
   const { solutions, certificate } = curriculum;
+  const [course] = data;
   return (
     <div className="mt-5">
       <div>
@@ -11,7 +12,7 @@ const Curriculum = ({ data }) => {
           What you will learn by doing the course
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
-          {data?.courseOutline.map((item, index) => (
+          {course?.course?.carriculum.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
               <p>
                 <Check size={20} color="#2492EB" />
@@ -21,10 +22,12 @@ const Curriculum = ({ data }) => {
           ))}
         </div>
       </div>
-      <div>{data?.courseStatus === "video" && <VideoContent />}</div>
+      <div>
+        {course?.course?.status === "online" && <VideoContent data={data} />}
+      </div>
       <div className="bg-gray-100 p-5 rounded-md my-14">
         <h1 className="text-xl font-bold mb-3">Software You&#39;ll Learn</h1>
-        {data?.tools.map((item, index) => (
+        {course?.course?.software.map((item, index) => (
           <div className="flex items-center gap-2" key={index}>
             <p>
               <Check size={20} color="#2492EB" />
@@ -36,7 +39,7 @@ const Curriculum = ({ data }) => {
       <div>
         <h1 className="text-xl  font-bold">Open Job Positions</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
-          {data?.job.map((item, index) => (
+          {course?.course?.job_position?.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
               <p>
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
