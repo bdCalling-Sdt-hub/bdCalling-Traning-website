@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import { AlignRight, ChevronDown, X } from "lucide-react";
-import { signOut, useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,7 +21,6 @@ const Navbar = () => {
   });
   const router = useRouter();
   const path = usePathname();
-  const { data } = useSession();
 
   const items = [
     {
@@ -111,33 +109,30 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-          {data?.user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <div className="bg-white rounded-full w-11 h-11 flex items-center justify-center">
-                  <img
-                    src={data?.user?.image || "/images/profile.png"}
-                    className="w-full h-full border border-primary rounded-full"
-                    alt=""
-                  />
-                </div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => signOut()}>
-                  Logout
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <Button
-              className="bg-[#1796fd]"
-              onClick={() => router.push("/login")}
-            >
-              Login
-            </Button>
-          )}
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <div className="bg-white rounded-full w-11 h-11 flex items-center justify-center">
+                <img
+                  src={"/images/profile.png"}
+                  className="w-full h-full border border-primary rounded-full"
+                  alt=""
+                />
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Button
+            className="bg-[#1796fd]"
+            onClick={() => router.push("/login")}
+          >
+            Login
+          </Button>
 
           {/* <DynamicAuthHomepage /> */}
         </ul>

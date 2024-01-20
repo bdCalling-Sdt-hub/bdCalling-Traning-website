@@ -102,8 +102,6 @@ export const getServerSideProps = async () => {
 
   const categoryData = categoryRes.data;
 
-  console.log(categoryData.data);
-
   return {
     props: {
       categories: categoryData.data,

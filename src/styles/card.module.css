@@ -10,7 +10,7 @@
 }
 
 .enrollBtn {
-  background: linear-gradient(bottom, #083c5f, #131313);
+  background: linear-gradient(to bottom, #083c5f, #131313);
 }
 
 .enrollBtn:hover {

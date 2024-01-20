@@ -1,4 +1,3 @@
-import { signIn } from "next-auth/react";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
@@ -40,10 +39,7 @@ const Login = ({ setRegister }) => {
           Sign up
         </Button>
       </p>
-      <Button
-        className="flex items-center gap-2 w-full py-6 bg-white shadow text-gray-500"
-        onClick={() => signIn("github")}
-      >
+      <Button className="flex items-center gap-2 w-full py-6 bg-white shadow text-gray-500">
         <img src="/images/google.svg" alt="google" /> Sign with Google
       </Button>
     </div>

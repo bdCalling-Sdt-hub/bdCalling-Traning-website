@@ -27,8 +27,6 @@ const CourseDetail = () => {
 
   const course = courseDetail[0];
 
-  console.log(course?.course);
-
   const features = [
     {
       icon: <Clock size={20} color="#2492EB" />,

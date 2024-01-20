@@ -1,25 +1,32 @@
-const Reviews = () => {
+import { baseUrl, imgUrl } from "@/config";
+import { useEffect, useState } from "react";
+
+const Reviews = ({ data }) => {
+  const id = data?.course_id;
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    baseUrl.get(`reviews/${id}`).then((res) => setReviews(res?.data?.data));
+  }, [id]);
+
   return (
     <div className="mt-5">
-      {[...Array(5)].map((item, index) => (
+      {reviews.map((item, index) => (
         <div
           className="flex flex-col lg:flex-row items-center gap-4 mb-5 border-b pb-5"
           key={index}
         >
           <img
-            src="/images/feedbackProfile.png"
-            className="w-24 h-24 rounded-full"
+            src={
+              item?.student.image
+                ? `${imgUrl}/${item?.student?.image}`
+                : "https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Images.png"
+            }
+            className="w-16 h-16 rounded-full border"
             alt=""
           />
           <div>
-            <h1 className="text-xl font-bold">David Shon</h1>
-            <p>
-              bdCalling Academy&#39;s courses are very practical and focused on
-              real-world skills.&#39; - Student x I would recommend Learn with
-              bdCalling to anyone who is looking to advance their career&#39; -
-              Student y bdCalling Academy&#39;s courses are very well-produced
-              and easy to follow.
-            </p>
+            <h1 className="text-xl font-bold">{item?.student?.fullName}</h1>
+            <p>{item?.review}</p>
           </div>
         </div>
       ))}

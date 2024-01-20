@@ -23,7 +23,7 @@ const Curriculum = ({ data }) => {
         </div>
       </div>
       <div>
-        {course?.course?.status === "online" && <VideoContent data={data} />}
+        {course?.course?.status === "video" && <VideoContent data={data} />}
       </div>
       <div className="bg-gray-100 p-5 rounded-md my-14">
         <h1 className="text-xl font-bold mb-3">Software You&#39;ll Learn</h1>

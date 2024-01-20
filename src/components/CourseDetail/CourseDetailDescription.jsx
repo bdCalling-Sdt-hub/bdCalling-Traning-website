@@ -40,7 +40,7 @@ const CourseDetailDescription = ({ data }) => {
       </div>
       {title === "Overview" && <Overview data={data} />}
       {title === "Curriculum" && <Curriculum data={data} />}
-      {title === "Reviews" && <Reviews />}
+      {title === "Reviews" && <Reviews data={course} />}
       {title === "Instructor" && <Instructor data={data} />}
     </div>
   );

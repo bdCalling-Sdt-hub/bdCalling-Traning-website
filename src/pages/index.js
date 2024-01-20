@@ -60,8 +60,6 @@ export const getServerSideProps = async () => {
   //const courseData = courseRes.data;
   const categoryData = categoryRes.data;
 
-  console.log(categoryData.data);
-
   return {
     props: {
       categories: categoryData.data,

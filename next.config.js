@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["i.ibb.co", "i.postimg.cc", "192.168.10.13"],
+    remotePatterns: [
+      { hostname: "i.ibb.co" },
+      { hostname: "i.postimg.cc" },
+      { hostname: "192.168.10.13" },
+      { hostname: "pngall.com" },
+    ],
   },
 };
 
