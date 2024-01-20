@@ -1,6 +1,7 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { baseUrl } from "@/config";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 
@@ -13,9 +14,16 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const value = { ...data, userType: "STUDENT" };
+      const res = await baseUrl.post("/register", value);
+
+      console.log(res.data);
+      alert(res.data);
+
+      reset();
+    } catch (err) {}
   };
 
   return (
@@ -86,10 +94,10 @@ const Register = () => {
               <Input
                 type="password"
                 placeholder="Confirm password"
-                name="confirmPassword"
-                {...register("confirmPassword", { required: true })}
+                name="password_confirmation"
+                {...register("password_confirmation", { required: true })}
               />
-              {errors.confirmPassword && (
+              {errors.password_confirmation && (
                 <span className="text-red-500">
                   Confirm password is required
                 </span>

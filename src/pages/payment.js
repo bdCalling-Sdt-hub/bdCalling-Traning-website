@@ -1,20 +1,16 @@
-import TopHeading from "@/components/Common/TopHeading";
 import RootLayout from "@/components/Layouts/RootLayout";
-import PaymentMethod from "@/components/Payment/PaymentMethod";
-import MetaTag from "@/shared/MetaTag";
+import PaymentInfo from "@/components/Payment/PaymentInfo";
 
-const payment = () => {
+const Payment = () => {
   return (
-    <div className="container">
-      <MetaTag title="Payment" />
-      <TopHeading blueText="COMPLETE YOUR PURCHASE" />
-      <PaymentMethod />
-    </div>
+    <>
+      <PaymentInfo />
+    </>
   );
 };
 
-export default payment;
+export default Payment;
 
-payment.getLayout = function (page) {
+Payment.getLayout = function (page) {
   return <RootLayout>{page}</RootLayout>;
 };

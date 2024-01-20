@@ -2,6 +2,7 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { baseUrl } from "@/config";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 
@@ -13,9 +14,15 @@ const Login = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const res = await baseUrl.post("/login", data);
+      console.log(res.data);
+
+      localStorage.setItem("token", res.data.access_token);
+      router.push("/");
+      reset();
+    } catch (err) {}
   };
 
   return (
@@ -42,6 +49,7 @@ const Login = () => {
 
             <div>
               <Input
+                type="password"
                 placeholder="Password"
                 name="password"
                 {...register("password", { required: true })}
