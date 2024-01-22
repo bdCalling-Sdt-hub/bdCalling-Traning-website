@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
 import MetaTag from "@/shared/MetaTag";
 import { Book, Clock, Globe, Presentation, Users } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -19,13 +18,16 @@ const CourseDetail = () => {
   useEffect(() => {
     if (Array.isArray(params) && params.length >= 2) {
       id = params[1];
-      baseUrl
-        .get(`/class/${id}`)
-        .then((res) => setCourseDetail(res?.data?.data));
+      baseUrl.get(`/class/${id}`).then((res) => {
+        setCourseDetail(res?.data?.data);
+        console.log(res.data);
+      });
     }
   }, [params]);
 
   const course = courseDetail[0];
+
+  console.log(course?.course);
 
   const features = [
     {
@@ -36,7 +38,7 @@ const CourseDetail = () => {
     {
       icon: <Book size={20} color="#2492EB" />,
       key: "Lessons",
-      value: course?.lessons,
+      value: courseDetail?.length,
     },
     {
       icon: <Users size={20} color="#2492EB" />,
@@ -83,11 +85,19 @@ const CourseDetail = () => {
                 Course Fee {course?.course?.status}
               </h2>
               <h2 className="text-2xl font-bold text-white my-2">
-                BDT{course?.course?.price}
+                BDT {course?.course?.discount_price}
               </h2>
-              <Link href="/payment">
-                <Button className="  bg-white text-primary">Enroll Now</Button>
-              </Link>
+
+              <Button
+                onClick={() =>
+                  router.push(
+                    `/payment/${course?.course?.id}/${course?.course?.courseName}/${course?.course?.price}/${course?.course?.discount_price}/${course?.course?.startDate}`
+                  )
+                }
+                className="  bg-white text-primary"
+              >
+                Enroll Now
+              </Button>
             </div>
           </div>
         </div>

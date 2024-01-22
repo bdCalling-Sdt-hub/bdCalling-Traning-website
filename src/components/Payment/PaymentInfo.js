@@ -6,11 +6,11 @@ import { useRouter } from "next/router";
 import TopHeading from "../Common/TopHeading";
 import PaymentMethod from "./PaymentMethod";
 
-const PaymentInfo = () => {
+const PaymentInfo = ({ data }) => {
   const router = useRouter();
   const { user } = useAuth();
 
-  console.log(user);
+  console.log(data);
 
   let token;
   if (typeof window !== undefined) {
@@ -26,7 +26,7 @@ const PaymentInfo = () => {
     <div className="container">
       <MetaTag title="Payment" />
       <TopHeading blueText="COMPLETE YOUR PURCHASE" />
-      <PaymentMethod />
+      <PaymentMethod data={data} />
     </div>
   );
 };

@@ -1,53 +1,114 @@
+import { baseUrl } from "@/config";
 import { BadgeDollarSign, Lock, PhoneCall } from "lucide-react";
+import { useRef, useState } from "react";
 import FlexItem from "../Common/FlexItem";
 import { Button } from "../ui/button";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { RadioGroup } from "../ui/radio-group";
 
-const PaymentMethod = () => {
+const PaymentMethod = ({ data }) => {
+  const [code, setCode] = useState("");
+  const token = localStorage.token;
+  const [couponPrice, setCouponPrice] = useState();
+  let id, title, price, discountPrice, date;
+  const bkashRef = useRef();
+  const nagadRef = useRef();
+  const sslRef = useRef();
+
+  if (Array.isArray(data) && data.length >= 5) {
+    let [item1, item2, item3, item4, item5] = data;
+
+    id = item1;
+    title = item2;
+    price = item3;
+    discountPrice = item4;
+    date = item5;
+  }
+
+  const handleCouponCode = () => {
+    const value = {
+      course_id: id,
+      coupon_code: code,
+    };
+    baseUrl
+      .post("/coupon-discount", value, {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setCouponPrice(res.data["coupon-price"]))
+      .catch((err) => console.log(err));
+  };
+
+  let amount;
+  if (couponPrice) {
+    amount = discountPrice
+      ? parseInt(discountPrice) - parseInt(couponPrice)
+      : parseInt(price) - parseInt(couponPrice);
+  } else {
+    amount = discountPrice ? parseInt(discountPrice) : parseInt(price);
+  }
+
+  const handleSelect = (value) => {
+    console.log(value);
+  };
+
+  const items = [
+    {
+      title: "Payment",
+      image: "/images/bkash.png",
+      color: "#E2136E",
+    },
+    {
+      title: "Payment",
+      image: "/images/nagad.png",
+      color: "#ed1d26",
+    },
+    {
+      title: "",
+      image: "/images/ssl.png",
+      color: "",
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12 lg:mx-32">
       <div>
         <div className="border border-[#2492EB] rounded-md p-4">
           <div>
-            <FlexItem gap="gap-4">
-              <img
-                src="/images/courseDetail.png"
-                className="w-40 h-24 rounded-md object-cover"
-                alt=""
-              />
-              <div>
-                <h1 className="font-medium text-lg">
-                  Certified UI/UX Designer Course{" "}
-                </h1>
-                <p className="text-sm">Starts on: Thursday, 26 October</p>
-                <p className="text-sm">Time: 04:pm 06:pm</p>
-              </div>
-            </FlexItem>
+            <div>
+              <h1 className=" text-xl capitalize">{title} </h1>
+              <p className="text-sm">Starts on: {date}</p>
+            </div>
             <h1 className="my-5">Payment Details</h1>
             <div className="bg-white shadow  rounded-md  flex items-center p-1 gap-1 w-full mb-7">
               <input
                 type="text"
                 placeholder="Discount coupon code"
-                className=" h-full w-full  bg-transparent outline-none px-2 py-2"
+                className="h-full w-full  bg-transparent outline-none px-2 py-2"
+                onChange={(e) => setCode(e.target.value)}
               />
 
-              <Button className="bg-primary rounded-md px-5 text-white py-2">
+              <Button
+                onClick={handleCouponCode}
+                className="bg-primary rounded-md px-5 text-white py-2"
+              >
                 Apply
               </Button>
             </div>
             <div className="space-y-1 mt-2 border-b mb-4">
               <FlexItem justify="justify-between">
                 <p>Sub Total</p>
-                <p>BDT18,000</p>
+                <p>BDT {discountPrice ? discountPrice : price}</p>
               </FlexItem>
               <FlexItem justify="justify-between">
                 <p>Discount</p>
-                <p className="">BDT3,000</p>
+                <p className="">BDT {couponPrice ? couponPrice : 0}</p>
               </FlexItem>
             </div>
             <FlexItem justify="justify-between">
               <p>Total</p>
-              <p>BDT15,000</p>
+              <p>BDT {amount}</p>
             </FlexItem>
           </div>
         </div>
@@ -60,36 +121,23 @@ const PaymentMethod = () => {
       </div>
       <div className="border border-[#2492EB] rounded-md p-4 ">
         <h1 className=" font-medium mb-5 text-lg">Payment Medium</h1>
-        <RadioGroup defaultValue="comfortable">
-          <div className="flex items-center space-x-2 mb-1 animate__animated animate__bounceIn">
-            <RadioGroupItem value="default" id="r1" />
-            <label
-              htmlFor="r1"
-              className="flex items-center justify-center gap-3 bg-white shadow w-full px-5 py-3 rounded"
+        <RadioGroup>
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center shadow gap-4 p-2 rounded"
             >
-              <img src="/images/bkash.png" width="100" alt="" />
-              <p className="text-xl text-[#E2136E]">Payment</p>
-            </label>
-          </div>
-          <div className="flex items-center space-x-2 mb-1 animate__animated animate__bounceIn">
-            <RadioGroupItem value="comfortable" id="r2" />
-            <label
-              htmlFor="r2"
-              className="flex items-center justify-center gap-3 bg-white shadow w-full px-5 py-3 rounded"
-            >
-              <img src="/images/nagad.png" width="100" alt="" />
-              <p className="text-xl text-[#EC2428]">Payment</p>
-            </label>
-          </div>
-          <div className="flex items-center space-x-2 mb-1 animate__animated animate__bounceIn">
-            <RadioGroupItem value="compact" id="r3" />
-            <label
-              htmlFor="r3"
-              className="flex justify-center items-center bg-white shadow w-full py-3 rounded text-center"
-            >
-              <img src="/images/ssl.png" width="200" alt="" />
-            </label>
-          </div>
+              <input type="radio" id={`r${index}`} name="payment" />
+              <label htmlFor={`r${index}`} className="flex items-center gap-2">
+                <img
+                  src={item.image}
+                  width={!item.title ? "200" : " 100"}
+                  alt=""
+                />
+                <p className={`text-[${item.color}] text-lg`}>Payment</p>
+              </label>
+            </div>
+          ))}
         </RadioGroup>
         <div className="my-5 border-t pt-5">
           <FlexItem justify="justify-between">
