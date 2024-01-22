@@ -14,13 +14,29 @@ const Login = () => {
     reset,
     formState: { errors },
   } = useForm();
+
+  console.log(router);
+
+  let redirect = "/";
+
+  // Check if running on the client side
+  if (typeof window !== "undefined") {
+    // Access localStorage only on the client side
+    redirect = localStorage.route || "/";
+  }
+
   const onSubmit = async (data) => {
     try {
       const res = await baseUrl.post("/login", data);
       console.log(res.data);
 
-      localStorage.setItem("token", res.data.access_token);
-      router.push("/");
+      if (typeof window !== "undefined") {
+        localStorage.setItem("token", res.data.access_token);
+
+        router.push(redirect);
+      }
+
+      localStorage.removeItem("route");
       reset();
     } catch (err) {}
   };

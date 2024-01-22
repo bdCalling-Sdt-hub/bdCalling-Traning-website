@@ -7,14 +7,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { baseUrl, imgUrl } from "@/config";
+import { imgUrl } from "@/config";
+import useAuth from "@/hooks/useAuth";
 import { motion } from "framer-motion";
 import { AlignRight, ChevronDown, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const DynamicAuthHomepage = dynamic(() => import("@/components/Auth/index"), {
@@ -22,23 +23,11 @@ const Navbar = () => {
   });
   const router = useRouter();
   const path = usePathname();
-  const [user, setUser] = useState({});
 
-  const token = localStorage.token;
-
-  useEffect(() => {
-    baseUrl
-      .get("/profile", {
-        headers: {
-          "Content-type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setUser(res.data?.user));
-  }, [token]);
+  const { user, setUser } = useAuth();
 
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.clear();
     setUser({});
   };
 

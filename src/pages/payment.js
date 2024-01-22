@@ -1,10 +1,16 @@
 import RootLayout from "@/components/Layouts/RootLayout";
-import PaymentInfo from "@/components/Payment/PaymentInfo";
+import dynamic from "next/dynamic";
 
 const Payment = () => {
+  const DynamicPayment = dynamic(
+    () => import("@/components/Payment/PaymentInfo"),
+    {
+      ssr: false,
+    }
+  );
   return (
     <>
-      <PaymentInfo />
+      <DynamicPayment />
     </>
   );
 };

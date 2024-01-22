@@ -1,3 +1,4 @@
+import AuthProvider from "@/contexts/AuthContext";
 import "@/styles/globals.css";
 import "animate.css";
 import { AnimatePresence, motion } from "framer-motion";
@@ -8,7 +9,7 @@ export default function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
 
   return (
-    <>
+    <AuthProvider>
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -20,6 +21,6 @@ export default function MyApp({ Component, pageProps }) {
           {getLayout(<Component {...pageProps} />)}
         </motion.div>
       </AnimatePresence>
-    </>
+    </AuthProvider>
   );
 }
