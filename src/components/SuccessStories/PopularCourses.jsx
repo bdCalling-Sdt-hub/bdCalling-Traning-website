@@ -6,7 +6,10 @@ const PopularCourses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    baseUrl.get(`/course`).then((res) => setCourses(res.data?.data?.data));
+    baseUrl
+      .get(`/course`)
+      .then((res) => setCourses(res.data?.data?.data))
+      .catch((err) => console.log(err));
   }, []);
 
   const popularCourse = courses.filter((course) => course.popular === 1);

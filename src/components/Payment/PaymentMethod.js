@@ -1,7 +1,6 @@
 import { baseUrl } from "@/config";
-import axios from "axios";
 import { BadgeDollarSign, Lock, PhoneCall } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FlexItem from "../Common/FlexItem";
 import { Button } from "../ui/button";
 
@@ -21,28 +20,6 @@ const PaymentMethod = ({ data }) => {
     discountPrice = item4;
     date = item5;
   }
-
-  useEffect(() => {
-    async function run() {
-      const options = {
-        method: "GET",
-        url: "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming",
-        headers: {
-          "X-RapidAPI-Key":
-            "0b5f1e92bcmshc5ec110bb7e1687p1e21a9jsn2b3e40923538",
-          "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
-        },
-      };
-
-      try {
-        const response = await axios.request(options);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    run();
-  }, []);
 
   const handleCouponCode = () => {
     const value = {
