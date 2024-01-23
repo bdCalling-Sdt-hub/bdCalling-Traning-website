@@ -107,7 +107,7 @@ const Navbar = () => {
                     <DropdownMenuContent>
                       {item.children.map((item, index) => (
                         <DropdownMenuItem key={index}>
-                          <Link href={`/courses/${item.path}`}>
+                          <Link href={`/courses${item.path}`}>
                             {item.title}
                           </Link>
                         </DropdownMenuItem>

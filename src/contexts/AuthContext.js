@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const [loading, setLoading] = useState(true);
+
   let token;
 
   if (typeof window !== "undefined") {
@@ -30,7 +30,6 @@ const AuthProvider = ({ children }) => {
         })
         .then((res) => {
           if (res.data) {
-            setLoading(false);
             setUser(res.data?.user);
           }
         })
@@ -38,12 +37,8 @@ const AuthProvider = ({ children }) => {
           console.error("Error fetching user data:", error);
         });
     }
-    setLoading(false);
   }, [token]);
 
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 

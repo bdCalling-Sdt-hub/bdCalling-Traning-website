@@ -1,18 +1,16 @@
 import { baseUrl } from "@/config";
+import axios from "axios";
 import { BadgeDollarSign, Lock, PhoneCall } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import FlexItem from "../Common/FlexItem";
 import { Button } from "../ui/button";
-import { RadioGroup } from "../ui/radio-group";
 
 const PaymentMethod = ({ data }) => {
   const [code, setCode] = useState("");
   const token = localStorage.token;
   const [couponPrice, setCouponPrice] = useState();
   let id, title, price, discountPrice, date;
-  const bkashRef = useRef();
-  const nagadRef = useRef();
-  const sslRef = useRef();
+  const [gateway, setGateway] = useState("sslcommerze");
 
   if (Array.isArray(data) && data.length >= 5) {
     let [item1, item2, item3, item4, item5] = data;
@@ -23,6 +21,28 @@ const PaymentMethod = ({ data }) => {
     discountPrice = item4;
     date = item5;
   }
+
+  useEffect(() => {
+    async function run() {
+      const options = {
+        method: "GET",
+        url: "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming",
+        headers: {
+          "X-RapidAPI-Key":
+            "0b5f1e92bcmshc5ec110bb7e1687p1e21a9jsn2b3e40923538",
+          "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    run();
+  }, []);
 
   const handleCouponCode = () => {
     const value = {
@@ -49,23 +69,57 @@ const PaymentMethod = ({ data }) => {
     amount = discountPrice ? parseInt(discountPrice) : parseInt(price);
   }
 
-  const handleSelect = (value) => {
-    console.log(value);
+  const handlePayment = () => {
+    const value = {
+      course_id: id,
+      price: amount,
+      gateway_name: gateway,
+    };
+
+    if (gateway === "sslcommerze") {
+      baseUrl
+        .post("/pay", value, {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          if (res.data.status === "success") {
+            const redirectUrl = res.data.data;
+
+            if (typeof redirectUrl === "string" && redirectUrl.trim() !== "") {
+              window.location.href = redirectUrl;
+            } else {
+              console.error("Invalid redirect URL:", redirectUrl);
+            }
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+
+    if (gateway === "bkash") {
+      window.location.href =
+        "http://192.168.10.13:8000/api/bkash/create-payment";
+    }
   };
 
   const items = [
     {
       title: "Payment",
+      value: "bkash",
       image: "/images/bkash.png",
       color: "#E2136E",
     },
-    {
-      title: "Payment",
-      image: "/images/nagad.png",
-      color: "#ed1d26",
-    },
+    // {
+    //   title: "Payment",
+    //   value: "nagad",
+    //   image: "/images/nagad.png",
+    //   color: "#ed1d26",
+    // },
     {
       title: "",
+      value: "sslcommerze",
       image: "/images/ssl.png",
       color: "",
     },
@@ -121,37 +175,49 @@ const PaymentMethod = ({ data }) => {
       </div>
       <div className="border border-[#2492EB] rounded-md p-4 ">
         <h1 className=" font-medium mb-5 text-lg">Payment Medium</h1>
-        <RadioGroup>
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center shadow gap-4 p-2 rounded"
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center shadow gap-4 p-2 rounded mb-3"
+          >
+            <input
+              type="radio"
+              id={`r${index}`}
+              className="w-5 h-5"
+              name="payment"
+              checked={item.value === gateway}
+              onChange={() => setGateway(item.value)}
+            />
+            <label
+              htmlFor={`r${index}`}
+              className="flex items-center gap-2 w-full"
             >
-              <input type="radio" id={`r${index}`} name="payment" />
-              <label htmlFor={`r${index}`} className="flex items-center gap-2">
-                <img
-                  src={item.image}
-                  width={!item.title ? "200" : " 100"}
-                  alt=""
-                />
-                <p className={`text-[${item.color}] text-lg`}>Payment</p>
-              </label>
-            </div>
-          ))}
-        </RadioGroup>
-        <div className="my-5 border-t pt-5">
+              <img
+                src={item.image}
+                width={!item.title ? "200" : " 100"}
+                alt=""
+              />
+              <p className={`text-lg`}>{!item.title ? "" : item.title}</p>
+            </label>
+          </div>
+        ))}
+
+        <div className="my-4 border-t pt-5">
           <FlexItem justify="justify-between">
             <p className="text-lg">Sub Total</p>
-            <p className="text-lg">BDT15,000</p>
+            <p className="text-lg">BDT {amount}</p>
           </FlexItem>
         </div>
-        <Button className="flex gap-1 bg-primary py-6 px-8 w-full">
+        <Button
+          className="flex gap-1 bg-primary py-6 px-8 w-full"
+          onClick={handlePayment}
+        >
           <p className="text-md uppercase">Complete Payment</p>
           <BadgeDollarSign size={20} />
         </Button>
         <p className="text-center mt-5 flex items-center justify-center gap-1">
           <Lock size={18} color="green" />
-          <span>Secured Payment</span>
+          <span className="text-sm text-gray-400">Secured Payment</span>
         </p>
       </div>
     </div>

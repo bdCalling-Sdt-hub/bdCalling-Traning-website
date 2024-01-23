@@ -38,10 +38,10 @@ const Banner = () => {
         <div className="lg:flex items-center container py-24">
           <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
-              <h2 className="text-2xl px-3 rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] , w-80 py-1 font-medium relative">
+              <h2 className="text-2xl text-center rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] , w-3/6 py-1 font-medium relative">
                 Let&#39;s Grow Your Career
                 <span
-                  className="absolute text-[18px] bottom-0 right-0 text-[#4a54e6fa]"
+                  className="absolute text-[18px] top-0 -right-14 text-[#4a54e6fa]"
                   style={{ textShadow: "2px 2px 5px #1696fd" }}
                 >
                   𝓌𝒾𝓉𝒽

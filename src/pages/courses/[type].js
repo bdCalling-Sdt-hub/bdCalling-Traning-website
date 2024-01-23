@@ -27,8 +27,6 @@ const CoursesPage = () => {
       });
   }, [status]);
 
-  console.log(error);
-
   const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
   const catagories = [
     "Wordpress",

@@ -10,7 +10,8 @@ const VerifyPage = () => {
   useEffect(() => {
     baseUrl
       .post("/verified-email", { verified_code: id })
-      .then((res) => console.log(res.data));
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
   }, [id]);
 
   return (

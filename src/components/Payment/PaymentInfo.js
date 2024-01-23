@@ -10,7 +10,7 @@ const PaymentInfo = ({ data }) => {
   const router = useRouter();
   const { user } = useAuth();
 
-  console.log(data);
+  const conData = data?.join("/");
 
   let token;
   if (typeof window !== undefined) {
@@ -19,7 +19,7 @@ const PaymentInfo = ({ data }) => {
 
   if (!token) {
     router.push("/login");
-    localStorage.setItem("route", "/payment");
+    localStorage.setItem("route", `/payment/${conData}`);
   }
 
   return (

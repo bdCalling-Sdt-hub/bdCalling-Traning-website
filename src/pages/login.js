@@ -1,6 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { baseUrl } from "@/config";
 import { useRouter } from "next/router";
@@ -15,8 +14,6 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  console.log(router);
-
   let redirect = "/";
 
   // Check if running on the client side
@@ -28,7 +25,6 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       const res = await baseUrl.post("/login", data);
-      console.log(res.data);
 
       if (typeof window !== "undefined") {
         localStorage.setItem("token", res.data.access_token);
@@ -63,7 +59,7 @@ const Login = () => {
               )}
             </div>
 
-            <div>
+            <div className="mb-5">
               <Input
                 type="password"
                 placeholder="Password"
@@ -75,7 +71,7 @@ const Login = () => {
               )}
             </div>
 
-            <div className="flex items-center justify-between mb-7 mt-2">
+            {/* <div className="flex items-center justify-between mb-7 mt-2">
               <div className="flex space-x-2">
                 <Checkbox id="terms1" />
                 <label
@@ -88,7 +84,7 @@ const Login = () => {
               <Button variant="link" className="px-0">
                 Forget password
               </Button>
-            </div>
+            </div> */}
             <Button type="submit" className="w-full py-6 bg-primary">
               Login
             </Button>

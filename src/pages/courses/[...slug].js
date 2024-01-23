@@ -20,14 +20,11 @@ const CourseDetail = () => {
       id = params[1];
       baseUrl.get(`/class/${id}`).then((res) => {
         setCourseDetail(res?.data?.data);
-        console.log(res.data);
       });
     }
   }, [params]);
 
   const course = courseDetail[0];
-
-  console.log(course?.course);
 
   const features = [
     {

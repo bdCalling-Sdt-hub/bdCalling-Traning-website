@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Button } from "../components/ui/button";
 
 const CourseCard = ({ course }) => {
-  // console.log(course);
   const {
     courseThumbnail,
     batch,

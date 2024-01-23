@@ -19,7 +19,6 @@ const Register = () => {
       const value = { ...data, userType: "STUDENT" };
       const res = await baseUrl.post("/register", value);
 
-      console.log(res.data);
       alert(res.data);
 
       reset();
