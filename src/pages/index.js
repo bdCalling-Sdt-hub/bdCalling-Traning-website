@@ -18,8 +18,6 @@ const HomePage = () => {
   });
   const { category } = useCategory();
 
-  console.log(category);
-
   return (
     <div>
       <MetaTag title="bdCalling Academy" />

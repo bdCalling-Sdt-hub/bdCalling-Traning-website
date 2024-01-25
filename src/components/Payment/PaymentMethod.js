@@ -86,7 +86,6 @@ const PaymentMethod = ({ data }) => {
         .then((res) => {
           if (res.data) {
             window.location.href = res.data;
-            console.log(res.data);
           }
         })
         .catch((err) => console.log(err));
