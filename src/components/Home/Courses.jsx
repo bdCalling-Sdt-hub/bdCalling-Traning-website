@@ -3,17 +3,28 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import CourseCard from "../../shared/CourseCard";
+import SkeletonCard from "../Common/SkeletonCard";
 import { Button } from "../ui/button";
 
 const Courses = ({ categories }) => {
   const [title, setTitle] = useState(0);
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     baseUrl
       .get(`/course?category=${title}`)
-      .then((res) => setCourses(res.data?.data?.data))
-      .catch((err) => setCourses([]));
+      .then((res) => {
+        if (res.data) {
+          setCourses(res.data?.data?.data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => setCourses([]))
+      .finally(() => {
+        setLoading(false);
+      });
   }, [title]);
 
   return (
@@ -38,7 +49,7 @@ const Courses = ({ categories }) => {
         >
           All
         </Button>
-        {categories.map((category, index) => (
+        {categories?.map((category, index) => (
           <Button
             key={index}
             variant="link"
@@ -52,7 +63,9 @@ const Courses = ({ categories }) => {
         ))}
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-12">
-        {courses.length > 0 ? (
+        {loading ? (
+          <SkeletonCard />
+        ) : courses.length > 0 ? (
           courses.map((course, index) => (
             <CourseCard key={index} course={course} />
           ))

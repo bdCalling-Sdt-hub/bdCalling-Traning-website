@@ -1,7 +1,7 @@
 .courseCard {
-  background: linear-gradient(70deg, #083a5f, #131313);
-  color: #ebe9e9;
-  transition: all 0.5s;
+  /* background: linear-gradient(70deg, #083a5f, #131313);
+  color: #ebe9e9; */
+  transition: all 0.4s;
 }
 
 .courseCard:hover {
@@ -10,7 +10,8 @@
 }
 
 .enrollBtn {
-  background: linear-gradient(to bottom, #083c5f, #131313);
+  /* background: linear-gradient(to bottom, #083c5f, #131313); */
+  background: #2194f3;
 }
 
 .enrollBtn:hover {

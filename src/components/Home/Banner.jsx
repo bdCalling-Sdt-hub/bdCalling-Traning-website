@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import useCategory from "@/hooks/useCategory";
 import styles from "@/styles/home.module.css";
 import { ChevronDown, Play, Search } from "lucide-react";
 import { useState } from "react";
@@ -14,17 +15,8 @@ import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const Banner = () => {
   const [videoLink, setVideoLink] = useState("");
-  const catagories = [
-    "Wordpress",
-    "Digital Marketing",
-    "Graphics Design",
-    "UX/UI Design",
-    "APP Developer with Flutter",
-    "Front-End Development",
-    "Lead & Data Entry",
-    "Visual Design Fundamentals",
-    "Prototyping and Wireframing",
-  ];
+  const { category: catagories } = useCategory();
+
   const videoLinkLists = [
     {
       video:
@@ -74,9 +66,9 @@ const Banner = () => {
                       Courses <ChevronDown />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                      {catagories.map((category, index) => (
-                        <DropdownMenuItem key={index}>
-                          {category}
+                      {catagories?.map((item, index) => (
+                        <DropdownMenuItem className="capitalize" key={index}>
+                          {item.category_name}
                         </DropdownMenuItem>
                       ))}
                     </DropdownMenuContent>

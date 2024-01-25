@@ -4,19 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { baseUrl } from "@/config";
+import useCategory from "@/hooks/useCategory";
 import MetaTag from "@/shared/MetaTag";
 import { useForm } from "react-hook-form";
 
-const FreeSeminar = ({ categories }) => {
+const FreeSeminar = () => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+  const { category: categories } = useCategory();
 
   const onSubmit = (data) => {
-    baseUrl.post("/seminers", data).then((res) => console.log(res.data));
+    baseUrl
+      .post("/seminers", data)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -62,7 +67,7 @@ const FreeSeminar = ({ categories }) => {
           {...register("category")}
           className="border w-full py-4  rounded-md"
         >
-          {categories.map((item, index) => (
+          {categories?.map((item, index) => (
             <option
               value={item.category_name}
               className="capitalize"
@@ -95,16 +100,4 @@ export default FreeSeminar;
 
 FreeSeminar.getLayout = function (page) {
   return <RootLayout>{page}</RootLayout>;
-};
-
-export const getServerSideProps = async () => {
-  const categoryRes = await baseUrl.get("/category");
-
-  const categoryData = categoryRes.data;
-
-  return {
-    props: {
-      categories: categoryData.data,
-    },
-  };
 };

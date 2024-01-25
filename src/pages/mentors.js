@@ -1,15 +1,23 @@
 import ExpertCard from "@/components/Common/Expert.Card";
-import Subscribe from "@/components/Common/Subscribe";
 import TopHeading from "@/components/Common/TopHeading";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
+import { baseUrl } from "@/config";
 import MetaTag from "@/shared/MetaTag";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import expert from "../../public/db/expert.json";
 
 const Mentors = () => {
-  const { expertList, teams } = expert;
+  const { teams } = expert;
   const [title, setTitle] = useState("Mentors");
+  const [expertList, setExpertList] = useState([]);
+
+  useEffect(() => {
+    baseUrl
+      .get("/mentors/all")
+      .then((res) => setExpertList(res.data?.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   const categoryLists = ["Mentors", "Team"];
 
@@ -44,10 +52,6 @@ const Mentors = () => {
         {title === "Team" &&
           teams.map((item, index) => <ExpertCard key={index} data={item} />)}
       </div>
-      <Subscribe
-        title="Join our dynamic team"
-        description="Unlock a world of knowledge and endless growth opportunities"
-      />
     </div>
   );
 };

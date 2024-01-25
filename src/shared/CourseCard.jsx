@@ -23,7 +23,7 @@ const CourseCard = ({ course }) => {
   return (
     <Link href={`/courses/${status}/${id}`}>
       <div
-        className={`rounded-lg hover:-translate-y-5 group ${styles.courseCard}`}
+        className={`rounded-lg hover:-translate-y-4 group ${styles.courseCard}`}
         style={{
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         }}
@@ -56,7 +56,7 @@ const CourseCard = ({ course }) => {
               {duration} Days Left
             </p>
           </div>
-          <h2 className="my-3 text-lg capitalize">{courseName}</h2>
+          <h2 className="my-3 text-xl capitalize">{courseName}</h2>
           <div className="flex items-center justify-between my-4">
             <div className="flex gap-4 items-center">
               <h2 className="text-lg font-bold">{discount_price}BDT</h2>
@@ -70,7 +70,7 @@ const CourseCard = ({ course }) => {
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />
               </div>
-              5(20)
+              (5.0)
             </div>
           </div>
           <Button

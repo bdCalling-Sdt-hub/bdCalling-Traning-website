@@ -8,20 +8,24 @@ import StudentSuccess from "@/components/Home/StudentSuccess";
 import Testimonial from "@/components/Home/Testimonial";
 import TotalSuccess from "@/components/Home/TotalSuccess";
 import RootLayout from "@/components/Layouts/RootLayout";
-import { baseUrl } from "@/config";
+import useCategory from "@/hooks/useCategory";
 import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
 
-const HomePage = ({ categories }) => {
+const HomePage = () => {
   const DynamicCourses = dynamic(() => import("@/components/Home/Courses"), {
     loading: () => <h1>Loading...</h1>,
   });
+  const { category } = useCategory();
+
+  console.log(category);
+
   return (
     <div>
       <MetaTag title="bdCalling Academy" />
       <Banner />
       <Reveal>
-        <DynamicCourses categories={categories} />
+        <DynamicCourses categories={category} />
       </Reveal>
       <Reveal>
         <Exceptional />
@@ -49,21 +53,4 @@ export default HomePage;
 
 HomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
-};
-
-export const getServerSideProps = async () => {
-  //api endpoint
-  // const courseRes = await baseUrl.get("/course");
-  const categoryRes = await baseUrl.get("/category");
-
-  //api response data
-  //const courseData = courseRes.data;
-  const categoryData = categoryRes.data;
-
-  return {
-    props: {
-      categories: categoryData.data,
-      //courses: courseData.data?.data,
-    },
-  };
 };

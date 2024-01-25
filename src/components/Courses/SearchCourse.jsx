@@ -4,20 +4,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import useCategory from "@/hooks/useCategory";
 import { ChevronDown, Search } from "lucide-react";
 
 const SearchCourse = () => {
-  const catagories = [
-    "Wordpress",
-    "Digital Marketing",
-    "Graphics Design",
-    "UX/UI Design",
-    "APP Developer with Flutter",
-    "Front-End Development",
-    "Lead & Data Entry",
-    "Visual Design Fundamentals",
-    "Prototyping and Wireframing",
-  ];
+  const { category: catagories } = useCategory();
+
   return (
     <div className="border rounded-full h-14 flex items-center  gap-2 px-2 mt-10">
       <input
@@ -30,8 +22,10 @@ const SearchCourse = () => {
           Courses <ChevronDown />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          {catagories.map((category, index) => (
-            <DropdownMenuItem key={index}>{category}</DropdownMenuItem>
+          {catagories?.map((category, index) => (
+            <DropdownMenuItem key={index}>
+              {category.category_name}
+            </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
       </DropdownMenu>

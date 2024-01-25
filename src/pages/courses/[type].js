@@ -5,6 +5,7 @@ import SearchCourse from "@/components/Courses/SearchCourse";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
+import useCategory from "@/hooks/useCategory";
 import CourseCard from "@/shared/CourseCard";
 import MetaTag from "@/shared/MetaTag";
 import { useRouter } from "next/router";
@@ -16,6 +17,7 @@ const CoursesPage = () => {
   const [courses, setCourses] = useState([]);
   const status = router.query.type;
   const [error, setError] = useState("");
+  const { category: catagories } = useCategory();
 
   useEffect(() => {
     baseUrl
@@ -28,17 +30,7 @@ const CoursesPage = () => {
   }, [status]);
 
   const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
-  const catagories = [
-    "Wordpress",
-    "Digital Marketing",
-    "Graphics Design",
-    "UX/UI Design",
-    "APP Developer with Flutter",
-    "Front-End Development",
-    "Lead & Data Entry",
-    "Visual Design Fundamentals",
-    "Prototyping and Wireframing",
-  ];
+
   return (
     <div className="container">
       <MetaTag title="Courses" />
@@ -54,15 +46,9 @@ const CoursesPage = () => {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-12">
         <div className="space-y-4">
-          <AccordionCard title="Courses">
-            {coursesFilter.map((item, index) => (
-              <AccordionAnswerText key={index} data={item} />
-            ))}
-          </AccordionCard>
-
           <AccordionCard title="Course Categories">
-            {catagories.map((item, index) => (
-              <AccordionAnswerText key={index} data={item} />
+            {catagories?.map((item, index) => (
+              <AccordionAnswerText key={index} data={item.category_name} />
             ))}
           </AccordionCard>
         </div>

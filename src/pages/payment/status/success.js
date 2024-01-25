@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const PaymentSuccessPage = () => {
   return (
-    <div className="flex justify-center items-center h-screen text-center bg-green-50">
+    <div className="flex justify-center items-center h-screen text-center bg-blue-50">
       <div>
         <div className="border-2 mx-auto mb-8 border-green-400 p-6 rounded-full w-32 h-32 flex items-center justify-center">
           <img

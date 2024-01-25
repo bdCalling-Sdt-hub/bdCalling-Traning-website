@@ -76,8 +76,20 @@ const PaymentMethod = ({ data }) => {
     }
 
     if (gateway === "bkash") {
-      window.location.href =
-        "http://192.168.10.13:8000/api/bkash/create-payment";
+      baseUrl
+        .post(`/bkash/create-payment`, value, {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          if (res.data) {
+            window.location.href = res.data;
+            console.log(res.data);
+          }
+        })
+        .catch((err) => console.log(err));
     }
   };
 
