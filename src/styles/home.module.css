@@ -1,6 +1,7 @@
 .homeBanner {
   background: linear-gradient(to left, #e6f8ff, #e6f8ff);
   width: 100%;
+  height: 65vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

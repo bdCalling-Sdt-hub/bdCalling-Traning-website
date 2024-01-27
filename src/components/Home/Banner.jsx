@@ -1,16 +1,12 @@
 import ParallaxText from "@/animation/FramerMotion/ParallaxText";
 import Reveal from "@/animation/FramerMotion/Reveal";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import useCategory from "@/hooks/useCategory";
 import styles from "@/styles/home.module.css";
-import { ChevronDown, Play, Search } from "lucide-react";
+import { BookOpen, Play } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import { AspectRatio } from "../ui/aspect-ratio";
+import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const Banner = () => {
@@ -27,13 +23,13 @@ const Banner = () => {
   return (
     <>
       <div className={styles.homeBanner}>
-        <div className="lg:flex items-center container py-24">
+        <div className="lg:flex items-center gap-8 container py-24">
           <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
-              <h2 className="text-2xl text-center rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] , w-3/6 py-1 font-medium relative">
-                Let&#39;s Grow Your Career
+              <h2 className="text-5xl  rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] , w-2/4 p-1 font-medium relative">
+                Let&#39;s Grow <br /> Your Career
                 <span
-                  className="absolute text-[18px] top-0 -right-14 text-[#4a54e6fa]"
+                  className="absolute text-[18px] bottom-0 -right-14 text-[#586faffa]"
                   style={{ textShadow: "2px 2px 5px #1696fd" }}
                 >
                   𝓌𝒾𝓉𝒽
@@ -54,6 +50,14 @@ const Banner = () => {
               </p>
             </Reveal>
             <Reveal>
+              <Link href="/courses" className="inline-block">
+                <Button className="flex items-center gap-2 py-6 bg-primary ">
+                  <BookOpen />
+                  Browse Courses
+                </Button>
+              </Link>
+            </Reveal>
+            {/* <Reveal>
               <div className="bg-white lg:w-[80%] shadow rounded-full h-14 flex items-center justify-between gap-1 px-2">
                 <input
                   type="text"
@@ -78,17 +82,17 @@ const Banner = () => {
                   </button>
                 </div>
               </div>
-            </Reveal>
+            </Reveal> */}
           </div>
-          <div className="order-1 lg:order-2 w-full lg:w-[700px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#16fdde] p-2 rounded-3xl animate__animated animate__zoomIn">
+          <div className="order-1 lg:order-2 w-full lg:w-[700px] h-[380px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#4d95d8] p-2 rounded-3xl animate__animated animate__zoomIn">
             <Dialog>
               {videoLinkLists.map((item, index) => (
                 <div key={index}>
-                  <div className={`relative w-full`}>
+                  <div className={`relative w-full h-full`}>
                     <img
                       src={item.thumb}
                       alt=""
-                      className="w-full rounded-3xl"
+                      className="w-full h-[364px] rounded-3xl"
                     />
 
                     <div
@@ -120,7 +124,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="py-2 bg-gradient-to-t from-[#167afd] to-[#17b4fd]">
+      <div className="py-5 bg-gradient-to-t from-[#167afd] to-[#17b4fd]">
         {/* <ParallaxText baseVelocity={-1}>
           🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
           Generation & Data Entry

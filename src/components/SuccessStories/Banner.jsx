@@ -52,7 +52,6 @@ const Banner = () => {
         {title === "Student Journey" && <StudentJourney />}
         {title === "Gallery" && <Gallery />}
       </div>
-      <Button className="mt-5 mx-auto block">See More</Button>
     </div>
   );
 };

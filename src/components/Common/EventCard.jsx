@@ -1,8 +1,21 @@
-import { Calendar, Clock8 } from "lucide-react";
+import { imgUrl } from "@/config";
+import { Calendar, Clock8, MapPinned } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
 const EventCard = ({ data, index }) => {
+  console.log(data);
+  const {
+    date,
+    starttime,
+    endtime,
+    courseName,
+    image,
+    description,
+    status,
+    officeLocation,
+  } = data;
+
   const animationType = [
     "animate__backInLeft",
     "animate__backInRight",
@@ -18,7 +31,7 @@ const EventCard = ({ data, index }) => {
       }}
     >
       <img
-        src={data?.image}
+        src={`${imgUrl}/${image}`}
         alt="course image"
         className="rounded-t-lg w-full h-[300px]"
       />
@@ -26,25 +39,29 @@ const EventCard = ({ data, index }) => {
         <div className="lg:flex items-center justify-between">
           <div className="flex gap-5 items-center">
             <p size={18} className="flex items-center gap-1">
-              <Calendar size={22} color="#1796fd" />
-              <span className="font-bold text-gray-600">30 December, 2023</span>
+              <Calendar size={18} color="#1796fd" />
+              <span className=" text-gray-600">{date}</span>
             </p>
             <p size={18} className="flex items-center gap-1">
-              <Clock8 size={22} color="#1796fd" />
-              <span className="font-bold text-gray-600">05:00 pm</span>
+              <Clock8 size={18} color="#1796fd" />
+              <span className=" text-gray-600">{starttime}</span>-
+              <span className=" text-gray-600">{endtime}</span>
             </p>
           </div>
-          <p className="text-green-500 text-lg">Online</p>
+          <p
+            className={`${
+              status === "OFFLINE" ? "text-black" : "text-green-500"
+            } text-md`}
+          >
+            {status}
+          </p>
         </div>
-        <h2 className="text-2xl font-bold my-3">
-          Career in WordPress online Seminar
-        </h2>
-        <p>
-          WordPress is now the most advanced in the web developing career but
-          WordPress is still beyond the knowledge of many people! So on December
-          30, 7 pm up to 100% scholarship facility, Career in WordPress came
-          with bdCalling to tell you more about WordPress.
-        </p>
+        <div className="flex items-center mt-1 gap-1">
+          <MapPinned size={20} color="#1796fd" />
+          <p className="text-md capitalize text-gray-500">{officeLocation}</p>
+        </div>
+        <h2 className="text-2xl capitalize my-3">{courseName}</h2>
+        <p>{description}</p>
         <Link href="/free-seminar">
           <Button className="bg-primary mt-5">Join Seminar</Button>
         </Link>
