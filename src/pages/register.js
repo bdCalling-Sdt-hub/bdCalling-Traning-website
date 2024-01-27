@@ -3,10 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { baseUrl } from "@/config";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Register = () => {
   const router = useRouter();
+
+  const [d, setD] = useState(false);
   const {
     register,
     handleSubmit,
@@ -16,13 +19,19 @@ const Register = () => {
   } = useForm();
   const onSubmit = async (data) => {
     try {
+      setD(true);
       const value = { ...data, userType: "STUDENT" };
       const res = await baseUrl.post("/register", value);
 
-      alert(res.data);
+      alert(res.data?.message);
 
+      setD(false);
       reset();
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setD(false);
+    }
   };
 
   return (
@@ -103,7 +112,11 @@ const Register = () => {
               )}
             </div>
 
-            <Button className="w-full py-6 bg-primary">Register</Button>
+            {d ? (
+              <h2 className="mt-2 text-center">Loading...</h2>
+            ) : (
+              <Button className="w-full py-6 bg-primary">Register</Button>
+            )}
           </form>
           <p className="mt-5">
             I already haven an account?{" "}
