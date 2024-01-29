@@ -7,6 +7,7 @@ const nextConfig = {
       { hostname: "i.postimg.cc" },
       { hostname: "192.168.10.13" },
       { hostname: "pngall.com" },
+      { hostname: "68.183.224.38" },
     ],
   },
   publicRuntimeConfig: {

@@ -75,6 +75,8 @@ const PaymentMethod = ({ data }) => {
         .catch((err) => console.log(err));
     }
 
+    console.log(value);
+
     if (gateway === "bkash") {
       baseUrl
         .post(`/bkash/create-payment`, value, {

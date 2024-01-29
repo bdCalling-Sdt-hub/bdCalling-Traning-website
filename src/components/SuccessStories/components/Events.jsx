@@ -5,7 +5,10 @@ import { useEffect, useState } from "react";
 const Events = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
-    baseUrl.get("/events").then((res) => setEvents(res?.data?.data));
+    baseUrl
+      .get("/events")
+      .then((res) => setEvents(res?.data?.data))
+      .catch((err) => console.log(err));
   }, []);
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">

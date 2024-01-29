@@ -16,16 +16,12 @@ const VerifyPage = () => {
 
   return (
     <div className="flex justify-center items-center  flex-col h-screen container">
-      <img
-        src="https://i.postimg.cc/Kjwc4n4J/undraw-a-whole-year-vnfm.png"
-        alt=""
-        className="w-[50%] h-[50%]"
-      />
-      <h2 className="text-black text-5xl font-bold">Thank you</h2>
+      <img src="/images/verify1.jpg" alt="" className="" />
+      <h2 className="text-black text-6xl font-bold">Thank you</h2>
       <p className="tracking-wider mt-1">
         Your email verify successfully, Now you can{" "}
-        <Link href="/login" className="text-primary mx-1 font-bold">
-          Login from here
+        <Link href="/login" className="text-primary text-lg mx-1 font-bold">
+          Login
         </Link>
       </p>
     </div>

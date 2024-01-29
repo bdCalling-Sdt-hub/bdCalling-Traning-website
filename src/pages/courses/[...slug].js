@@ -18,9 +18,12 @@ const CourseDetail = () => {
   useEffect(() => {
     if (Array.isArray(params) && params.length >= 2) {
       id = params[1];
-      baseUrl.get(`/class/${id}`).then((res) => {
-        setCourseDetail(res?.data?.data);
-      });
+      baseUrl
+        .get(`/class/${id}`)
+        .then((res) => {
+          setCourseDetail(res?.data?.data);
+        })
+        .catch((err) => console.log(err));
     }
   }, [params]);
 

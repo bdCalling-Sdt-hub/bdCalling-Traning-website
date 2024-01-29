@@ -15,7 +15,10 @@ const FormSection = ({ categories }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    baseUrl.post("/contacts", data).then((res) => console.log(res.data));
+    baseUrl
+      .post("/contacts", data)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
   };
   const contacts = [
     {
@@ -121,7 +124,7 @@ const FormSection = ({ categories }) => {
             {...register("category")}
             className="border w-full py-4  rounded-md"
           >
-            {categories.map((item, index) => (
+            {categories?.map((item, index) => (
               <option
                 value={item.category_name}
                 className="capitalize"

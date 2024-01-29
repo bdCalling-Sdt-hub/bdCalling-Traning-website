@@ -8,7 +8,10 @@ import { Button } from "../ui/button";
 const Event = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
-    baseUrl.get("/events").then((res) => setEvents(res?.data?.data));
+    baseUrl
+      .get("/events")
+      .then((res) => setEvents(res?.data?.data))
+      .catch((err) => console.log(err));
   }, []);
 
   console.log(events);

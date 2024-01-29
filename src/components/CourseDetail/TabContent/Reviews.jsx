@@ -5,7 +5,10 @@ const Reviews = ({ data }) => {
   const id = data?.course_id;
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    baseUrl.get(`reviews/${id}`).then((res) => setReviews(res?.data?.data));
+    baseUrl
+      .get(`reviews/${id}`)
+      .then((res) => setReviews(res?.data?.data))
+      .catch((err) => console.log(err));
   }, [id]);
 
   return (

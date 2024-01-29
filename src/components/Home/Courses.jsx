@@ -62,7 +62,7 @@ const Courses = ({ categories }) => {
           </Button>
         ))}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-16">
         {loading ? (
           <SkeletonCard />
         ) : courses.length > 0 ? (
@@ -70,7 +70,7 @@ const Courses = ({ categories }) => {
             <CourseCard key={index} course={course} />
           ))
         ) : (
-          <h2 className="text-center col-span-3 text-2xl text-gray-400">
+          <h2 className="text-center col-span-3 text-3xl text-gray-200 mb-72 mt-24">
             Data Not Found
           </h2>
         )}

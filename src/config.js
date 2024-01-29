@@ -1,9 +1,20 @@
 import axios from "axios";
 
+const cloud = true;
+const imgCloud = true;
+
+const url = cloud
+  ? "http://68.183.224.38:8000/api/"
+  : "http://192.168.10.13:8000/api/";
+
+const imageUrl = imgCloud
+  ? "http://68.183.224.38:8000"
+  : "http://192.168.10.13:8000";
+
 export const baseUrl = axios.create({
-  baseURL: "http://192.168.10.13:8000/api/",
+  baseURL: url,
   timeout: 10000,
   headers: { "X-Custom-Header": "foobar" },
 });
 
-export const imgUrl = "http://192.168.10.13:8000";
+export const imgUrl = imageUrl;
