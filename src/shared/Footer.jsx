@@ -106,7 +106,7 @@ const Footer = () => {
                 <MapPinned size={40} color="#e8e3e3" absoluteStrokeWidth />
               </Icon>
               <p>
-                Daisy Garden, House 14,Block A, Banasree, main road, Dhaka-1219
+                Daisy Garden, House 14, Block A, Banasree, main road, Dhaka-1219
               </p>
             </div>
             <h3 className="my-4 text-lg">Online Transaction Method</h3>

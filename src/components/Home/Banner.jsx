@@ -2,7 +2,7 @@ import ParallaxText from "@/animation/FramerMotion/ParallaxText";
 import Reveal from "@/animation/FramerMotion/Reveal";
 import useCategory from "@/hooks/useCategory";
 import styles from "@/styles/home.module.css";
-import { BookOpen, Play } from "lucide-react";
+import { BookOpenCheck, Play, Star } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { AspectRatio } from "../ui/aspect-ratio";
@@ -38,7 +38,7 @@ const Banner = () => {
             </Reveal>
             <Reveal>
               <h1 className="text-6xl font-bold mt-5">
-                <span className="text-[#1696fd]">bdCalling Academy</span>
+                <span className="text-[#1696fd]">Bdcalling Academy</span>
               </h1>
             </Reveal>
             <Reveal>
@@ -50,12 +50,24 @@ const Banner = () => {
               </p>
             </Reveal>
             <Reveal>
-              <Link href="/courses" className="inline-block">
-                <Button className="flex items-center gap-2 py-6 bg-primary ">
-                  <BookOpen />
-                  Browse Courses
-                </Button>
-              </Link>
+              <div className="flex items-center gap-5">
+                <Link href="/courses" className="inline-block">
+                  <Button className="flex items-center gap-2 py-6 bg-primary ">
+                    <BookOpenCheck />
+                    Browse Courses
+                  </Button>
+                </Link>
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center ">
+                    <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                    <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                    <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                    <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                    <Star size={20} color="#ffc60b" fill="#ffc60b" />
+                  </div>
+                  <span className="text-2xl font-semibold"> 5.0</span>
+                </div>
+              </div>
             </Reveal>
             {/* <Reveal>
               <div className="bg-white lg:w-[80%] shadow rounded-full h-14 flex items-center justify-between gap-1 px-2">

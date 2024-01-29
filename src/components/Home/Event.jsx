@@ -79,7 +79,7 @@ const Event = () => {
           </div>
         </div>
         <div className="space-y-4">
-          {events.slice(1, 3).map((event, index) => (
+          {events.slice(0, 2).map((event, index) => (
             <div
               key={index}
               className="rounded-lg relative"

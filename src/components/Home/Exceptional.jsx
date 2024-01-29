@@ -33,7 +33,7 @@ const Exceptional = () => {
       <div className="space-y-5">
         <h1 className="text-4xl font-bold">Why We’re Exceptional</h1>
         <p>
-          bdCalling Academy offers various courses and upon successful
+          Bdcalling Academy offers various courses and upon successful
           completion, we offer job opportunities within our company.
           Additionally, we provide scholarships in different categories to
           support aspiring individuals. We guarantee a refund if anyone is
