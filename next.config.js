@@ -9,6 +9,7 @@ const nextConfig = {
       { hostname: "pngall.com" },
       { hostname: "68.183.224.38" },
       { hostname: "bdcallingacademy.com" },
+      { hostname: "server.bdcallingacademy.com" },
     ],
   },
   // publicRuntimeConfig: {

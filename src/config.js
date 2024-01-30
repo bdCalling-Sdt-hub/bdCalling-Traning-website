@@ -4,11 +4,11 @@ const cloud = true;
 const imgCloud = true;
 
 const url = cloud
-  ? "http://bdcallingacademy.com:8000/api/"
+  ? "https://server.bdcallingacademy.com/api/"
   : "http://192.168.10.13:8000/api/";
 
 const imageUrl = imgCloud
-  ? "http://bdcallingacademy.com:8000"
+  ? "https://server.bdcallingacademy.com"
   : "http://192.168.10.13:8000";
 
 export const baseUrl = axios.create({
