@@ -32,7 +32,6 @@
     "react-countup": "^6.5.0",
     "react-dom": "^18",
     "react-hook-form": "^7.49.3",
-    "react-lottie-player": "^1.5.5",
     "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.0.0",

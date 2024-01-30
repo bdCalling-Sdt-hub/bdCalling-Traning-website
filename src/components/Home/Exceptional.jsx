@@ -1,6 +1,5 @@
 import { ArrowUpRight, Check, Trophy } from "lucide-react";
 import Link from "next/link";
-import LottiePlane from "../Common/lottie";
 import { Button } from "../ui/button";
 
 const Exceptional = () => {
@@ -26,9 +25,7 @@ const Exceptional = () => {
             <p>Awesome Awards</p>
           </div>
         </div>
-        <div className="absolute bottom-28">
-          <LottiePlane />
-        </div>
+        <div className="absolute bottom-28">{/* <LottiePlane /> */}</div>
       </div>
       <div className="space-y-5">
         <h1 className="text-4xl font-bold">Why We’re Exceptional</h1>
