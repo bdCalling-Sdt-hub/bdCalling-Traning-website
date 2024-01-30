@@ -52,10 +52,10 @@ const Navbar = () => {
           title: "Online Courses",
           path: "/online",
         },
-        {
-          title: "Video Courses",
-          path: "/video",
-        },
+        // {
+        //   title: "Video Courses",
+        //   path: "/video",
+        // },
       ],
     },
     {
@@ -94,7 +94,7 @@ const Navbar = () => {
               <Link
                 className={`${
                   item.path === path ? "text-primary font-bold" : "text-black"
-                } text-[17px]`}
+                } text-[17px] hover:text-primary duration-200`}
                 href={item.path}
               >
                 {item.title !== "Courses" ? (

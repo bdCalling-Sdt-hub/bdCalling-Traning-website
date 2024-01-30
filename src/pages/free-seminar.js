@@ -6,22 +6,41 @@ import { Textarea } from "@/components/ui/textarea";
 import { baseUrl } from "@/config";
 import useCategory from "@/hooks/useCategory";
 import MetaTag from "@/shared/MetaTag";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const FreeSeminar = () => {
+  let [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const { category: categories } = useCategory();
 
   const onSubmit = (data) => {
+    setLoading(true);
     baseUrl
       .post("/seminers", data)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        if (res.data?.data) {
+          Swal.fire({
+            title: "Good Job!",
+            text: res.data?.data,
+            icon: "success",
+            confirmButtonColor: "#1796fd",
+          });
+          setLoading(false);
+        }
+        reset();
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -67,6 +86,7 @@ const FreeSeminar = () => {
           {...register("category")}
           className="border w-full py-4  rounded-md"
         >
+          <option>Select category</option>
           {categories?.map((item, index) => (
             <option
               value={item.category_name}
@@ -88,7 +108,7 @@ const FreeSeminar = () => {
           )}
         </p>
 
-        <Button type="submit" className="bg-primary">
+        <Button type="submit" className="bg-primary" disabled={loading}>
           Submit
         </Button>
       </form>

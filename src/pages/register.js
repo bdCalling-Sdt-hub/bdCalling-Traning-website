@@ -5,11 +5,12 @@ import { baseUrl } from "@/config";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const router = useRouter();
 
-  const [d, setD] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -19,18 +20,26 @@ const Register = () => {
   } = useForm();
   const onSubmit = async (data) => {
     try {
-      setD(true);
-      const value = { ...data, userType: "STUDENT" };
+      setLoading(true);
+      const value = { ...data, userType: "STUDENT", signAs: "dashboard" };
+
       const res = await baseUrl.post("/register", value);
 
-      alert(res.data?.message);
+      if (res.data?.message) {
+        Swal.fire({
+          title: "Let's verify",
+          text: "Check your email & click the link to activate your account",
+          icon: "success",
+          confirmButtonColor: "#1796fd",
+        });
+        setLoading(false);
+      }
 
-      setD(false);
       reset();
     } catch (err) {
       console.log(err);
     } finally {
-      setD(false);
+      setLoading(false);
     }
   };
 
@@ -112,7 +121,7 @@ const Register = () => {
               )}
             </div>
 
-            {d ? (
+            {loading ? (
               <h2 className="mt-2 text-center">Loading...</h2>
             ) : (
               <Button className="w-full py-6 bg-primary">Register</Button>

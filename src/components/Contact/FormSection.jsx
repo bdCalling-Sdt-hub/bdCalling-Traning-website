@@ -1,25 +1,45 @@
 import Reveal from "@/animation/FramerMotion/Reveal";
 import { baseUrl } from "@/config";
 import { Clock, Mail, MapPin, PhoneCall } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
 const FormSection = ({ categories }) => {
+  let [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
+    setLoading(true);
     baseUrl
       .post("/contacts", data)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        if (res.data?.data) {
+          Swal.fire({
+            title: "Good Job!",
+            text: res.data?.data,
+            icon: "success",
+            confirmButtonColor: "#1796fd",
+          });
+          setLoading(false);
+        }
+        reset();
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoading(false);
+      });
   };
+
   const contacts = [
     {
       title: "Give us a call",
@@ -43,17 +63,6 @@ const FormSection = ({ categories }) => {
     },
   ];
 
-  // const catagories = [
-  //   "Wordpress",
-  //   "Digital Marketing",
-  //   "Graphics Design",
-  //   "UX/UI Design",
-  //   "APP Developer with Flutter",
-  //   "Front-End Development",
-  //   "Lead & Data Entry",
-  //   "Visual Design Fundamentals",
-  //   "Prototyping and Wireframing",
-  // ];
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 my-16">
       <div>
@@ -124,6 +133,7 @@ const FormSection = ({ categories }) => {
             {...register("category")}
             className="border w-full py-4  rounded-md"
           >
+            <option>Select category</option>
             {categories?.map((item, index) => (
               <option
                 value={item.category_name}
@@ -144,8 +154,7 @@ const FormSection = ({ categories }) => {
               <span className="text-red-500">Message is required</span>
             )}
           </p>
-
-          <Button type="submit" className="bg-primary">
+          <Button type="submit" className="bg-primary" disabled={loading}>
             Submit
           </Button>
         </form>
