@@ -21,7 +21,7 @@ const Register = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const value = { ...data, userType: "STUDENT", signAs: "dashboard" };
+      const value = { ...data, userType: "STUDENT", signAs: "website" };
 
       const res = await baseUrl.post("/register", value);
 
