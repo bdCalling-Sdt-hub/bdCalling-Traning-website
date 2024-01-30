@@ -13,7 +13,7 @@ const nextConfig = {
   publicRuntimeConfig: {
     server: {
       target: "server",
-      host: "192.168.10.16",
+      host: "68.183.224.38",
       port: 3000,
     },
   },
