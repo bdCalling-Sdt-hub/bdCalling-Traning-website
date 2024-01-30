@@ -22,7 +22,7 @@ const Testimonial = () => {
   return (
     <div className="container">
       <HeadingText sTitle={"Testimonial"} title={"Student's Feedback"} />
-      <div className="lg:mx-28">
+      <div className="">
         <Swiper
           modules={[Pagination, A11y, Autoplay]}
           spaceBetween={10}
@@ -33,7 +33,7 @@ const Testimonial = () => {
           }}
           breakpoints={{
             690: {
-              slidesPerView: 2,
+              slidesPerView: 3,
             },
           }}
           pagination={{ clickable: true }}
@@ -47,7 +47,7 @@ const Testimonial = () => {
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
                 }}
               >
-                <div className="absolute -top-14 bg-white p-1 shadow rounded-full">
+                <div className="absolute -top-16 bg-white p-1 shadow rounded-full">
                   <Image
                     src={testimonial?.image}
                     className="w-24 h-24 rounded-full"
@@ -57,7 +57,7 @@ const Testimonial = () => {
                   />
                 </div>
                 <div>
-                  <div className="my-12">
+                  <div className="my-6">
                     <h2 className="text-xl">{testimonial?.name}</h2>
                     <p className="">{testimonial?.designation}</p>
                   </div>
