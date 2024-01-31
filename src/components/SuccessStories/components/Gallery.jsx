@@ -1,5 +1,4 @@
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-
+import ModalImage from "react-modal-image";
 const Gallery = () => {
   const images = [
     "/images/gallery/gallery6.png",
@@ -26,23 +25,18 @@ const Gallery = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-12">
       {images.map((item, index) => (
-        <AspectRatio
-          ratio={16 / 9}
-          key={index}
-          style={{ position: "relative" }}
-        >
-          <div style={{ width: "100%", paddingBottom: "62.5%" }}>
-            <img
-              src={item}
-              alt=""
-              className={`w-full h-full absolute top-0 left-0 object-cover rounded-md animate__animated ${
-                animationType.length <= index
-                  ? animationType[0]
-                  : animationType[index]
-              }`}
-            />
-          </div>
-        </AspectRatio>
+        <div key={index} style={{ width: "100%" }}>
+          <ModalImage
+            small={item}
+            large={item}
+            alt="Bdcalling Academy"
+            className={`w-full h-[280px] rounded-md animate__animated ${
+              animationType.length <= index
+                ? animationType[0]
+                : animationType[index]
+            }`}
+          />
+        </div>
       ))}
     </div>
   );

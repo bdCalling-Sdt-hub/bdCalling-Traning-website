@@ -14,9 +14,8 @@ const PaymentSuccessPage = () => {
         <h1 className="text-4xl font-bold text-green-400">Thank You!</h1>
         <h className="text-lg">Payment done Successfully</h>
 
-        <p className="mt-8">
-          You will be redirected the home page shortly or
-          <br /> click here to return to home page
+        <p className="mt-8 text-xl">
+          Check your email we send a link to login your Dashboard
         </p>
 
         <Link

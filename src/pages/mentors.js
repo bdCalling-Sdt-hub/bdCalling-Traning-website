@@ -21,6 +21,8 @@ const Mentors = () => {
 
   const categoryLists = ["Mentors", "Team"];
 
+  console.log(teams);
+
   return (
     <div className="container">
       <MetaTag title="Mentors" />

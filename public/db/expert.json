@@ -1,47 +1,24 @@
 {
   "teams": [
     {
-      "image": "/images/team1.png",
-      "name": "App Development"
+      "image": "https://i.postimg.cc/6pLVbNtg/Screenshot-2024-01-29-161833.png",
+      "fullName": "Amirul Islam",
+      "expert": "AGM"
     },
     {
-      "image": "/images/team2.png",
-      "name": "Digital Marketing"
+      "image": "https://i.postimg.cc/CxVH4KTb/expert1.png",
+      "fullName": "Digital Marketing",
+      "expert": "AGM"
     },
     {
-      "image": "/images/team3.png",
-      "name": "Web Development"
+      "image": "https://i.postimg.cc/dtCjdyXq/expert2.png",
+      "fullName": "Web Development",
+      "expert": "AGM"
     },
     {
-      "image": "/images/team4.png",
-      "name": "UI/UX"
-    }
-  ],
-  "expertList": [
-    {
-      "image": "/images/expert5.png",
-      "name": "Babul Mridha",
-      "title": "Software Engineer"
-    },
-    {
-      "image": "/images/expert1.png",
-      "name": "Md Shamin Miah",
-      "title": "Lead Generation-Data Entry Expert"
-    },
-    {
-      "image": "/images/expert2.png",
-      "name": "Rony Hossen",
-      "title": "Wordpress Specialist"
-    },
-    {
-      "image": "/images/expert3.png",
-      "name": "Ashraful",
-      "title": "UI/UX Designer"
-    },
-    {
-      "image": "/images/expert4.png",
-      "name": "Md. Sazib Hossain",
-      "title": "Digital Marketing Specialist"
+      "image": "https://i.postimg.cc/T2Fcp9t7/expert4.png",
+      "fullName": "UI/UX",
+      "expert": "AGM"
     }
   ]
 }
