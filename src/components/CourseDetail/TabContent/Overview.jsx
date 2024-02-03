@@ -11,8 +11,7 @@ const Overview = ({ data }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {course?.course?.careeropportunities?.map((item, index) => (
             <div key={index}>
-              <img src="/images/opportunities2.png" alt="" />
-              <p className="mt-4">{item}</p>
+              <p>{item}</p>
             </div>
           ))}
         </div>

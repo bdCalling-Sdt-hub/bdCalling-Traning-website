@@ -1,4 +1,5 @@
 import Icon from "@/components/Common/icon";
+import useCategory from "@/hooks/useCategory";
 import {
   Facebook,
   Linkedin,
@@ -12,8 +13,8 @@ import Link from "next/link";
 import footerLink from "../../public/db/footer.json";
 
 const Footer = () => {
-  const { usefulLinks, popularCourses, description, contacts, paymentImages } =
-    footerLink;
+  const { usefulLinks, description, contacts, paymentImages } = footerLink;
+  const { category: categories } = useCategory();
 
   return (
     <footer className="bg-[#e6f8ff]">
@@ -73,13 +74,13 @@ const Footer = () => {
           </nav>
           <nav>
             <header className="font-bold mb-6">Course Categories</header>
-            {popularCourses.map((link, index) => (
+            {categories?.slice(0, 8).map((link, index) => (
               <Link
                 key={index}
                 href="/courses"
                 className="block mb-2 hover:underline transition"
               >
-                {link?.title}
+                {link?.category_name}
               </Link>
             ))}
           </nav>

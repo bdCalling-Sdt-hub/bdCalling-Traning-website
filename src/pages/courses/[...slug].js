@@ -33,7 +33,7 @@ const CourseDetail = () => {
     {
       icon: <Clock size={20} color="#2492EB" />,
       key: "Duration",
-      value: `${course?.course?.courseTimeLength} Days`,
+      value: `${course?.course?.courseTimeLength} Month`,
     },
     {
       icon: <Book size={20} color="#2492EB" />,

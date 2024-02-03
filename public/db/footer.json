@@ -26,40 +26,6 @@
       "link": ""
     }
   ],
-  "popularCourses": [
-    {
-      "title": "Lead Generation-Data Entry",
-      "link": ""
-    },
-    {
-      "title": "Digital Marketing",
-      "link": "contact"
-    },
-    {
-      "title": "WordPress Development",
-      "link": "success-stories"
-    },
-    {
-      "title": "Graphics Design",
-      "link": ""
-    },
-    {
-      "title": "UX/UI Design",
-      "link": ""
-    },
-    {
-      "title": "APP Development with Flutter",
-      "link": ""
-    },
-    {
-      "title": "Front-End Development",
-      "link": ""
-    },
-    {
-      "title": "MERN STACK Development",
-      "link": ""
-    }
-  ],
   "contacts": [
     {
       "icon": "Phone",

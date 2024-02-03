@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { baseUrl } from "@/config";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
   const router = useRouter();
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
@@ -28,13 +30,15 @@ const Login = () => {
 
       if (typeof window !== "undefined") {
         localStorage.setItem("token", res.data.access_token);
-
+        setError("");
         router.push(redirect);
       }
 
       localStorage.removeItem("route");
       reset();
-    } catch (err) {}
+    } catch (err) {
+      setError(err.response?.data?.error);
+    }
   };
 
   return (
@@ -59,7 +63,7 @@ const Login = () => {
               )}
             </div>
 
-            <div className="mb-5">
+            <div>
               <Input
                 type="password"
                 placeholder="Password"
@@ -70,7 +74,7 @@ const Login = () => {
                 <span className="text-red-500">Password is required</span>
               )}
             </div>
-
+            {error && <p className="text-red-500">{error}</p>}
             {/* <div className="flex items-center justify-between mb-7 mt-2">
               <div className="flex space-x-2">
                 <Checkbox id="terms1" />
@@ -85,7 +89,7 @@ const Login = () => {
                 Forget password
               </Button>
             </div> */}
-            <Button type="submit" className="w-full py-6 bg-primary">
+            <Button type="submit" className="w-full py-6 bg-primary mt-5">
               Login
             </Button>
           </form>

@@ -9,8 +9,9 @@ import Swal from "sweetalert2";
 
 const Register = () => {
   const router = useRouter();
-
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -35,9 +36,16 @@ const Register = () => {
         setLoading(false);
       }
 
+      setError("");
       reset();
     } catch (err) {
-      console.log(err);
+      if (err.response.data && err.response.data.email) {
+        setError(err.response.data.email[0]);
+      } else if (err.response.data && err.response.data.userName) {
+        setError(err.response.data.userName[0]);
+      } else if (err.response.data && err.response.data.password) {
+        setError(err.response.data.password[0]);
+      }
     } finally {
       setLoading(false);
     }
@@ -107,7 +115,7 @@ const Register = () => {
                 <span className="text-red-500">Password is required</span>
               )}
             </div>
-            <div className="mb-4">
+            <div>
               <Input
                 type="password"
                 placeholder="Confirm password"
@@ -121,11 +129,11 @@ const Register = () => {
               )}
             </div>
 
-            {loading ? (
-              <h2 className="mt-2 text-center">Loading...</h2>
-            ) : (
-              <Button className="w-full py-6 bg-primary">Register</Button>
-            )}
+            {error && <p className="text-red-500">{error}</p>}
+
+            <Button className="w-full py-6 bg-primary mt-5" disabled={loading}>
+              Register
+            </Button>
           </form>
           <p className="mt-5">
             I already haven an account?{" "}

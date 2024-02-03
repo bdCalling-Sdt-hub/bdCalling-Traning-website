@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const cloud = true;
-const imgCloud = true;
+const cloud = false;
+const imgCloud = false;
 
 const url = cloud
   ? "https://server.bdcallingacademy.com/api/"

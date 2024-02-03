@@ -24,8 +24,6 @@ const CourseCard = ({ course }) => {
   const differentDate = today - courseStartDate;
   const dayLeft = Math.abs(Math.floor(differentDate / (1000 * 60 * 60 * 24)));
 
-  console.log(course);
-
   return (
     <Link href={`/courses/${status}/${id}`}>
       <div

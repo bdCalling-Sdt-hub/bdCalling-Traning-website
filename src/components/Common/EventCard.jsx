@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 
 const EventCard = ({ data, index }) => {
-  console.log(data);
   const {
     date,
     starttime,
