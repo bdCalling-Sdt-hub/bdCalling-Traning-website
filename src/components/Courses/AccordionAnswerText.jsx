@@ -1,15 +1,13 @@
-import { Checkbox } from "../ui/checkbox";
-
-const AccordionAnswerText = ({ data }) => {
+const AccordionAnswerText = ({ data, setSelectCategory }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4" onClick={() => setSelectCategory(data.id)}>
       <div className="flex items-center gap-2">
-        <Checkbox id={data} />
+        <input type="radio" id={data.category_name} name="category" />
         <label
-          htmlFor={data}
-          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          htmlFor={data.category_name}
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 capitalize"
         >
-          {data}
+          {data.category_name}
         </label>
       </div>
     </div>

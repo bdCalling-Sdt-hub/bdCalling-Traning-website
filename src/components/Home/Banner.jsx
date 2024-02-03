@@ -26,10 +26,10 @@ const Banner = () => {
         <div className="lg:flex items-center gap-8 container py-24">
           <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
-              <h2 className="text-5xl  rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] , w-2/4 p-1 font-medium relative">
+              <h2 className="text-5xl  rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] , lg:w-2/4 p-1 font-medium relative">
                 Let&#39;s Grow <br /> Your Career
                 <span
-                  className="absolute text-[18px] bottom-0 -right-14 text-[#586faffa]"
+                  className="absolute text-[18px] bottom-0 lg:-right-14 text-[#586faffa]"
                   style={{ textShadow: "2px 2px 5px #1696fd" }}
                 >
                   𝓌𝒾𝓉𝒽
@@ -96,7 +96,7 @@ const Banner = () => {
               </div>
             </Reveal> */}
           </div>
-          <div className="order-1 lg:order-2 w-full lg:w-[700px] h-[380px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#4d95d8] p-2 rounded-3xl animate__animated animate__zoomIn">
+          <div className="order-1 lg:order-2 w-full lg:w-[700px] h-[250px] lg:h-[380px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#4d95d8] p-2 rounded-3xl animate__animated animate__zoomIn">
             <Dialog>
               {videoLinkLists.map((item, index) => (
                 <div key={index}>
@@ -104,7 +104,7 @@ const Banner = () => {
                     <img
                       src={item.thumb}
                       alt=""
-                      className="w-full h-[364px] rounded-3xl"
+                      className="w-full h-[234px] lg:h-[364px] rounded-3xl"
                     />
 
                     <div

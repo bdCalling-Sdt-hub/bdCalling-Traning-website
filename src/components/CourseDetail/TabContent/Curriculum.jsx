@@ -5,6 +5,7 @@ import VideoContent from "../VideoContent";
 const Curriculum = ({ data }) => {
   const { solutions, certificate } = curriculum;
   const [course] = data;
+  console.log(course);
   return (
     <div className="mt-5">
       <div>

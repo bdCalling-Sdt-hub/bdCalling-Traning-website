@@ -18,16 +18,18 @@ const CoursesPage = () => {
   const status = router.query.type;
   const [error, setError] = useState("");
   const { category: catagories } = useCategory();
+  const [selectCategory, setSelectCategory] = useState(0);
+  const [title, setTitle] = useState(0);
 
   useEffect(() => {
     baseUrl
-      .get(`/course?status=${status}`)
+      .get(`/course?status=${status}&category=${title | selectCategory}`)
       .then((res) => setCourses(res.data?.data?.data))
       .catch((err) => {
         setError(err.response?.data?.message);
         setCourses([]);
       });
-  }, [status]);
+  }, [status, title, selectCategory]);
 
   const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
 
@@ -42,13 +44,18 @@ const CoursesPage = () => {
           development topics. Delve into the intricacies of coding, master the
           art of photography, or unlock the secrets of effective communication.
         </p>
-        <SearchCourse />
+        <SearchCourse setTitle={setTitle} />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-12">
         <div className="space-y-4">
           <AccordionCard title="Course Categories">
             {catagories?.map((item, index) => (
-              <AccordionAnswerText key={index} data={item.category_name} />
+              <AccordionAnswerText
+                key={index}
+                data={item}
+                setSelectCategory={setSelectCategory}
+                selectCategory={selectCategory}
+              />
             ))}
           </AccordionCard>
         </div>
@@ -60,7 +67,7 @@ const CoursesPage = () => {
               ))}
           </div>
           {courses.length === 0 && (
-            <p className="text-center text-4xl mt-16 text-gray-200">
+            <p className="text-center text-4xl my-48 text-gray-200 ">
               {status} Courses not found
             </p>
           )}

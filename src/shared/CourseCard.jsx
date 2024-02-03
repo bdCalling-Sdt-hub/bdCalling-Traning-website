@@ -9,16 +9,22 @@ const CourseCard = ({ course }) => {
   const {
     courseThumbnail,
     batch,
-    countRating,
+    startDate,
     id,
     status,
-    duration,
     price,
-    rating,
     seat_left,
     courseName,
     discount_price,
   } = course;
+
+  //remain day calculate here
+  const today = new Date();
+  const courseStartDate = new Date(startDate);
+  const differentDate = today - courseStartDate;
+  const dayLeft = Math.abs(Math.floor(differentDate / (1000 * 60 * 60 * 24)));
+
+  console.log(course);
 
   return (
     <Link href={`/courses/${status}/${id}`}>
@@ -39,7 +45,7 @@ const CourseCard = ({ course }) => {
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1">
               {" "}
-              <BookOpenText size={20} color="#1796fd" />
+              <BookOpenText size={17} color="#1796fd" />
               Batch {batch}
             </p>
             <div className="bg-gradient-to-tr from-[#80b3dd] to-[#0779d6] text-white rounded-md py-1 px-5">
@@ -47,13 +53,13 @@ const CourseCard = ({ course }) => {
             </div>
           </div>
           <div className="flex items-center justify-between mt-4 border-b pb-2">
-            <p size={20} className="flex items-center gap-1">
-              <UsersRound size={20} color="#1796fd" />
+            <p className="flex items-center gap-1">
+              <UsersRound size={17} color="#1796fd" />
               {seat_left} Seats Left
             </p>
-            <p size={18} className="flex items-center gap-1">
-              <Clock8 size={20} color="#1796fd" />
-              {duration} Days Left
+            <p className="flex items-center gap-1">
+              <Clock8 size={17} color="#1796fd" />
+              {dayLeft} Days Left
             </p>
           </div>
           <h2 className="my-3 text-xl capitalize">{courseName}</h2>
