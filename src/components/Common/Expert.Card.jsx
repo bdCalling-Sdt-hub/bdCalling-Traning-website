@@ -21,9 +21,9 @@ const ExpertCard = ({ data }) => {
           className="rounded-md h-[340px] w-full object-cover"
         />
       </CardHeader>
-      <CardContent className="text-white mt-3">
-        <CardTitle>{fullName}</CardTitle>
-        <CardDescription className="text-gray-300 mt-1 text-sm">
+      <CardContent className="text-white mt-2">
+        <CardTitle className="text-lg">{fullName}</CardTitle>
+        <CardDescription className="text-gray-300  text-[13px]">
           {expert}
         </CardDescription>
       </CardContent>
