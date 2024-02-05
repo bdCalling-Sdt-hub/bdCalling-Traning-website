@@ -32,6 +32,8 @@ const PaymentInfo = ({ data }) => {
         <PaymentMethod data={data} />
       </div>
     );
+  } else {
+    router.push("/");
   }
 };
 
