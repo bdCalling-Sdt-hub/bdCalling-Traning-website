@@ -10,6 +10,8 @@ const PaymentInfo = ({ data }) => {
   const router = useRouter();
   const { user } = useAuth();
 
+  console.log("py", user);
+
   const conData = data?.join("/");
 
   let token;
@@ -17,18 +19,20 @@ const PaymentInfo = ({ data }) => {
     token = localStorage.token;
   }
 
-  if (!token) {
+  if (!token && user?.userType != "") {
     router.push("/login");
     localStorage.setItem("route", `/payment/${conData}`);
   }
 
-  return (
-    <div className="container">
-      <MetaTag title="Payment" />
-      <TopHeading blueText="COMPLETE YOUR PURCHASE" />
-      <PaymentMethod data={data} />
-    </div>
-  );
+  if (user?.userType === "STUDENT") {
+    return (
+      <div className="container">
+        <MetaTag title="Payment" />
+        <TopHeading blueText="COMPLETE YOUR PURCHASE" />
+        <PaymentMethod data={data} />
+      </div>
+    );
+  }
 };
 
 export default PaymentInfo;
