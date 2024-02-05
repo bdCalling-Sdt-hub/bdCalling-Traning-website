@@ -10,7 +10,10 @@ const Overview = ({ data }) => {
         <h1 className="text-2xl font-bold my-10">Career Opportunities</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {course?.course?.careeropportunities?.map((item, index) => (
-            <div key={index}>
+            <div className="flex items-center gap-2" key={index}>
+              <p>
+                <div className="w-3 h-3 bg-primary rounded-full"></div>
+              </p>
               <p>{item}</p>
             </div>
           ))}
