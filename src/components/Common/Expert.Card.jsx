@@ -19,6 +19,7 @@ const ExpertCard = ({ data }) => {
           src={src}
           alt=""
           className="rounded-md h-[340px] w-full object-cover"
+          loading="lazy"
         />
       </CardHeader>
       <CardContent className="text-white mt-2">
