@@ -1,5 +1,5 @@
+import CourseCard from "@/components/Common/CourseCard";
 import { baseUrl } from "@/config";
-import CourseCard from "@/shared/CourseCard";
 import { useEffect, useState } from "react";
 
 const PopularCourses = () => {

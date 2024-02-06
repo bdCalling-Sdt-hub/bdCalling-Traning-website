@@ -34,7 +34,6 @@ const Login = () => {
         router.push(redirect);
       }
 
-      localStorage.removeItem("route");
       reset();
     } catch (err) {
       setError(err.response?.data?.error);

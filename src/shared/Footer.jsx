@@ -18,8 +18,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#e6f8ff]">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 text-base-content">
+      <div className="container pt-16 mb-5">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-10 text-base-content">
           <aside>
             <a href="#">
               <Image
@@ -80,7 +80,11 @@ const Footer = () => {
                 href="/courses"
                 className="block mb-2 hover:underline transition"
               >
-                {link?.category_name}
+                {link.category_name === "ux/ui design" ? (
+                  <span>{`UX/UI Design`}</span>
+                ) : (
+                  <span className="capitalize">{link.category_name}</span>
+                )}
               </Link>
             ))}
           </nav>
@@ -110,7 +114,7 @@ const Footer = () => {
                 Daisy Garden, House 14, Block A, Banasree, main road, Dhaka-1219
               </p>
             </div>
-            <h3 className="my-4 text-lg">Online Transaction Method</h3>
+            {/* <h3 className="my-4 text-lg">Online Transaction Method</h3>
             <div className="flex gap-1">
               {paymentImages.map((img, index) => (
                 <div key={index} className="bg-white  rounded-md px-2 py-1">
@@ -130,6 +134,12 @@ const Footer = () => {
                 width={150}
                 height={150}
               />
+            </div> */}
+          </nav>
+          <div></div>
+          <nav className="col-span-3 -mt-14">
+            <div>
+              <img src="/images/sslcommerzbanner.png" alt="" />
             </div>
           </nav>
         </div>
@@ -143,7 +153,7 @@ const Footer = () => {
             <a href="#">Terms & Conditions</a>
           </div>
           <div>
-            <p>© 2023 Learn bdCalling. All Rights Reserved.</p>
+            <p>© 2024 Bdcalling Academy. All Rights Reserved.</p>
           </div>
         </div>
       </div>

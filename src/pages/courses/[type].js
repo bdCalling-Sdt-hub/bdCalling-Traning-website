@@ -1,4 +1,5 @@
 import AccordionCard from "@/components/Common/AccordionCard";
+import CourseCard from "@/components/Common/CourseCard";
 import AccordionAnswerText from "@/components/Courses/AccordionAnswerText";
 import JoinNow from "@/components/Courses/JoinNow";
 import SearchCourse from "@/components/Courses/SearchCourse";
@@ -6,13 +7,12 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
 import useCategory from "@/hooks/useCategory";
-import CourseCard from "@/shared/CourseCard";
 import MetaTag from "@/shared/MetaTag";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const CoursesPage = () => {
-  const [courseLoad, setCourseLoad] = useState(6);
+  const [courseLoad, setCourseLoad] = useState(4);
   const router = useRouter();
   const [courses, setCourses] = useState([]);
   const status = router.query.type;
@@ -23,13 +23,17 @@ const CoursesPage = () => {
 
   useEffect(() => {
     baseUrl
-      .get(`/course?status=${status}&category=${title | selectCategory}`)
+      .get(
+        `/course?status=${status}&category=${
+          title | selectCategory
+        }&per_page=${courseLoad}`
+      )
       .then((res) => setCourses(res.data?.data?.data))
       .catch((err) => {
         setError(err.response?.data?.message);
         setCourses([]);
       });
-  }, [status, title, selectCategory]);
+  }, [status, title, selectCategory, courseLoad]);
 
   const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
 
@@ -74,7 +78,7 @@ const CoursesPage = () => {
           {courses.length > 0 && (
             <Button
               className="mt-8 mx-auto block"
-              onClick={() => setCourseLoad(courseLoad + 6)}
+              onClick={() => setCourseLoad(courseLoad + 4)}
             >
               See More
             </Button>

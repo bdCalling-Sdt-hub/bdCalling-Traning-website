@@ -64,6 +64,7 @@ const SuccessStories = () => {
                 <img
                   src={item.thumb}
                   alt=""
+                  loading="lazy"
                   className="w-full h-full rounded-md"
                 />
               </div>

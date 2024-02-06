@@ -20,6 +20,7 @@ const EventCard = ({ data, index }) => {
     "animate__backInRight",
     "animate__backInUp",
   ];
+
   return (
     <div
       className={`rounded-lg animate__animated ${
@@ -32,7 +33,8 @@ const EventCard = ({ data, index }) => {
       <img
         src={`${imgUrl}/${image}`}
         alt="course image"
-        className="rounded-t-lg w-full h-[300px]"
+        className="rounded-t-lg w-full h-[350px]"
+        loading="lazy"
       />
       <div className="p-3">
         <div className="lg:flex items-center justify-between">

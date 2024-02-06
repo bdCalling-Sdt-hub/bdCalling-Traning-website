@@ -1,8 +1,8 @@
+import CourseCard from "@/components/Common/CourseCard";
 import SkeletonCard from "@/components/Common/SkeletonCard";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
-import CourseCard from "@/shared/CourseCard";
 import { useEffect, useState } from "react";
 
 const CourseHomePage = () => {

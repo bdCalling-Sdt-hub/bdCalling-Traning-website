@@ -140,7 +140,11 @@ const FormSection = ({ categories }) => {
                 className="capitalize"
                 key={index}
               >
-                {item.category_name}
+                {item.category_name === "ux/ui design" ? (
+                  <span>{`UX/UI Design`}</span>
+                ) : (
+                  <span className="capitalize">{item.category_name}</span>
+                )}
               </option>
             ))}
           </select>

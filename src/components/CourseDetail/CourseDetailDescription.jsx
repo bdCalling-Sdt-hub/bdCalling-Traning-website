@@ -21,7 +21,9 @@ const CourseDetailDescription = ({ data }) => {
         alt=""
         className="w-full h-[450px] rounded mb-8"
       />
-
+      <h2 className="capitalize text-3xl mt-4  font-bold">
+        {course?.course?.courseName}
+      </h2>
       <div className="bg-gray-100 p-4 rounded-md mt-8">
         <div className="flex flex-col lg:flex-row items-center gap-2">
           {buttons.map((btnText, index) => (
@@ -38,6 +40,7 @@ const CourseDetailDescription = ({ data }) => {
           ))}
         </div>
       </div>
+
       {title === "Overview" && <Overview data={data} />}
       {title === "Curriculum" && <Curriculum data={data} />}
       {title === "Reviews" && <Reviews data={course} />}

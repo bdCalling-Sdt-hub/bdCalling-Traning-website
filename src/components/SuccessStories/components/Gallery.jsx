@@ -29,6 +29,7 @@ const Gallery = () => {
           <ModalImage
             small={item}
             large={item}
+            loading="lazy"
             alt="Bdcalling Academy"
             className={`w-full h-[280px] rounded-md animate__animated ${
               animationType.length <= index

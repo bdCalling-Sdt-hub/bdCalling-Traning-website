@@ -2,7 +2,7 @@ import { baseUrl } from "@/config";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import CourseCard from "../../shared/CourseCard";
+import CourseCard from "../Common/CourseCard";
 import SkeletonCard from "../Common/SkeletonCard";
 import { Button } from "../ui/button";
 
@@ -56,9 +56,13 @@ const Courses = ({ categories }) => {
             onClick={() => setTitle(category.id)}
             className={`${
               title === category.id ? "bg-[#1796fd] text-white" : ""
-            }  text-md font-medium capitalize`}
+            }  text-md font-medium`}
           >
-            {category.category_name}
+            {category.category_name === "ux/ui design" ? (
+              <span>{`UX/UI Design`}</span>
+            ) : (
+              <span className="capitalize">{category.category_name}</span>
+            )}
           </Button>
         ))}
       </div>

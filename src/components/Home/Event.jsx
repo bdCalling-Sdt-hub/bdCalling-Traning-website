@@ -7,6 +7,8 @@ import { Button } from "../ui/button";
 
 const Event = () => {
   const [events, setEvents] = useState([]);
+  const [desLen, setDesLen] = useState(false);
+
   useEffect(() => {
     baseUrl
       .get("/events")
@@ -28,7 +30,7 @@ const Event = () => {
             <img
               src={`${imgUrl}/${events[events.length - 1]?.image}`}
               alt="course image"
-              className="rounded-t-lg w-full h-[380px]"
+              className="rounded-t-lg w-full h-[400px]"
             />
             <div className="p-3">
               <div className="lg:flex items-center justify-between">
@@ -53,8 +55,8 @@ const Event = () => {
                 <p
                   className={`${
                     events[events.length - 1]?.status === "OFFLINE"
-                      ? "text-black"
-                      : "text-green-500"
+                      ? "text-white bg-red-500 py-1 px-3 rounded-md"
+                      : "text-white bg-green-500 py-1 px-3 rounded-md"
                   } text-md`}
                 >
                   {events[events.length - 1]?.status}
@@ -69,7 +71,20 @@ const Event = () => {
               <h2 className="text-2xl capitalize my-3">
                 {events[events.length - 1]?.courseName}
               </h2>
-              <p>{events[events.length - 1]?.description}</p>
+              <p>
+                {!desLen &&
+                  events[events.length - 1]?.description.slice(0, 150)}
+                {!desLen && (
+                  <span
+                    className="text-primary cursor-pointer"
+                    onClick={() => setDesLen(true)}
+                  >
+                    see more
+                  </span>
+                )}
+
+                {desLen && events[events.length - 1]?.description}
+              </p>
               <Link href="/free-seminar">
                 <Button className="bg-primary mt-5">Join Seminar</Button>
               </Link>
@@ -88,7 +103,7 @@ const Event = () => {
               <img
                 src={`${imgUrl}/${event?.image}`}
                 alt="course image"
-                className="rounded-md h-[300px] w-full pb-16"
+                className="rounded-md h-[330px] w-full pb-16"
               />
               <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fd]">
                 <div className="flex gap-5 items-center">
