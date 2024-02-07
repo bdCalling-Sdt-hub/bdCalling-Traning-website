@@ -1,6 +1,7 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { baseUrl } from "@/config";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -16,35 +17,24 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  // let redirect = "/";
-
-  // // Check if running on the client side
-  // if (typeof window !== "undefined") {
-  //   // Access localStorage only on the client side
-  //   redirect = localStorage.route || "/";
-  // }
-
   const onSubmit = async (data) => {
-    try {
-      const nextAuthData = await signIn("credentials", {
-        email: data.email,
-        password: data.password,
-        // redirect: false,
-        callbackUrl: router.query.callbackUrl,
-      });
-      //const res = await baseUrl.post("/login", data);
+    const res = await signIn("credentials", {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
 
-      console.log("login page", nextAuthData);
-      // if (typeof window !== "undefined") {
-      //   localStorage.setItem("token", res.data.access_token);
-      //   setError("");
-      //   router.push(redirect);
-      // }
+    //only keep token at local storage
+    const resToken = await baseUrl.post("/login", data);
+    localStorage.setItem("token", resToken.data.access_token);
 
-      reset();
-    } catch (err) {
-      setError(err.response?.data?.error);
+    if (!res?.ok) {
+      setError("Credential are Wrong");
+    } else {
+      router.push(router.query.callbackUrl || "/");
     }
+
+    reset();
   };
 
   return (
