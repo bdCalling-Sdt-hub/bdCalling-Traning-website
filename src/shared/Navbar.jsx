@@ -8,14 +8,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { imgUrl } from "@/config";
-import useAuth from "@/hooks/useAuth";
 import { motion } from "framer-motion";
-import { AlignRight, ChevronDown, X } from "lucide-react";
+import { AlignRight, ChevronDown, LogOut, X } from "lucide-react";
+import { signOut, useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { useState } from "react";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const DynamicAuthHomepage = dynamic(() => import("@/components/Auth/index"), {
@@ -23,12 +24,12 @@ const Navbar = () => {
   });
   const router = useRouter();
   const path = usePathname();
+  const { data: session } = useSession();
 
-  const { user, setUser } = useAuth();
+  console.log("navbar", session);
 
   const logout = () => {
-    localStorage.clear();
-    setUser({});
+    signOut();
   };
 
   const items = [
@@ -67,6 +68,10 @@ const Navbar = () => {
       path: "/contact",
     },
   ];
+
+  const srcUrl = session?.user?.image
+    ? `${imgUrl}/${session?.user?.image}`
+    : "/images/profile.png";
 
   return (
     <div className="bg-[#e6f8ff] sticky top-0 z-50 py-4">
@@ -119,25 +124,29 @@ const Navbar = () => {
             </li>
           ))}
 
-          {user?.email ? (
+          {session?.user?.email ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <div className="bg-white rounded-full w-11 h-11 flex items-center justify-center">
                   <img
-                    src={
-                      user.image
-                        ? `${imgUrl}/${user?.image}`
-                        : "/images/profile.png"
-                    }
+                    src={srcUrl}
                     className="w-full h-full border border-primary rounded-full"
                     alt=""
                   />
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="text-center my-0">
-                <DropdownMenuLabel>{user?.fullName}</DropdownMenuLabel>
+              <DropdownMenuContent className="text-center">
+                <DropdownMenuLabel className="text-sm">
+                  {session?.user?.name}
+                </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={logout}>Logout</DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={logout}
+                  className="flex items-center gap-2 font-normal"
+                >
+                  <LogOut size={20} />
+                  Logout
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (

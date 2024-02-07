@@ -1,7 +1,7 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { baseUrl } from "@/config";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,23 +16,30 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  let redirect = "/";
+  // let redirect = "/";
 
-  // Check if running on the client side
-  if (typeof window !== "undefined") {
-    // Access localStorage only on the client side
-    redirect = localStorage.route || "/";
-  }
+  // // Check if running on the client side
+  // if (typeof window !== "undefined") {
+  //   // Access localStorage only on the client side
+  //   redirect = localStorage.route || "/";
+  // }
 
   const onSubmit = async (data) => {
     try {
-      const res = await baseUrl.post("/login", data);
+      const nextAuthData = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        // redirect: false,
+        callbackUrl: router.query.callbackUrl,
+      });
+      //const res = await baseUrl.post("/login", data);
 
-      if (typeof window !== "undefined") {
-        localStorage.setItem("token", res.data.access_token);
-        setError("");
-        router.push(redirect);
-      }
+      console.log("login page", nextAuthData);
+      // if (typeof window !== "undefined") {
+      //   localStorage.setItem("token", res.data.access_token);
+      //   setError("");
+      //   router.push(redirect);
+      // }
 
       reset();
     } catch (err) {
