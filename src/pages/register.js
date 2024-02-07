@@ -19,6 +19,7 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = async (data) => {
     try {
       setLoading(true);

@@ -42,6 +42,8 @@
   ],
   "paymentImages": [
     { "imgLink": "/images/bkash.png", "title": "bkash" },
-    { "imgLink": "/images/nagad.png", "title": "nagad" }
+    { "imgLink": "/images/nagad.png", "title": "nagad" },
+    { "imgLink": "/images/rocket.png", "title": "rocket" },
+    { "imgLink": "/images/ssl.png", "title": "ssl" }
   ]
 }
