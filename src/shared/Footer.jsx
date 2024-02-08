@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#e6f8ff]">
       <div className="container pt-16 pb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-10 text-base-content">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-8 lg:gap-y-0  text-base-content items-center">
           <aside>
             <a href="#">
               <Image
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
           </aside>
           <nav>
-            <header className="font-bold mb-6">Useful Links</header>
+            <header className="font-bold mb-6 text-lg">Useful Links</header>
             {usefulLinks.map((link, index) => (
               <Link
                 key={index}
@@ -73,7 +73,9 @@ const Footer = () => {
             ))}
           </nav>
           <nav>
-            <header className="font-bold mb-6">Course Categories</header>
+            <header className="font-bold mb-6 text-lg">
+              Course Categories
+            </header>
             {categories?.slice(0, 8).map((link, index) => (
               <Link
                 key={index}
@@ -89,7 +91,7 @@ const Footer = () => {
             ))}
           </nav>
           <nav>
-            <header className="font-bold mb-6">Contact Info</header>
+            <header className="font-bold mb-6 text-lg">Contact Info</header>
             <a href="tel:+88 01321231802">
               <div className="flex items-center gap-2">
                 <Icon>
@@ -116,24 +118,28 @@ const Footer = () => {
             </div>
           </nav>
           <div></div>
-          <nav className="col-span-3 -mt-10">
-            <div>
-              <div className="flex gap-1">
-                {paymentImages.map((img, index) => (
-                  <div key={index} className="bg-white  rounded-md px-2 py-1">
-                    <Image
-                      src={img.imgLink}
-                      alt={`${img.title} logo`}
-                      width={img.title === "ssl" ? 150 : 80}
-                      height={80}
-                    />
-                  </div>
-                ))}
-              </div>
+          <div>
+            <h2 className="text-lg font-semibold border-r-2 border-primary">
+              Online Transaction Method
+            </h2>
+          </div>
+          <nav className="lg:col-span-2">
+            <div className="flex gap-1">
+              {paymentImages.map((img, index) => (
+                <div key={index} className="bg-white  rounded-md px-2 py-1">
+                  <img
+                    src={img.imgLink}
+                    alt={`${img.title} logo`}
+                    width={img.title === "ssl" ? 150 : 80}
+                    height={80}
+                  />
+                </div>
+              ))}
             </div>
           </nav>
         </div>
       </div>
+
       <div className="border-t py-7">
         <div className="container lg:flex items-center justify-between">
           <div>

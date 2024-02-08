@@ -50,7 +50,7 @@ const Banner = () => {
               </p>
             </Reveal>
             <Reveal>
-              <div className="flex items-center gap-5">
+              <div className="lg:flex  items-center gap-5">
                 <Link href="/courses" className="inline-block">
                   <Button className="flex items-center gap-2 py-6 bg-primary ">
                     <BookOpenCheck />

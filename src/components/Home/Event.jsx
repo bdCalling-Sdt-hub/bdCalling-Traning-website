@@ -34,7 +34,7 @@ const Event = () => {
             />
             <div className="p-3">
               <div className="lg:flex items-center justify-between">
-                <div className="flex gap-5 items-center">
+                <div className="lg:flex gap-5 items-center">
                   <p size={18} className="flex items-center gap-1">
                     <Calendar size={18} color="#1796fd" />
                     <span className=" text-gray-600">
@@ -106,7 +106,7 @@ const Event = () => {
                 className="rounded-md h-[330px] w-full pb-16"
               />
               <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fd]">
-                <div className="flex gap-5 items-center">
+                <div className="lg:flex gap-5 items-center">
                   <p className="flex items-center gap-1">
                     <Calendar size={18} />
                     <span>{event?.date}</span>
@@ -117,7 +117,7 @@ const Event = () => {
                     <span>{event?.endtime}</span>
                   </p>
                 </div>
-                <h2 className="text-xl  my-3 capitalize">
+                <h2 className="text-sm lg:text-xl  my-3 capitalize">
                   {event?.courseName}
                 </h2>
               </div>

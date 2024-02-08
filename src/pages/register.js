@@ -54,8 +54,8 @@ const Register = () => {
 
   return (
     <div className="container my-24">
-      <div className="grid grid-cols-2 items-center">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div className="order-2 lg:order-1">
           <div className="mb-8">
             <h2 className="font-semibold text-2xl">Create a new account</h2>
             <p>Enter your details to register</p>
@@ -147,7 +147,7 @@ const Register = () => {
             </Button>
           </p>
         </div>
-        <div>
+        <div className="order-1 lg:order-2">
           <img
             src="https://learnwithsumit.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogin.cc7f1c14.png&w=640&q=75"
             alt=""
