@@ -12,35 +12,26 @@ const SuccessStories = () => {
   const videoLinkLists = [
     {
       video:
-        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
+        "https://www.youtube.com/embed/9ab5fKohvHA?si=KZuraKey3IfX8voz&autoplay=1",
       thumb:
-        "https://i.postimg.cc/HL892xSn/Industrial-Attachment-Thumbnail-03-02.png",
+        "https://i.postimg.cc/9MWM8wLB/Digital-Marketing-Students-Openion-thumbnail.jpg",
     },
     {
       video:
-        "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp&autoplay=1",
+        "https://www.youtube.com/embed/UGkIN-lhhbA?si=djN9Y9e9yUUsIiRd&autoplay=1",
       thumb:
-        "https://i.postimg.cc/x1CRXgMK/Industrial-Attachment-keno-korben.jpg",
+        "https://i.postimg.cc/28775Mtc/Thumbnail-for-Flutter-to-Swapon-02.jpg",
     },
     {
       video:
-        "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp&autoplay=1",
-      thumb: "https://i.postimg.cc/mZYVJPTF/Students-Success-Story-Part-01.jpg",
+        "https://www.youtube.com/embed/N58lmQhkYY4?si=L9u4ppsBsLWRsWkV&autoplay=1",
+      thumb:
+        "https://i.postimg.cc/zvxRSF5W/Word-Press-Students-Openion-thumbnail.jpg",
     },
     {
       video:
-        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
-      thumb: "https://i.postimg.cc/hjFb3Bwr/Web-Development.png",
-    },
-    {
-      video:
-        "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp&autoplay=1",
+        "https://www.youtube.com/embed/-qoaZ6sQp3s?si=0qlFnVAxTJuKCAOI&autoplay=1",
       thumb: "https://i.postimg.cc/gJWKJsNH/Students-Success-Story-Part-03.jpg",
-    },
-    {
-      video:
-        "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp&autoplay=1",
-      thumb: "https://i.postimg.cc/VLz48zNZ/Happy-New-Year-Offer.jpg",
     },
   ];
   const animationType = [
@@ -65,7 +56,7 @@ const SuccessStories = () => {
                   src={item.thumb}
                   alt=""
                   loading="lazy"
-                  className="w-full h-full rounded-md"
+                  className="w-full h-full rounded-md border"
                 />
               </div>
 

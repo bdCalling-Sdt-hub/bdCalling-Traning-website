@@ -1,38 +1,47 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import styles from "@/styles/home.module.css";
 import { Play } from "lucide-react";
-import "swiper/css";
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import HeadingText from "../Common/headingText";
-
 import { useState } from "react";
 import "swiper/css";
-import "swiper/css/navigation";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import HeadingText from "../Common/headingText";
 import { AspectRatio } from "../ui/aspect-ratio";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const StudentSuccess = () => {
   const [videoLink, setVideoLink] = useState("");
   const swiperContainerStyle = {
     width: "100%",
-    height: "380px",
-    marginTop: "40px",
+    height: "440px",
+    marginTop: "30px",
+    paddingBottom: "50px",
   };
   const videoLinkLists = [
     {
       video:
-        "https://www.youtube.com/embed/LW37AQikbtE?si=VtKcmJX4h-nfR2Mk&amp&autoplay=1",
+        "https://www.youtube.com/embed/9ab5fKohvHA?si=KZuraKey3IfX8voz&autoplay=1",
       thumb:
         "https://i.postimg.cc/9MWM8wLB/Digital-Marketing-Students-Openion-thumbnail.jpg",
     },
     {
       video:
-        "https://www.youtube.com/embed/oxbeaeSIAjo?si=fx57zTaGguB4ed5G&amp&autoplay=1",
-      thumb: "https://i.postimg.cc/dQ57fnPZ/Flutter-Jisan.jpg",
+        "https://www.youtube.com/embed/UGkIN-lhhbA?si=djN9Y9e9yUUsIiRd&autoplay=1",
+      thumb:
+        "https://i.postimg.cc/28775Mtc/Thumbnail-for-Flutter-to-Swapon-02.jpg",
     },
     {
       video:
-        "https://www.youtube.com/embed/3bxMCZIaNxo?si=W3pgCUvNdJ7x-qKd&amp&autoplay=1",
+        "https://www.youtube.com/embed/N58lmQhkYY4?si=L9u4ppsBsLWRsWkV&autoplay=1",
+      thumb:
+        "https://i.postimg.cc/zvxRSF5W/Word-Press-Students-Openion-thumbnail.jpg",
+    },
+    {
+      video:
+        "https://www.youtube.com/embed/-qoaZ6sQp3s?si=0qlFnVAxTJuKCAOI&autoplay=1",
       thumb: "https://i.postimg.cc/gJWKJsNH/Students-Success-Story-Part-03.jpg",
     },
   ];
@@ -41,9 +50,10 @@ const StudentSuccess = () => {
       <HeadingText title={"Success Story"} />
       <Dialog>
         <Swiper
-          modules={[Navigation]}
+          modules={[Pagination, Autoplay]}
           spaceBetween={10}
           slidesPerView={1}
+          pagination={{ clickable: true }}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -53,7 +63,6 @@ const StudentSuccess = () => {
               slidesPerView: 2,
             },
           }}
-          navigation
           style={swiperContainerStyle}
         >
           {videoLinkLists.map((item, index) => (
