@@ -1,9 +1,9 @@
-import ExpertCard from "@/components/Common/Expert.Card";
 import TopHeading from "@/components/Common/TopHeading";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
 import MetaTag from "@/shared/MetaTag";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import expert from "../../public/db/expert.json";
 
@@ -11,6 +11,10 @@ const Mentors = () => {
   const { teams } = expert;
   const [title, setTitle] = useState("Mentors");
   const [expertList, setExpertList] = useState([]);
+  const MentorAreaDynamic = dynamic(
+    () => import("@/components/Mentors/MentorsArea"),
+    { loading: () => <h2>Loading...</h2> }
+  );
 
   useEffect(() => {
     baseUrl
@@ -44,14 +48,7 @@ const Mentors = () => {
           </Button>
         ))}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 my-12">
-        {title === "Mentors" &&
-          expertList.map((item, index) => (
-            <ExpertCard key={index} data={item} />
-          ))}
-        {title === "Team" &&
-          teams.map((item, index) => <ExpertCard key={index} data={item} />)}
-      </div>
+      <MentorAreaDynamic expertList={expertList} teams={teams} title={title} />
     </div>
   );
 };
