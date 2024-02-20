@@ -39,7 +39,7 @@ const Courses = ({ categories }) => {
           </Button>
         </Link>
       </div>
-      <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2 bg-blue-400 p-2 overflow-x-scroll">
+      <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2">
         <Button
           variant="link"
           onClick={() => setTitle(0)}
@@ -49,15 +49,7 @@ const Courses = ({ categories }) => {
         >
           All
         </Button>
-        <Button
-          variant="link"
-          onClick={() => setTitle(0)}
-          className={`${
-            title === 0 ? "bg-[#1796fd] text-white" : ""
-          } text-md font-medium`}
-        >
-          Welcome to bangladesh
-        </Button>
+
         {categories?.map((category, index) => (
           <Button
             key={index}
