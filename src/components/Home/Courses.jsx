@@ -28,7 +28,7 @@ const Courses = ({ categories }) => {
   }, [title]);
 
   return (
-    <div className="container">
+    <div className="container ">
       <div className="flex justify-between mt-24">
         <div>
           <h2 className="text-2xl font-bold">Most Popular Courses</h2>
@@ -39,7 +39,7 @@ const Courses = ({ categories }) => {
           </Button>
         </Link>
       </div>
-      <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2">
+      <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2 bg-blue-400 p-2 overflow-x-scroll">
         <Button
           variant="link"
           onClick={() => setTitle(0)}
@@ -48,6 +48,15 @@ const Courses = ({ categories }) => {
           } text-md font-medium`}
         >
           All
+        </Button>
+        <Button
+          variant="link"
+          onClick={() => setTitle(0)}
+          className={`${
+            title === 0 ? "bg-[#1796fd] text-white" : ""
+          } text-md font-medium`}
+        >
+          Welcome to bangladesh
         </Button>
         {categories?.map((category, index) => (
           <Button

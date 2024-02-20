@@ -1,4 +1,5 @@
 import { baseUrl, imgUrl } from "@/config";
+import { timeFormat } from "@/lib/utils";
 import { Calendar, Clock8, MapPinned } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -30,7 +31,7 @@ const Event = () => {
             <img
               src={`${imgUrl}/${events[events.length - 1]?.image}`}
               alt="course image"
-              className="rounded-t-lg w-full h-[400px]"
+              className="rounded-t-lg w-full "
             />
             <div className="p-3">
               <div className="lg:flex items-center justify-between">
@@ -44,11 +45,11 @@ const Event = () => {
                   <p size={18} className="flex items-center gap-1">
                     <Clock8 size={18} color="#1796fd" />
                     <span className=" text-gray-600">
-                      {events[events.length - 1]?.starttime}
+                      {timeFormat(events[events.length - 1]?.starttime)}
                     </span>
                     -
                     <span className=" text-gray-600">
-                      {events[events.length - 1]?.endtime}
+                      {timeFormat(events[events.length - 1]?.endtime)}
                     </span>
                   </p>
                 </div>
@@ -76,7 +77,7 @@ const Event = () => {
                   events[events.length - 1]?.description.slice(0, 150)}
                 {!desLen && (
                   <span
-                    className="text-primary cursor-pointer"
+                    className="text-primary cursor-pointer ml-1"
                     onClick={() => setDesLen(true)}
                   >
                     see more
@@ -113,8 +114,8 @@ const Event = () => {
                   </p>
                   <p className="flex items-center gap-1">
                     <Clock8 size={18} />
-                    <span>{event?.starttime}</span>-
-                    <span>{event?.endtime}</span>
+                    <span>{timeFormat(event?.starttime)}</span>-
+                    <span>{timeFormat(event?.endtime)}</span>
                   </p>
                 </div>
                 <h2 className="text-sm lg:text-xl  my-3 capitalize">

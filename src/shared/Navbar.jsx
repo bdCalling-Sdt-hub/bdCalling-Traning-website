@@ -26,8 +26,6 @@ const Navbar = () => {
   const path = usePathname();
   const { data: session } = useSession();
 
-  console.log("navbar", session);
-
   const logout = () => {
     signOut();
   };

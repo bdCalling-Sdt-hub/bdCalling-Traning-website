@@ -19,7 +19,11 @@
     },
     {
       "title": "Mentors",
-      "link": "/mentors"
+      "link": "/mentors?title=Mentors"
+    },
+    {
+      "title": "Team",
+      "link": "/mentors?title=Team"
     },
     {
       "title": "Refund Policy",

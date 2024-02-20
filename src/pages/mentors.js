@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
 import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import expert from "../../public/db/expert.json";
 
 const Mentors = () => {
   const { teams } = expert;
-  const [title, setTitle] = useState("Mentors");
+  const router = useRouter();
+  const [title, setTitle] = useState(router.query.title);
   const [expertList, setExpertList] = useState([]);
   const MentorAreaDynamic = dynamic(
     () => import("@/components/Mentors/MentorsArea"),

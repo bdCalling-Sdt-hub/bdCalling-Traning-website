@@ -129,25 +129,17 @@ const FormSection = ({ categories }) => {
             )}
           </p>
 
-          <select
-            {...register("category")}
-            className="border w-full py-4  rounded-md"
-          >
-            <option>Select category</option>
-            {categories?.map((item, index) => (
-              <option
-                value={item.category_name}
-                className="capitalize"
-                key={index}
-              >
-                {item.category_name === "ux/ui design" ? (
-                  <span>{`UX/UI Design`}</span>
-                ) : (
-                  <span className="capitalize">{item.category_name}</span>
-                )}
-              </option>
-            ))}
-          </select>
+          <Input
+            type="text"
+            name="subject"
+            {...register("subject", { required: true })}
+            placeholder="Subject"
+          />
+          <p>
+            {errors.name && (
+              <span className="text-red-500">Subject is required</span>
+            )}
+          </p>
           <Textarea
             name="details"
             {...register("details", { required: true })}

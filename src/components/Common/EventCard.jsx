@@ -1,4 +1,5 @@
 import { imgUrl } from "@/config";
+import { timeFormat } from "@/lib/utils";
 import { Calendar, Clock8, MapPinned } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -45,8 +46,8 @@ const EventCard = ({ data, index }) => {
             </p>
             <p size={18} className="flex items-center gap-1">
               <Clock8 size={18} color="#1796fd" />
-              <span className=" text-gray-600">{starttime}</span>-
-              <span className=" text-gray-600">{endtime}</span>
+              <span className=" text-gray-600">{timeFormat(starttime)}</span>-
+              <span className=" text-gray-600">{timeFormat(endtime)}</span>
             </p>
           </div>
           <p
