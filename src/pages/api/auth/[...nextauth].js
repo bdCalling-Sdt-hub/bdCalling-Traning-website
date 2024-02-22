@@ -13,25 +13,29 @@ export const authOptions = {
     // }),
     CredentialsProvider({
       async authorize(credentials, req) {
-        const res = await baseUrl.post("/login", credentials);
-        let resData;
-        const token = res?.data?.access_token;
+        try {
+          const res = await baseUrl.post("/login", credentials);
+          let resData;
+          const token = res?.data?.access_token;
 
-        if (token) {
-          resData = await baseUrl.get("/profile", {
-            headers: {
-              "Content-type": "application/json",
-              authorization: `Bearer ${token}`,
-            },
-          });
+          if (token) {
+            resData = await baseUrl.get("/profile", {
+              headers: {
+                "Content-type": "application/json",
+                authorization: `Bearer ${token}`,
+              },
+            });
+          }
+
+          const user = {
+            email: resData.data?.user?.email,
+            name: resData.data?.user?.fullName,
+            image: resData.data?.user?.image,
+          };
+          return user;
+        } catch (err) {
+          console.log(err);
         }
-
-        const user = {
-          email: resData.data?.user?.email,
-          name: resData.data?.user?.fullName,
-          image: resData.data?.user?.image,
-        };
-        return user;
       },
     }),
   ],
