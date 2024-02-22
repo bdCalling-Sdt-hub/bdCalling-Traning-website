@@ -1,14 +1,14 @@
 import axios from "axios";
 
-const cloud = false;
-const imgCloud = false;
+const cloud = true;
+const imgCloud = true;
 
 const url = cloud
-  ? "https://server.bdcallingacademy.com/api/"
+  ? "https://hub.bdcallingacademy.com/api/"
   : "http://192.168.10.13:8000/api/";
 
 const imageUrl = imgCloud
-  ? "https://server.bdcallingacademy.com"
+  ? "https://hub.bdcallingacademy.com"
   : "http://192.168.10.13:8000";
 
 export const baseUrl = axios.create({

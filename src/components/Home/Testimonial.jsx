@@ -6,11 +6,14 @@ import testimonials from "../../../public/db/testimonial.json";
 import HeadingText from "../Common/headingText";
 
 // Import Swiper styles
+import { useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 
 const Testimonial = () => {
   const { testimonialList } = testimonials;
+  const [seeMore, setSeeMore] = useState(false);
+  const [seeMoreId, setSeeMoreId] = useState();
 
   const swiperContainerStyle = {
     width: "100%",
@@ -42,7 +45,7 @@ const Testimonial = () => {
           {testimonialList.map((testimonial, index) => (
             <SwiperSlide key={index} className="mt-16">
               <div
-                className="p-5 rounded-md relative flex justify-center h-[350px] lg:h-[340px] text-center"
+                className="p-5 rounded-md relative flex justify-center h-auto text-center"
                 style={{
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
                 }}
@@ -59,9 +62,24 @@ const Testimonial = () => {
                 <div>
                   <div className="my-6">
                     <h2 className="text-xl">{testimonial?.name}</h2>
-                    <p className="">{testimonial?.designation}</p>
+                    {/* <p className="">{testimonial?.designation}</p> */}
                   </div>
-                  <p>{testimonial?.feedback}</p>
+                  <p>
+                    {seeMore && testimonial.id === seeMoreId
+                      ? testimonial?.feedback
+                      : testimonial?.feedback.slice(0, 220)}{" "}
+                    <button
+                      className="text-blue-400"
+                      onClick={() => {
+                        setSeeMore(!seeMore);
+                        setSeeMoreId(testimonial.id);
+                      }}
+                    >
+                      {seeMore && testimonial.id === seeMoreId
+                        ? "See less"
+                        : "See More"}
+                    </button>
+                  </p>
                 </div>
               </div>
             </SwiperSlide>
