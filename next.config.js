@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
+  // trailingSlash: true,
+  // output: "export",
   images: {
-    unoptimized: true,
+    // unoptimized: true,
     remotePatterns: [
       { hostname: "i.ibb.co" },
       { hostname: "i.postimg.cc" },
@@ -14,13 +15,6 @@ const nextConfig = {
       { hostname: "server.bdcallingacademy.com" },
     ],
   },
-  // publicRuntimeConfig: {
-  //   server: {
-  //     target: "server",
-  //     host: "68.183.224.38",
-  //     port: 3000,
-  //   },
-  // },
 };
 
 module.exports = nextConfig;

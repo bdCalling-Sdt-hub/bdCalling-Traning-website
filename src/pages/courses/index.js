@@ -3,6 +3,7 @@ import SkeletonCard from "@/components/Common/SkeletonCard";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
+import MetaTag from "@/shared/MetaTag";
 import { useEffect, useState } from "react";
 
 const CourseHomePage = () => {
@@ -28,6 +29,7 @@ const CourseHomePage = () => {
 
   return (
     <>
+      <MetaTag title="Courses" />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-12 container">
         {loading ? (
           <SkeletonCard />
