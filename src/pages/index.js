@@ -20,7 +20,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <MetaTag title="bdCalling Academy" />
+      <MetaTag title="Bdcalling Academy" />
       <Banner />
       <Reveal>
         <DynamicCourses categories={category} />

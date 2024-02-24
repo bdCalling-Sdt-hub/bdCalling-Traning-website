@@ -48,7 +48,7 @@ const FormSection = ({ categories }) => {
     },
     {
       title: "Chat with us",
-      value: "learn.bdcalling@gmail.com",
+      value: "info@bdcallingacademy.com",
       icon: <Mail size={20} color="#2492EB" />,
     },
     {

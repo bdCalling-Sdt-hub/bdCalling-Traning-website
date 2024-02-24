@@ -25,13 +25,17 @@ const Gallery = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-12">
       {images.map((item, index) => (
-        <div key={index} style={{ width: "100%" }}>
+        <div
+          key={index}
+          style={{ width: "100%" }}
+          className="bg-[#E6F8FF] rounded-md shadow-sm p-2 flex items-center justify-center"
+        >
           <ModalImage
             small={item}
             large={item}
             loading="lazy"
             alt="Bdcalling Academy"
-            className={`w-full h-[280px] rounded-md animate__animated ${
+            className={`w-full rounded-md animate__animated  ${
               animationType.length <= index
                 ? animationType[0]
                 : animationType[index]

@@ -34,7 +34,7 @@ const CourseCard = ({ course }) => {
         <img
           src={`${imgUrl}/${courseThumbnail}`}
           alt="course image"
-          className="rounded-t-lg w-full h-[240px]"
+          className="rounded-t-lg w-full "
         />
         <div className="p-3">
           <div className="flex items-center justify-between">

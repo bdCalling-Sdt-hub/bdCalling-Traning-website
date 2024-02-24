@@ -53,7 +53,7 @@ const Footer = () => {
                   <Youtube color="#e8e3e3" />
                 </Icon>
               </a>
-              <a href="mailto:learn.bdcalling@gmail.com">
+              <a href="mailto:info@bdcallingacademy.com">
                 <Icon>
                   <Mail color="#e8e3e3" />
                 </Icon>
@@ -100,12 +100,12 @@ const Footer = () => {
                 <p>+88 01321231802</p>
               </div>
             </a>
-            <a href="mailto:learn.bdcalling@gmail.com">
+            <a href="mailto:info@bdcallingacademy.com">
               <div className="flex items-center gap-2 mt-4">
                 <Icon>
                   <Mail color="#e8e3e3" />
                 </Icon>
-                <p>learn.bdcalling@gmail.com</p>
+                <p>info@bdcallingacademy.com</p>
               </div>
             </a>
             <div className="flex items-center gap-2 mt-4">

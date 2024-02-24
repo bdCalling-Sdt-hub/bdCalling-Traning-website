@@ -53,23 +53,28 @@ const Event = () => {
                     </span>
                   </p>
                 </div>
-                <p
-                  className={`${
-                    events[events.length - 1]?.status === "OFFLINE"
-                      ? "text-white bg-red-500 py-1 px-3 rounded-md"
-                      : "text-white bg-green-500 py-1 px-3 rounded-md"
-                  } text-md`}
-                >
-                  {events[events.length - 1]?.status}
-                </p>
+                <div className="flex items-center">
+                  <p
+                    className={`${
+                      events[events.length - 1]?.status === "OFFLINE"
+                        ? " text-red-500 py-1 px-3 rounded-md"
+                        : " text-green-500 py-1 px-3 rounded-md"
+                    } text-md`}
+                  >
+                    {events[events.length - 1]?.status}
+                  </p>
+                  <Link href="/free-seminar">
+                    <Button className="bg-primary">Join Seminar</Button>
+                  </Link>
+                </div>
               </div>
-              <div className="flex items-center mt-1 gap-1">
+              <div className="flex items-center  gap-1">
                 <MapPinned size={20} color="#1796fd" />
                 <p className="text-md capitalize text-gray-500">
                   {events[events.length - 1]?.officeLocation}
                 </p>
               </div>
-              <h2 className="text-2xl capitalize my-3">
+              <h2 className="text-2xl capitalize my-2">
                 {events[events.length - 1]?.courseName}
               </h2>
               <p>
@@ -86,9 +91,6 @@ const Event = () => {
 
                 {desLen && events[events.length - 1]?.description}
               </p>
-              <Link href="/free-seminar">
-                <Button className="bg-primary mt-5">Join Seminar</Button>
-              </Link>
             </div>
           </div>
         )}
@@ -96,7 +98,7 @@ const Event = () => {
           {events.slice(0, 2).map((event, index) => (
             <div
               key={index}
-              className="rounded-lg relative"
+              className="rounded-lg relative lg:h-[290px]"
               style={{
                 boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
               }}
@@ -104,7 +106,7 @@ const Event = () => {
               <img
                 src={`${imgUrl}/${event?.image}`}
                 alt="course image"
-                className="rounded-md h-[330px] w-full pb-16"
+                className="rounded-md  w-full pb-16"
               />
               <div className="h-24 w-full border-t  absolute left-0 bottom-0 rounded-b-md p-2 text-white bg-[#1e99fd]">
                 <div className="lg:flex gap-5 items-center">
