@@ -69,34 +69,8 @@ const Banner = () => {
                 </div>
               </div>
             </Reveal>
-            {/* <Reveal>
-              <div className="bg-white lg:w-[80%] shadow rounded-full h-14 flex items-center justify-between gap-1 px-2">
-                <input
-                  type="text"
-                  placeholder="Search here..."
-                  className=" h-full w-[55%] lg:w-[80%]  bg-transparent outline-none pl-2"
-                />
-                <div className="flex items-center gap-1">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger className="border h-11 flex items-center px-2 lg:px-4 rounded-3xl bg-[#e1ecf4] text-primary ">
-                      Courses <ChevronDown />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      {catagories?.map((item, index) => (
-                        <DropdownMenuItem className="capitalize" key={index}>
-                          {item.category_name}
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  <button className="bg-primary h-11 w-11 flex items-center justify-center rounded-full">
-                    <Search color="#ffd" />
-                  </button>
-                </div>
-              </div>
-            </Reveal> */}
           </div>
-          <div className="order-1 lg:order-2 w-full lg:w-[700px] h-[250px] lg:h-[380px]  mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#4d95d8] p-2 rounded-3xl animate__animated animate__zoomIn">
+          <div className="order-1 lg:order-2 w-full lg:w-[700px]   mt-4 lg:mt-0 bg-gradient-to-bl from-[#1696fd] to-[#4d95d8] p-2 rounded-3xl animate__animated animate__zoomIn">
             <Dialog>
               {videoLinkLists.map((item, index) => (
                 <div key={index}>
@@ -104,7 +78,7 @@ const Banner = () => {
                     <img
                       src={item.thumb}
                       alt=""
-                      className="w-full h-[234px] lg:h-[364px] rounded-3xl"
+                      className="w-full  rounded-3xl"
                     />
 
                     <div

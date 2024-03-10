@@ -10,8 +10,7 @@
 /coverage
 
 # next.js
-
-
+.next
 
 # production
 /build
@@ -37,5 +36,4 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
-
 .vercel

@@ -1,14 +1,17 @@
 import { ArrowUpRight, Check, Trophy } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 import { Button } from "../ui/button";
 
 const Exceptional = () => {
+  const [img, setImag] = useState();
   const items = [
     "Free Seminar",
     "Provide Best Support",
     "Expert Many Teacher",
     "Lifetime access",
   ];
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 my-36 items-center justify-center container">
       <div className="relative">
@@ -27,8 +30,8 @@ const Exceptional = () => {
         </div>
         <div className="absolute bottom-28">{/* <LottiePlane /> */}</div>
       </div>
-      <div className="space-y-5">
-        <h1 className="text-4xl font-bold">Why We’re Exceptional</h1>
+      <div className="space-y-5 ">
+        <h1 className="text-4xl font-bold ">Why We’re Exceptional</h1>
         <p>
           Bdcalling Academy offers various courses and upon successful
           completion, we offer job opportunities within our company.
@@ -38,6 +41,7 @@ const Exceptional = () => {
           experience with real client projects, ensuring a comprehensive
           learning experience.
         </p>
+
         <div className="bg-gray-50 rounded-md rounded-l-[55px] relative h-36">
           <img
             src="/images/flexible.png"
@@ -74,6 +78,7 @@ const Exceptional = () => {
           </Button>
         </Link>
       </div>
+      <img src={img} alt="" />
     </div>
   );
 };

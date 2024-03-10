@@ -1,1 +1,9 @@
-{"/_app":"pages/_app.js","/_document":"pages/_document.js","/about":"pages/about.html","/contact":"pages/contact.html","/courses/[...slug]":"pages/courses/[...slug].html","/courses/[type]":"pages/courses/[type].html","/courses":"pages/courses.html","/free-seminar":"pages/free-seminar.html","/":"pages/index.html","/mentors":"pages/mentors.html","/payment/[...pay]":"pages/payment/[...pay].html","/payment/status/failed":"pages/payment/status/failed.html","/payment/status/success":"pages/payment/status/success.html","/register":"pages/register.html","/success-stories":"pages/success-stories.html","/verify-email/[id]":"pages/verify-email/[id].html","/_error":"pages/_error.js","/login":"pages/login.html","/api/auth/[...nextauth]":"pages/api/auth/[...nextauth].js","/404":"pages/404.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/success-stories": "pages/success-stories.js",
+  "/about": "pages/about.js",
+  "/contact": "pages/contact.js"
+}

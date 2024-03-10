@@ -22,12 +22,7 @@ const SuccessStories = () => {
       thumb:
         "https://i.postimg.cc/28775Mtc/Thumbnail-for-Flutter-to-Swapon-02.jpg",
     },
-    {
-      video:
-        "https://www.youtube.com/embed/N58lmQhkYY4?si=L9u4ppsBsLWRsWkV&autoplay=1",
-      thumb:
-        "https://i.postimg.cc/zvxRSF5W/Word-Press-Students-Openion-thumbnail.jpg",
-    },
+
     {
       video:
         "https://www.youtube.com/embed/-qoaZ6sQp3s?si=0qlFnVAxTJuKCAOI&autoplay=1",
